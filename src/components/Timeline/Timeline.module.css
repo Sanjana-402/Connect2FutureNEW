@@ -1,0 +1,78 @@
+.track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--count), 1fr);
+  gap: var(--space-3);
+}
+
+.track::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.item {
+  position: relative;
+  padding-top: var(--space-4);
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 3px solid var(--color-background);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.itemAccent .dot {
+  background: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.year {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .track {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .track::before {
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .item {
+    padding-top: 0;
+    padding-left: var(--space-4);
+  }
+  .dot {
+    top: 4px;
+  }
+}

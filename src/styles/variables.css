@@ -1,0 +1,60 @@
+:root {
+  /* ============ COLOR SYSTEM ============ */
+  --color-primary: #081b33;        /* deep corporate navy */
+  --color-primary-light: #0f2947;
+  --color-secondary: #ffffff;
+  --color-accent: #c89b3c;         /* gold */
+  --color-accent-hover: #e0b552;
+  --color-background: #f8f8f6;
+  --color-surface: #ffffff;
+  --color-text: #1b1b1b;
+  --color-muted: #6f6f6f;
+  --color-border: #e5e5e5;
+
+  /* translucent helpers */
+  --color-primary-08: rgba(8, 27, 51, 0.08);
+  --color-primary-60: rgba(8, 27, 51, 0.6);
+  --color-overlay-dark: rgba(6, 16, 30, 0.55);
+  --color-accent-15: rgba(200, 155, 60, 0.15);
+
+  /* ============ TYPOGRAPHY ============ */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ============ SPACING SYSTEM ============ */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* ============ RADIUS ============ */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* ============ SHADOW ============ */
+  --shadow-sm: 0 2px 8px rgba(8, 27, 51, 0.06);
+  --shadow-md: 0 8px 24px rgba(8, 27, 51, 0.10);
+  --shadow-lg: 0 24px 64px rgba(8, 27, 51, 0.16);
+
+  /* ============ LAYOUT ============ */
+  --container-max: 1280px;
+  --container-padding: clamp(20px, 5vw, 80px);
+  --nav-height: 88px;
+
+  /* ============ TRANSITIONS ============ */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.25s;
+  --duration-base: 0.5s;
+  --duration-slow: 0.9s;
+
+  /* ============ Z-INDEX ============ */
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}

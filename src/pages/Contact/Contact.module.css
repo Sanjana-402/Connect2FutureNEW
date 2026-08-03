@@ -1,0 +1,206 @@
+/* ===== INFO STRIP ===== */
+.infoStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.infoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent-15);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoTitle {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.98rem;
+}
+
+.infoText {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ===== FORM + MAP ===== */
+.formMapGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.field {
+  width: 100%;
+  height: 54px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.textarea {
+  height: 140px;
+  padding-top: var(--space-3);
+  resize: vertical;
+}
+
+.field:focus, .textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.secureNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+/* ===== MAP ===== */
+.mapWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  height: 340px;
+  margin-top: var(--space-4);
+}
+
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.impactCard {
+  margin-top: var(--space-3);
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.impactIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(200, 155, 60, 0.2);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.impactTitle {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.impactText {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.88rem;
+  margin-bottom: var(--space-2);
+}
+
+.impactLink {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== REACH OUT ===== */
+.reachGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+}
+
+.reachItem {
+  text-align: center;
+}
+
+.reachIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-2);
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.reachItem:hover .reachIcon {
+  background: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.reachTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.reachText {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1080px) {
+  .infoStrip { grid-template-columns: repeat(2, 1fr); }
+  .formMapGrid { grid-template-columns: 1fr; }
+  .reachGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .infoStrip { grid-template-columns: 1fr; }
+  .formRow { grid-template-columns: 1fr; }
+  .reachGrid { grid-template-columns: repeat(2, 1fr); }
+}

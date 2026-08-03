@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ctaBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ctaLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ctaIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-accent-15);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ctaTitle {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.ctaText {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.92rem;
+}
