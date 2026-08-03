@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-
+// import { useLenis } from './hooks/useLenis';
 
 import Home from './pages/Home/Home';
 import WhoWeAre from './pages/WhoWeAre/WhoWeAre';
@@ -19,7 +19,7 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  
+  // useLenis();
 
   return (
     <>
