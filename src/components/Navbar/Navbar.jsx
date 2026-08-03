@@ -14,11 +14,15 @@ export default function Navbar() {
     <>
       <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         <Container wide className={styles.inner}>
-          <Link to="/" className={styles.logo} aria-label="Connect2Future — Home">
-            <span className={styles.logoMark}>C2F</span>
-            <span className={styles.logoText}>
-              CONNECT<span className={styles.logoAccent}>2</span>FUTURE
-            </span>
+          <Link to="/" className={`${styles.logo} ${scrolled ? styles.logoScrolled : ""}`} aria-label="Connect2Future">
+            <img src="/c2flooooo.png" alt="Wing Logo" className={styles.logoIcon} />
+            <div className={styles.brand}>
+              <div className={styles.verticalLine}></div>
+              <div className={styles.text}>
+                <h1 className={styles.title}>Connect2future</h1>
+                <p className={styles.tagline}>UNLOCK THE POWER OF CONNECTIVITY</p>
+              </div>
+            </div>
           </Link>
 
           <nav className={styles.links} aria-label="Primary">
@@ -37,12 +41,7 @@ export default function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <button className={styles.iconBtn} aria-label="Search">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M16 16L12.5 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-            </button>
+            
             <Link to="/contact" className={styles.ctaBtn}>
               Get in Touch
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">

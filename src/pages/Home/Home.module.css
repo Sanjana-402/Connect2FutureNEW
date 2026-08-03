@@ -63,17 +63,18 @@
   padding-bottom: 12px;
 }
 
-.heroDot {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
-  padding-left: 10px;
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
+.heroDot{
+    font-size:.78rem;
+    font-weight:600;
+    color:#ff1ea8;
+    padding-left:10px;
+    border-left:2px solid #ff1ea8;
+    transition:.35s ease;
 }
 
-.heroDotActive {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+.heroDotActive{
+    color:#fff;
+    border-color:#fff;
 }
 
 .heroTitle {

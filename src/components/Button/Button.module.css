@@ -50,17 +50,20 @@
 }
 
 /* Gold — filled accent CTA */
-.gold {
-  background: var(--color-accent);
-  color: var(--color-primary);
-  border-color: var(--color-accent);
+.gold{
+    background:var(--brand-pink);
+    color:#fff;
+    border:1px solid var(--brand-pink);
+    transition:.35s ease;
 }
 
-.gold:hover {
-  background: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
+.gold:hover{
+    background:#ff47b9;
+    border-color:#ff47b9;
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(255,30,168,.28);
 }
-
 /* On dark section background */
 .onDark {
   background: transparent;
