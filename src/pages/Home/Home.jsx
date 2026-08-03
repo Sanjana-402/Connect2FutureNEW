@@ -6,7 +6,6 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
 import StatBlock from '../../components/StatBlock/StatBlock';
 import InsightCard from '../../components/InsightCard/InsightCard';
-import Newsletter from '../../components/Newsletter/Newsletter';
 import { images } from '../../utils/images';
 import { ventures } from '../../data/ventures';
 import { homeInsights } from '../../data/insights';
@@ -176,8 +175,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ============ NEWSLETTER CTA ============ */}
-      <Newsletter />
+  
     </>
   );
 }

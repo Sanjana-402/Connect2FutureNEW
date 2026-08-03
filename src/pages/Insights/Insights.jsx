@@ -4,7 +4,6 @@ import Hero from '../../components/Hero/Hero';
 import Button from '../../components/Button/Button';
 import InsightCard from '../../components/InsightCard/InsightCard';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
-import Newsletter from '../../components/Newsletter/Newsletter';
 import { images } from '../../utils/images';
 import { featuredInsight, sideInsights, gridInsights, insightCategories } from '../../data/insights';
 import styles from './Insights.module.css';
@@ -130,11 +129,6 @@ export default function Insights() {
           </div>
         </Container>
       </section>
-
-      <Newsletter
-        text="Subscribe to our newsletter to receive the latest insights and announcements."
-        cta="Subscribe"
-      />
     </>
   );
 }
