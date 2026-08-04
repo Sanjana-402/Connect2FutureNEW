@@ -1,0 +1,180 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: var(--space-12);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0);
+  text-decoration: none;
+  color: #fff;
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+/* Accent colour classes – to be added to the parent container */
+.accentPink {
+  --accent-color: #ff1ea8;
+  --accent-glow: rgba(255, 30, 168, 0.28);
+}
+
+.accentBlue {
+  --accent-color: #2f8fff;
+  --accent-glow: rgba(47, 143, 255, 0.28);
+}
+
+.accentGold {
+  --accent-color: #c89b3c;
+  --accent-glow: rgba(200, 155, 60, 0.28);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-color, var(--color-accent));
+  box-shadow:
+    0 16px 36px var(--accent-glow, rgba(200, 155, 60, 0.28)),
+    0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.top {
+  margin-bottom: 6px;
+}
+
+.lockup {
+  display: flex;
+  align-items: center;
+}
+
+.wingLogo {
+  width: 24px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.standaloneLogo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.card:hover .wingLogo,
+.card:hover .standaloneLogo {
+  transform: scale(1.08);
+}
+
+.verticalLine {
+  width: 1.5px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.35);
+  margin: 0 6px;
+  flex-shrink: 0;
+  transition: background 0.35s var(--ease-out);
+}
+
+.card:hover .verticalLine {
+  background: var(--accent-color, var(--color-accent));
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tagline {
+  margin: 2px 0 0;
+  font-size: 0.42rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  margin: 6px 0 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+}
+
+.arrow {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  margin-top: 6px;
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    background 0.35s var(--ease-out),
+    color 0.35s var(--ease-out);
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+  border-color: var(--accent-color, var(--color-accent));
+  background: var(--accent-color, var(--color-accent));
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: var(--space-8);
+  }
+  .card {
+    min-height: 120px;
+    padding: 10px;
+  }
+}

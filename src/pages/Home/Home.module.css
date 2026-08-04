@@ -1,9 +1,7 @@
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 640px;
-  max-height: 920px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -50,31 +48,7 @@
 }
 
 .heroInner {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: var(--space-4);
-  align-items: end;
-}
-
-.heroDots {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  padding-bottom: 12px;
-}
-
-.heroDot{
-    font-size:.78rem;
-    font-weight:600;
-    color:#ff1ea8;
-    padding-left:10px;
-    border-left:2px solid #ff1ea8;
-    transition:.35s ease;
-}
-
-.heroDotActive{
-    color:#fff;
-    border-color:#fff;
+  display: block;
 }
 
 .heroTitle {
@@ -295,5 +269,4 @@
 @media (max-width: 640px) {
   .ventureGrid { grid-template-columns: repeat(2, 1fr); }
   .heroInner { grid-template-columns: 1fr; }
-  .heroDots { flex-direction: row; padding-bottom: 0; order: 2; }
 }
