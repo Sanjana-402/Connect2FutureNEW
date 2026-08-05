@@ -299,68 +299,174 @@
 }
 
 /* ===== ECOSYSTEM PREVIEW GRID ===== */
-.ventureGrid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--space-3);
-  margin-bottom: var(--space-6);
+.ventureGrid{
+    display:grid;
+    grid-template-columns:repeat(4,290px);
+    justify-content:center;
+    gap:28px;
+    margin-top:35px;
+    margin-bottom:35px;
 }
 
-.ventureCard {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-3);
-  transition: all var(--duration-base) var(--ease-out);
-  text-align: center;
+.ventureGrid > :nth-child(5){
+    grid-column:2;
 }
 
-.ventureCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-6px);
-  border-color: var(--color-accent);
+.ventureGrid > :nth-child(6){
+    grid-column:3;
+}
+.ventureCard:nth-child(5){
+    grid-column:2;
 }
 
-.ventureMark {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto var(--space-2);
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-primary);
+.ventureCard:nth-child(6){
+    grid-column:3;
+}
+.ventureLogo{
+    width:34px;
+    height:34px;
+    object-fit:contain;
 }
 
-.ventureName {
-  font-size: 1rem;
-  margin-bottom: 6px;
+.washLogo{
+    width:44px;
+    height:44px;
+    object-fit:contain;
 }
 
-.ventureTagline {
-  font-size: 0.82rem;
-  margin-bottom: var(--space-2);
+.zenLogo{
+    width:56px;
+    height:56px;
+    object-fit:contain;
+    transform: scale(1.18);
+}
+.ventureCard{
+    width:290px;
+    height:170px;
+    padding:18px;
+    border-radius:22px;
+    border:1px solid #e8e8e8;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.35s;
 }
 
-.ventureExplore {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+.ventureCard:hover{
+    transform:translateY(-8px);
+    border-color:#ff1ea8;
+    box-shadow:
+    0 0 18px rgba(255,30,168,.25),
+    0 0 42px rgba(255,30,168,.18);
+}
+.washCard:hover{
+    border-color:#1e88e5;
+    box-shadow:
+        0 0 18px rgba(30,136,229,.35),
+        0 0 40px rgba(30,136,229,.25),
+        0 18px 40px rgba(0,0,0,.12);
+}
+
+.zenCard:hover{
+    border-color:#d4af37;
+    box-shadow:
+        0 0 18px rgba(212,175,55,.35),
+        0 0 40px rgba(212,175,55,.25),
+        0 18px 40px rgba(0,0,0,.12);
+}
+.ventureTop{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+}
+
+.ventureMark{
+    width:64px;
+    height:64px;
+    flex-shrink:0;
+    border-radius:14px;
+    background:#f3f3f3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.ventureName{
+    font-size:1.45rem;
+    margin:0;
+}
+
+.ventureTagline{
+    margin-top:6px;
+    margin-bottom:0;
+    font-size:1rem;
+    line-height:1.45;
+    color:#626262;
+}
+
+.ventureExplore{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:auto;
+    color:#000;
+    font-size:0.82rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    transition:all .3s ease;
+    cursor:pointer;
+}
+.ventureExplore svg{
+    stroke:currentColor;
+    transition:all .3s ease;
+}
+
+.ventureCard:hover .ventureExplore{
+    color:#ff1ea8;
+}
+
+.ventureCard:hover .ventureExplore svg{
+    transform:translateX(4px);
+}
+/* WashWala - Dark Blue */
+.washCard:hover .ventureExplore{
+    color:#0d47a1;
+}
+
+.washCard:hover .ventureExplore svg{
+    color:#0d47a1;
+    stroke:#0d47a1;
+}
+
+/* ZenTrax - Gold */
+.zenCard:hover .ventureExplore{
+    color:#d4af37;
+}
+
+.zenCard:hover .ventureExplore svg{
+    color:#d4af37;
+    stroke:#d4af37;
 }
 
 .viewAllWrap {
   display: flex;
   justify-content: center;
 }
+.ecosystemHeader{
+    margin-top:-65px;
+    margin-bottom:18px;
+}
 
+.ecosystemHeader :global(.eyebrow){
+    color:#ff1ea8;
+}
+.ventureWing{
+    width:30px;
+    height:30px;
+    object-fit:contain;
+}
 /* ===== INSIGHTS PREVIEW ===== */
 .insightsHeader {
   display: flex;
@@ -437,4 +543,21 @@
     line-height:1.9;
     color:#fb029f;
     font-weight:400;
+}
+/* Connect2Job, Connect2EdTech, Connect2Crevox, Connect2Space */
+.pinkTagline{
+    color:#ff1ea8;
+    font-weight:500;
+}
+
+/* Mr.WashWala */
+.washTagline{
+    color:#2f80ed;
+    font-weight:500;
+}
+
+/* ZenTrax */
+.zenTagline{
+    color:#b8860b;   /* Dark Gold */
+    font-weight:500;
 }

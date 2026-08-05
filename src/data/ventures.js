@@ -61,7 +61,7 @@ export const ventures = [
     id: 'mrwashwala',
     mark: '💧',
     name: 'Mr.WashWala',
-    tagline: 'Smart laundry services at your doorstep.',
+    tagline: 'Premium Wash - Shine Like New',
     description:
       'Mr.WashWala is transforming everyday laundry needs with convenient, reliable and eco-friendly doorstep laundry services.',
     image: images.ventureMrWashWala,
@@ -75,7 +75,7 @@ export const ventures = [
     id: 'zentrax',
     mark: 'Z',
     name: 'ZenTrax',
-    tagline: 'Technology that drives performance.',
+    tagline: 'Construction & Man Power',
     description:
       'ZenTrax provides performance-driven technology solutions and IT services that help businesses optimize, scale and succeed.',
     image: images.ventureZenTrax,

@@ -153,13 +153,13 @@ export default function Home() {
           </p>
         </div>
       </section>
-            {/* ============ IMPACT ============ */}
-      <section  style={{ paddingTop: "40px",paddingBottom: "40px" ,background:"#0b0b0b"}}>
+      {/* ============ IMPACT ============ */}
+      <section style={{ paddingTop: "40px", paddingBottom: "40px", background: "#0b0b0b" }}>
         <Container wide>
           <div className={styles.impact}>
             <RevealOnScroll>
               <span className="eyebrow" style={{ color: "#ff1ea8" }}>Our Impact</span>
-              <h2 className="text-white" style={{ fontSize:"3rem",lineHeight:"1.1",fontWeight:600 }}>
+              <h2 className="text-white" style={{ fontSize: "3rem", lineHeight: "1.1", fontWeight: 600 }}>
                 Creating Value That Matters.
               </h2>
             </RevealOnScroll>
@@ -171,28 +171,87 @@ export default function Home() {
       {/* ============ ECOSYSTEM PREVIEW ============ */}
       <section className="section bg-surface">
         <Container wide>
-          <SectionTitle
-            center
-            eyebrow="Our Ecosystem"
-            title="Six Ventures. One Vision."
-          />
+          <div className={styles.ecosystemHeader}>
+            <SectionTitle
+              center
+              eyebrow="Our Ecosystem"
+              title="Six Ventures. One Vision."
+            />
+          </div>
           <div className={styles.ventureGrid}>
             {ventures.map((v, i) => (
-              <RevealOnScroll key={v.id} delay={i * 0.06} className={styles.ventureCard} as="div">
-                <div className={styles.ventureMark}>{v.mark}</div>
-                <h3 className={styles.ventureName}>{v.name}</h3>
-                <p className={styles.ventureTagline}>{v.tagline}</p>
+              <RevealOnScroll
+                key={v.id}
+                delay={i * 0.06}
+                as="div"
+                className={`${styles.ventureCard} ${v.name === "Mr.WashWala"
+                  ? styles.washCard
+                  : v.name === "ZenTrax"
+                    ? styles.zenCard
+                    : ""
+                  }`}
+              >
+                <div className={styles.ventureTop}>
+
+                  <div className={styles.ventureMark}>
+                    <img
+                      src={
+                        v.name === "Mr.WashWala"
+                          ? "/washwalaMAN.png"
+                          : v.name === "ZenTrax"
+                            ? "/ZENTRAXBUILDING.png"
+                            : "/c2flooooo.png"
+                      }
+                      alt={v.name}
+                      className={
+                        v.name === "Mr.WashWala"
+                          ? styles.washLogo
+                          : v.name === "ZenTrax"
+                            ? styles.zenLogo
+                            : styles.ventureLogo
+                      }
+                    />
+                  </div>
+
+                  <div className={styles.ventureInfo}>
+                    <h3 className={styles.ventureName}>{v.name}</h3>
+
+                    <p
+                      className={`${styles.ventureTagline} ${v.name === "Mr.WashWala"
+                          ? styles.washTagline
+                          : v.name === "ZenTrax"
+                            ? styles.zenTagline
+                            : styles.pinkTagline
+                        }`}
+                    >
+                      {v.tagline}
+                    </p>
+                  </div>
+
+                </div>
+
                 <span className={styles.ventureExplore}>
                   Explore
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                    <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </span>
               </RevealOnScroll>
             ))}
           </div>
           <div className={styles.viewAllWrap}>
-            <Button to="/our-ecosystem" variant="primary">View All Companies</Button>
+            <Button to="/our-ecosystem" variant="gold">View All Ventures</Button>
           </div>
         </Container>
       </section>
