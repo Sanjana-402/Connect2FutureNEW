@@ -39,7 +39,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: #ff1ea8;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);

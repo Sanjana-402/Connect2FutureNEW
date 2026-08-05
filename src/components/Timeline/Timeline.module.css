@@ -15,6 +15,31 @@
   background: var(--color-border);
 }
 
+.trackLight::before {
+  content: none;
+}
+
+.trackBase {
+  position: absolute;
+  /* ✅ Aligned to 8.5px to pass perfectly through the center of the dot */
+  top: 8.5px; 
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ffffff;
+}
+
+.trackFill {
+  position: absolute;
+  /* ✅ Aligned to 8.5px to pass perfectly through the center of the dot */
+  top: 8.5px; 
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #ff1ea8;
+  box-shadow: 0 0 8px rgba(255, 30, 168, 0.55);
+}
+
 .item {
   position: relative;
   padding-top: var(--space-4);
@@ -23,7 +48,9 @@
 .dot {
   position: absolute;
   top: 0;
-  left: 0;
+  /* ✅ Centered horizontally in the grid column */
+  left: 50%; 
+  transform: translateX(-50%); 
   width: 17px;
   height: 17px;
   border-radius: 50%;
@@ -35,6 +62,10 @@
 .itemAccent .dot {
   background: var(--color-accent);
   box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.trackLight .dot {
+  border-width: 2px;
 }
 
 .year {
@@ -55,12 +86,23 @@
   font-size: 0.85rem;
 }
 
+.trackLight .year,
+.trackLight .title {
+  color: #fff;
+}
+
+.trackLight .desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 @media (max-width: 900px) {
   .track {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
-  .track::before {
+  .track::before,
+  .trackBase,
+  .trackFill {
     top: 0;
     bottom: 0;
     left: 8px;
@@ -68,11 +110,17 @@
     width: 1px;
     height: auto;
   }
+  .trackFill {
+    width: 1px !important;
+  }
   .item {
     padding-top: 0;
     padding-left: var(--space-4);
   }
   .dot {
+    /* On mobile, the dot stays aligned with the vertical line */
     top: 4px;
+    left: 0; 
+    transform: none; 
   }
 }

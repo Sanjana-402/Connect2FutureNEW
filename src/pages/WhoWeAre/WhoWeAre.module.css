@@ -19,7 +19,7 @@
   height: 48px;
   border-radius: 50%;
   background: var(--color-accent-15);
-  color: var(--color-accent);
+  color: #ff1ea8 ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
 .purposeUnderline {
   width: 32px;
   height: 2px;
-  background: var(--color-accent);
+  background: #ff1ea8;
   margin-top: var(--space-3);
 }
 
@@ -66,10 +66,10 @@
   transition: all var(--duration-base) var(--ease-out);
 }
 
-.valueItem:hover .valueIcon {
-  background: var(--color-primary);
-  color: var(--color-accent);
-  border-color: var(--color-primary);
+.valueItem .valueIcon {
+  background: #ff1ea8;
+  border-color: #ff1ea8; /* Fixed: Was previously empty */
+  color: #fcfcfc;
 }
 
 .valueTitle {
@@ -84,54 +84,8 @@
 .valueUnderline {
   width: 24px;
   height: 2px;
-  background: var(--color-accent);
+  background: #ff1ea8;
   margin: var(--space-2) auto 0;
-}
-
-/* ===== LEADERSHIP ===== */
-.leadership {
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.9fr;
-  gap: var(--space-6);
-  align-items: center;
-}
-
-.leaderImage {
-  width: 100%;
-  aspect-ratio: 4 / 4.6;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-}
-
-.leaderText p {
-  margin: var(--space-3) 0 var(--space-4);
-}
-
-.quoteBox {
-  background: var(--color-primary);
-  color: #fff;
-  padding: var(--space-6) var(--space-4);
-  border-radius: var(--radius-md);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.quoteMark {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--color-accent);
-  line-height: 0.4;
-  margin-bottom: var(--space-3);
-  display: block;
-}
-
-.quoteText {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  line-height: 1.4;
-  color: #fff;
 }
 
 /* ===== MILESTONES ===== */
@@ -139,11 +93,13 @@
   padding-top: var(--space-4);
 }
 
+.heroTimelineWrap {
+  padding-bottom: var(--space-2);
+}
+
 @media (max-width: 1080px) {
   .purposeGrid { grid-template-columns: 1fr 1fr; }
   .valuesGrid { grid-template-columns: repeat(3, 1fr); }
-  .leadership { grid-template-columns: 1fr; }
-  .leaderImage { max-width: 420px; }
 }
 
 @media (max-width: 640px) {
