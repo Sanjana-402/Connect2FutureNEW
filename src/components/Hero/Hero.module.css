@@ -54,16 +54,17 @@
   max-width: 720px;
 }
 
-.underline {
+/* .underline {
   width: 56px;
   height: 2px;
   background: var(--color-accent);
   margin: var(--space-2) 0 var(--space-3);
-}
+} */
 
 .subtitle {
   color: rgba(255, 255, 255, 0.78);
   max-width: 560px;
+   margin-top: 30px;
 }
 
 @media (max-width: 900px) {

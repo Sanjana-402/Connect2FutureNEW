@@ -6,36 +6,107 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
 import { images } from '../../utils/images';
 import styles from './Contact.module.css';
+import {
+  FaUserTie,
+  FaGraduationCap,
+  FaMicrophoneAlt,
+  FaChartLine,
+  FaHardHat,
+  FaSoap
+} from "react-icons/fa";
+
+
 
 const infoItems = [
   {
-    title: 'Our Office',
-    lines: ['Connect2Future Corporate Office', 'Prestige Tech Park, Kadubeesanahalli', 'Bengaluru, Karnataka 560103, India'],
-    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z" stroke="currentColor" strokeWidth="1.4" /><circle cx="10" cy="8" r="2.2" stroke="currentColor" strokeWidth="1.4" /></svg>,
+    title: "Our Office",
+    lines: [
+      "970, Nirmithi Kendra Rd,",
+      "Vijayanagar, Bogadi 2nd Stage North,",
+      "Mysuru, Karnataka 570006"
+    ],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 18s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z" stroke="currentColor" strokeWidth="1.4" />
+        <circle cx="10" cy="8" r="2.2" stroke="currentColor" strokeWidth="1.4" />
+      </svg>
+    ),
   },
+
   {
-    title: 'Call Us',
-    lines: ['+91 98765 43210', 'Mon – Fri, 9:00 AM – 6:00 PM IST'],
-    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3h3l1.5 4-2 1.5a10 10 0 004.5 4.5L12.5 11l4 1.5V16a1.5 1.5 0 01-1.6 1.5A14 14 0 014 4.6 1.5 1.5 0 015.5 3H4z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" /></svg>,
+    title: "Call Us",
+    lines: [
+      "+91 70194 36720",
+      "Monday – Saturday",
+      "10:00 AM – 6:00 PM"
+    ],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4 3h3l1.5 4-2 1.5a10 10 0 004.5 4.5L12.5 11l4 1.5V16a1.5 1.5 0 01-1.6 1.5A14 14 0 014 4.6 1.5 1.5 0 015.5 3H4z" stroke="currentColor" strokeWidth="1.3" />
+      </svg>
+    ),
   },
+
   {
-    title: 'Email Us',
-    lines: ['hello@connect2future.com', 'partnerships@connect2future.com'],
-    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.3" /><path d="M3 5.5L10 11l7-5.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>,
+    title: "Email Us",
+    lines: [
+      "hr@connect2future.com",
+      "karthikgowdaja@connect2future.com",
+      "support@connect2future.com"
+    ],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M3 5.5L10 11l7-5.5" stroke="currentColor" strokeWidth="1.3" />
+      </svg>
+    ),
   },
+
   {
-    title: 'Working Hours',
-    lines: ['Monday – Friday', '9:00 AM – 6:00 PM IST'],
-    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.3" /><path d="M10 5.5V10l3 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>,
+    title: "Visit Us",
+    lines: [
+      "Monday – Saturday",
+      "10:00 AM – 6:00 PM"
+    ],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M10 5.5V10l3 2" stroke="currentColor" strokeWidth="1.3" />
+      </svg>
+    ),
   },
 ];
 
 const reachOptions = [
-  { title: 'Partnerships', text: 'Explore strategic collaborations and partnership opportunities.', icon: <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M9 13l3 3 5-6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /><path d="M4 10l3-3h4l2 2M22 10l-3-3h-4l-2 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg> },
-  { title: 'Careers', text: 'Join our team and be a part of our growth journey.', icon: <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="5" y="9" width="16" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.4" /><path d="M9 9V7a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" strokeWidth="1.4" /></svg> },
-  { title: 'Investors', text: 'Learn more about our ecosystem and investment opportunities.', icon: <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="9" r="3.2" stroke="currentColor" strokeWidth="1.4" /><path d="M6 21c0-3.6 3-6.5 7-6.5s7 2.9 7 6.5" stroke="currentColor" strokeWidth="1.4" /><path d="M17 6l1.5 1.5L21 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg> },
-  { title: 'Media & Press', text: 'For media inquiries, press releases, and brand assets.', icon: <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="6" width="20" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.4" /><path d="M9.5 10.5L15 13l-5.5 2.5v-5z" fill="currentColor" /></svg> },
-  { title: 'General Inquiries', text: 'Have a question? We\u2019re happy to help.', icon: <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" strokeWidth="1.4" /><path d="M13 17v.01M11 10a2 2 0 112.6 1.9c-.9.3-1.6 1-1.6 2.1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg> },
+  {
+    title: "Recruitment & Hiring",
+    icon: <FaUserTie size={24} />,
+  },
+
+  {
+    title: "Training & Learning",
+    icon: <FaGraduationCap size={24} />,
+  },
+
+  {
+    title: "Studio & Event Spaces",
+    icon: <FaMicrophoneAlt size={24} />,
+  },
+
+  {
+    title: "Business Consultation",
+    icon: <FaChartLine size={24} />,
+  },
+
+  {
+    title: "Construction & Real Estate",
+    icon: <FaHardHat size={24} />,
+  },
+
+  {
+    title: "Premium Laundry Services",
+    icon: <FaSoap size={24} />,
+  },
 ];
 
 export default function Contact() {
@@ -54,9 +125,62 @@ export default function Contact() {
         subtitle="We are always open to new ideas, partnerships, and opportunities. Get in touch with us."
         image={images.contactOffice}
       />
+      <section className={styles.heroReach}>
+        <Container>
 
+          <RevealOnScroll className={styles.heroReachContent}>
+
+            <span className={styles.heroReachEyebrow}>
+              WE'D LOVE TO CONNECT
+            </span>
+
+            <div className={styles.heroReachGrid}>
+
+              {reachOptions.map((item, i) => (
+
+                <div key={item.title} className={styles.heroReachItem}>
+
+                  <div className={styles.heroReachIcon}>
+                    {item.icon}
+                  </div>
+
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </RevealOnScroll>
+
+        </Container>
+      </section>
+      {/* ===== CONTACT STRIP HEADING ===== */}
+      <section className={styles.contactStripHeading}>
+        <Container>
+          <RevealOnScroll>
+            <span className={styles.contactEyebrow}>
+              CONTACT US THROUGH
+            </span>
+
+            {/* <h2 className={styles.contactHeading}>
+              Contact Us Through
+            </h2> */}
+
+          </RevealOnScroll>
+        </Container>
+      </section>
       {/* ===== INFO STRIP ===== */}
-      <section className="section-tight bg-background">
+      <section
+        className="section-tight"
+        style={{
+          background: "#fff3f8",
+          paddingTop: "2px",
+          paddingBottom: "30px"
+        }}
+      >
         <Container wide>
           <div className={styles.infoStrip}>
             {infoItems.map((item, i) => (
@@ -75,11 +199,11 @@ export default function Contact() {
       </section>
 
       {/* ===== FORM + MAP ===== */}
-      <section className="section bg-surface">
+      <section className="section bg-surface" style={{ paddingTop: "45px", paddingBottom: "80px" }}>
         <Container wide>
           <div className={styles.formMapGrid}>
             <RevealOnScroll>
-              <span className="eyebrow">Send Us a Message</span>
+              <span className="eyebrow" style={{ color: "#ff1ea8" }}>Send Us a Message</span>
               <h2 className="h-2" style={{ marginTop: '16px' }}>We'd Love to Hear From You</h2>
               <p className="text-body" style={{ marginTop: '12px' }}>
                 Whether you have a question, want to explore a partnership, or just want
@@ -111,13 +235,14 @@ export default function Contact() {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.15}>
-              <span className="eyebrow">Find Us Here</span>
+              <span className="eyebrow" style={{ color: "#ff1ea8" }}>Find Us Here</span>
               <div className={styles.mapWrap}>
                 <iframe
                   title="Connect2Future office location"
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps?q=Prestige+Tech+Park+Kadubeesanahalli+Bengaluru&output=embed"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.0901449305525!2d76.60861799999999!3d12.309716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b0050ce1873%3A0xe6c2f3909d626076!2sConnect2future!5e0!3m2!1sen!2sin!4v1785918775942!5m2!1sen!2sin"
                 />
               </div>
 
@@ -133,12 +258,6 @@ export default function Contact() {
                     We collaborate with visionary organizations and individuals to build
                     innovative solutions that create real-world impact.
                   </p>
-                  <a href="#" className={styles.impactLink}>
-                    Explore Partnership Opportunities
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                      <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </a>
                 </div>
               </div>
             </RevealOnScroll>
@@ -146,21 +265,6 @@ export default function Contact() {
         </Container>
       </section>
 
-      {/* ===== REACH OUT FOR ===== */}
-      <section className="section bg-background">
-        <Container wide>
-          <SectionTitle center eyebrow="We'd Love to Connect" title="Reach Out for" />
-          <div className={styles.reachGrid}>
-            {reachOptions.map((r, i) => (
-              <RevealOnScroll key={r.title} delay={i * 0.08} className={styles.reachItem}>
-                <div className={styles.reachIcon}>{r.icon}</div>
-                <div className={styles.reachTitle}>{r.title}</div>
-                <p className={styles.reachText}>{r.text}</p>
-              </RevealOnScroll>
-            ))}
-          </div>
-        </Container>
-      </section>
     </>
   );
 }

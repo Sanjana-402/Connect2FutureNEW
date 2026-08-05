@@ -26,15 +26,19 @@
 }
 
 /* Primary — dark navy background, white text, gold hover border */
-.primary {
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  border-color: var(--color-primary);
+.primary{
+    background:#ff1ea8;
+    color:#fff;
+    border-color:#ff1ea8;
+    transition:.35s ease;
 }
 
-.primary:hover {
-  border-color: var(--color-accent);
-  background: var(--color-primary-light);
+.primary:hover{
+    background:#ff47b9;
+    border-color:#ff47b9;
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(255,30,168,.30);
 }
 
 /* Secondary — outlined, for light or dark backgrounds */
