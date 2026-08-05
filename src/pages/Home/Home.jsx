@@ -6,6 +6,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
 import StatBlock from '../../components/StatBlock/StatBlock';
 import InsightCard from '../../components/InsightCard/InsightCard';
+import EcosystemCards from '../../components/EcosystemCards/EcosystemCards'; // <-- new import
 import { images } from '../../utils/images';
 import { ventures } from '../../data/ventures';
 import { homeInsights } from '../../data/insights';
@@ -71,99 +72,47 @@ export default function Home() {
               >
                 <Button to="/our-ecosystem" variant="gold">Explore Our Ecosystem</Button>
               </motion.div>
+
+              {/* Ecosystem cards ΓÇô directly below the button, still inside hero */}
+              <EcosystemCards />
             </div>
           </div>
         </Container>
 
-        <div className={styles.scrollDown}>
+        {/* <div className={styles.scrollDown}>
           <span>Scroll Down</span>
           <span className={styles.scrollLine} />
-        </div>
+        </div> */}
       </section>
 
-      {/* ============ OUR FOUNDERS ============ */}
-      <section className={`${styles.foundersSection} bg-background`}>
+      {/* ============ CHAIRMAN'S MESSAGE ============ */}
+      <section className="section bg-background">
         <Container wide>
-
-          <RevealOnScroll className={styles.founderHeader}>
-            <span className="eyebrow">OUR FOUNDERS</span>
-
-            <h2 className="h-2" style={{ marginTop: "18px" }}>
-              A Vision for a Better Tomorrow
-            </h2>
-          </RevealOnScroll>
-
-          <div className={styles.founderGrid}>
-
-            <RevealOnScroll className={styles.founderCard}>
-
-              <img
-                src="/founder1.jpg"
-                alt="Founder 1"
-                className={styles.founderImage}
-              />
-
-              <div className={styles.quoteCard}>
-
-                <span className={styles.quoteMark}>
-                  &ldquo;
-                </span>
-
-                <p className={styles.quoteText}>
-                  We don't just build companies,
-                  we build opportunities.
-                </p>
-
-              </div>
-
-            </RevealOnScroll>
-
-            <RevealOnScroll
-              delay={0.15}
-              className={styles.founderCard}
-            >
-
-              <img
-                src="/founder2.jpg"
-                alt="Founder 2"
-                className={styles.founderImage}
-              />
-
-              <div className={styles.quoteCard}>
-
-                <span className={styles.quoteMark}>
-                  &ldquo;
-                </span>
-
-                <p className={styles.quoteText}>
-                  Innovation begins with people
-                  and grows through vision.
-                </p>
-
-              </div>
-
-            </RevealOnScroll>
-
-          </div>
-
-        </Container>
-        <div className={styles.founderClosing}>
-          <p>
-            "𝘌𝘮𝘱𝘰𝘸𝘦𝘳𝘪𝘯𝘨 𝘱𝘦𝘰𝘱𝘭𝘦. 𝘐𝘯𝘴𝘱𝘪𝘳𝘪𝘯𝘨 𝘪𝘯𝘯𝘰𝘷𝘢𝘵𝘪𝘰𝘯. 𝘉𝘶𝘪𝘭𝘥𝘪𝘯𝘨 𝘣𝘶𝘴𝘪𝘯𝘦𝘴𝘴𝘦𝘴 𝘵𝘩𝘢𝘵 𝘤𝘳𝘦𝘢𝘵𝘦 𝘭𝘢𝘴𝘵𝘪𝘯𝘨 𝘪𝘮𝘱𝘢𝘤𝘵."
-          </p>
-        </div>
-      </section>
-      {/* ============ IMPACT ============ */}
-      <section style={{ paddingTop: "40px", paddingBottom: "40px", background: "#0b0b0b" }}>
-        <Container wide>
-          <div className={styles.impact}>
-            <RevealOnScroll>
-              <span className="eyebrow" style={{ color: "#ff1ea8" }}>Our Impact</span>
-              <h2 className="text-white" style={{ fontSize: "3rem", lineHeight: "1.1", fontWeight: 600 }}>
-                Creating Value That Matters.
+          <div className={styles.chairman}>
+            <RevealOnScroll className={styles.chairmanText}>
+              <span className="eyebrow">Chairman's Message</span>
+              <h2 className="h-2" style={{ marginTop: '16px', marginBottom: '20px' }}>
+                A Vision for a Better Tomorrow
               </h2>
+              <p className="text-body-lg" style={{ marginBottom: '28px' }}>
+                At Connect2Future, our purpose is to build and nurture businesses that
+                solve real problems and create lasting impact. We believe in the power
+                of people, the strength of innovation and the promise of a future built together.
+              </p>
+              <div className={styles.signature}>Vikram N.</div>
+              <div className={styles.signatureRole}>Chairman, Connect2Future</div>
+              <Button to="/who-we-are" variant="secondary">Read Full Message</Button>
             </RevealOnScroll>
-            <StatBlock stats={impactStats} cols={3} />
+
+            <RevealOnScroll delay={0.15} className={styles.chairmanImageWrap}>
+              <img src={images.chairman} alt="Vikram N., Chairman, Connect2Future" className={styles.chairmanImage} />
+              <div className={styles.quoteCard}>
+                <span className={styles.quoteMark}>&ldquo;</span>
+                <p className={styles.quoteText}>
+                  We don't just build companies, we build opportunities.
+                </p>
+              </div>
+            </RevealOnScroll>
           </div>
         </Container>
       </section>
@@ -171,87 +120,28 @@ export default function Home() {
       {/* ============ ECOSYSTEM PREVIEW ============ */}
       <section className="section bg-surface">
         <Container wide>
-          <div className={styles.ecosystemHeader}>
-            <SectionTitle
-              center
-              eyebrow="Our Ecosystem"
-              title="Six Ventures. One Vision."
-            />
-          </div>
+          <SectionTitle
+            center
+            eyebrow="Our Ecosystem"
+            title="Six Ventures. One Vision."
+          />
           <div className={styles.ventureGrid}>
             {ventures.map((v, i) => (
-              <RevealOnScroll
-                key={v.id}
-                delay={i * 0.06}
-                as="div"
-                className={`${styles.ventureCard} ${v.name === "Mr.WashWala"
-                  ? styles.washCard
-                  : v.name === "ZenTrax"
-                    ? styles.zenCard
-                    : ""
-                  }`}
-              >
-                <div className={styles.ventureTop}>
-
-                  <div className={styles.ventureMark}>
-                    <img
-                      src={
-                        v.name === "Mr.WashWala"
-                          ? "/washwalaMAN.png"
-                          : v.name === "ZenTrax"
-                            ? "/ZENTRAXBUILDING.png"
-                            : "/c2flooooo.png"
-                      }
-                      alt={v.name}
-                      className={
-                        v.name === "Mr.WashWala"
-                          ? styles.washLogo
-                          : v.name === "ZenTrax"
-                            ? styles.zenLogo
-                            : styles.ventureLogo
-                      }
-                    />
-                  </div>
-
-                  <div className={styles.ventureInfo}>
-                    <h3 className={styles.ventureName}>{v.name}</h3>
-
-                    <p
-                      className={`${styles.ventureTagline} ${v.name === "Mr.WashWala"
-                          ? styles.washTagline
-                          : v.name === "ZenTrax"
-                            ? styles.zenTagline
-                            : styles.pinkTagline
-                        }`}
-                    >
-                      {v.tagline}
-                    </p>
-                  </div>
-
-                </div>
-
+              <RevealOnScroll key={v.id} delay={i * 0.06} className={styles.ventureCard} as="div">
+                <div className={styles.ventureMark}>{v.mark}</div>
+                <h3 className={styles.ventureName}>{v.name}</h3>
+                <p className={styles.ventureTagline}>{v.tagline}</p>
                 <span className={styles.ventureExplore}>
                   Explore
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <path
-                      d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </RevealOnScroll>
             ))}
           </div>
           <div className={styles.viewAllWrap}>
-            <Button to="/our-ecosystem" variant="gold">View All Ventures</Button>
+            <Button to="/our-ecosystem" variant="primary">View All Companies</Button>
           </div>
         </Container>
       </section>
@@ -274,8 +164,20 @@ export default function Home() {
         </Container>
       </section>
 
-
-
+      {/* ============ IMPACT ============ */}
+      <section className="section bg-primary">
+        <Container wide>
+          <div className={styles.impact}>
+            <RevealOnScroll>
+              <span className="eyebrow">Our Impact</span>
+              <h2 className="h-2 text-white" style={{ marginTop: '16px' }}>
+                Creating Value That Matters.
+              </h2>
+            </RevealOnScroll>
+            <StatBlock stats={impactStats} cols={3} />
+          </div>
+        </Container>
+      </section>
     </>
   );
 }

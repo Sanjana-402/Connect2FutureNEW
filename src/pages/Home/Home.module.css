@@ -1,9 +1,7 @@
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 640px;
-  max-height: 920px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -20,47 +18,27 @@
   animation: heroCrossfade 15s infinite;
 }
 
-.heroImage:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.heroImage:nth-child(2) {
-  animation-delay: 5s;
-}
-
-.heroImage:nth-child(3) {
-  animation-delay: 10s;
-}
+.heroImage:nth-child(1) { animation-delay: 0s; }
+.heroImage:nth-child(2) { animation-delay: 5s; }
+.heroImage:nth-child(3) { animation-delay: 10s; }
 
 @keyframes heroCrossfade {
-  0% {
-    opacity: 0;
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  38% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  38% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg,
-      rgba(6, 16, 30, 0.9) 0%,
-      rgba(6, 16, 30, 0.6) 40%,
-      rgba(6, 16, 30, 0.2) 75%);
+  background: linear-gradient(
+    100deg,
+    rgba(6, 16, 30, 0.9) 0%,
+    rgba(6, 16, 30, 0.6) 40%,
+    rgba(6, 16, 30, 0.2) 75%
+  );
 }
 
 .heroContent {
@@ -70,31 +48,7 @@
 }
 
 .heroInner {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: var(--space-4);
-  align-items: end;
-}
-
-.heroDots {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  padding-bottom: 12px;
-}
-
-.heroDot {
-  font-size: .78rem;
-  font-weight: 600;
-  color: #ff1ea8;
-  padding-left: 10px;
-  border-left: 2px solid #ff1ea8;
-  transition: .35s ease;
-}
-
-.heroDotActive {
-  color: #fff;
-  border-color: #fff;
+  display: block;
 }
 
 .heroTitle {
@@ -145,328 +99,138 @@
 }
 
 @keyframes scrollDrop {
-  0% {
-    top: -100%;
-  }
-
-  100% {
-    top: 100%;
-  }
+  0% { top: -100%; }
+  100% { top: 100%; }
 }
 
-.founderHeader{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    margin:20px auto 16px;
-}
-
-.founderHeader h2{
-
-    font-size:clamp(2.6rem,4vw,4rem);
-    font-family:"Cormorant Garamond", serif;
-    font-weight:600;
-    line-height:1.05;
-
-    background:linear-gradient(
-        90deg,
-        #081b33 0%,
-        #081b33 35%,
-        #ff1ea8 48%,
-        #ffffff 52%,
-        #ff1ea8 56%,
-        #081b33 70%,
-        #081b33 100%
-    );
-
-    background-size:300% auto;
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    animation:visionGlow 5s linear infinite;
-}
-
-@keyframes visionGlow{
-
-    0%{
-        background-position:300% center;
-    }
-
-    100%{
-        background-position:-300% center;
-    }
-
-}
-
-
-.founderGrid {
+/* ===== CHAIRMAN ===== */
+.chairman {
   display: grid;
-  grid-template-columns: repeat(2, minmax(340px, 440px));
-  justify-content: center;
-  gap: 110px;
-  align-items: start;
-  margin-top:10px;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
 }
 
-.founderCard {
+.chairmanText p {
+  margin-bottom: var(--space-4);
+}
+
+.signature {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.signatureRole {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-4);
+}
+
+.chairmanImageWrap {
   position: relative;
-  border-radius: 20px;
-  transition: .45s ease;
 }
 
-.founderImage {
+.chairmanImage {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 4 / 3.1;
   object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  box-shadow:
-    0 0 0 rgba(255, 30, 168, 0),
-    0 0 40px rgba(255, 30, 168, .18);
-
-  transition: .45s ease;
-}
-
-.founderCard:hover .founderImage {
-
-  box-shadow:
-    0 0 20px rgba(255, 30, 168, .35),
-    0 0 55px rgba(255, 30, 168, .45);
-
-  transform: translateY(-6px);
-}
-
-.foundersSection{
-    min-height:90vh;
-    padding:20px 0 35px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-}
-
-.founderHeader :global(.eyebrow){
-    display:block;
-    color:#ff1ea8;
-    margin-bottom:16px;
-}
-
-.founderHeader :global(.eyebrow)::after{
-    content:none !important;
-    display:none !important;
+  border-radius: var(--radius-md);
 }
 
 .quoteCard {
   position: absolute;
-  right: -35px;
-  bottom: -35px;
-  width: 270px;
-  background: #081b33;
+  bottom: -24px;
+  right: -24px;
+  width: 62%;
+  background: var(--color-primary);
   color: #fff;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, .20);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .quoteMark {
-  font-size: 2rem;
-  color: #ff1ea8;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  line-height: 0.5;
   display: block;
-  margin-bottom: 10px;
-  line-height: 1;
-  transition: .45s ease;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, .20),
-    0 0 18px rgba(255, 30, 168, .18);
-}
-
-.founderCard:hover .quoteCard {
-
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, .25),
-    0 0 30px rgba(255, 30, 168, .45);
-
+  margin-bottom: var(--space-2);
 }
 
 .quoteText {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  line-height: 1.45;
+  font-size: 1.15rem;
+  line-height: 1.4;
   color: #fff;
 }
 
 /* ===== ECOSYSTEM PREVIEW GRID ===== */
-.ventureGrid{
-    display:grid;
-    grid-template-columns:repeat(4,290px);
-    justify-content:center;
-    gap:28px;
-    margin-top:35px;
-    margin-bottom:35px;
+.ventureGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
 }
 
-.ventureGrid > :nth-child(5){
-    grid-column:2;
+.ventureCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  transition: all var(--duration-base) var(--ease-out);
+  text-align: center;
 }
 
-.ventureGrid > :nth-child(6){
-    grid-column:3;
-}
-.ventureCard:nth-child(5){
-    grid-column:2;
-}
-
-.ventureCard:nth-child(6){
-    grid-column:3;
-}
-.ventureLogo{
-    width:34px;
-    height:34px;
-    object-fit:contain;
+.ventureCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
 }
 
-.washLogo{
-    width:44px;
-    height:44px;
-    object-fit:contain;
+.ventureMark {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
-.zenLogo{
-    width:56px;
-    height:56px;
-    object-fit:contain;
-    transform: scale(1.18);
-}
-.ventureCard{
-    width:290px;
-    height:170px;
-    padding:18px;
-    border-radius:22px;
-    border:1px solid #e8e8e8;
-    background:#fff;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition:.35s;
+.ventureName {
+  font-size: 1rem;
+  margin-bottom: 6px;
 }
 
-.ventureCard:hover{
-    transform:translateY(-8px);
-    border-color:#ff1ea8;
-    box-shadow:
-    0 0 18px rgba(255,30,168,.25),
-    0 0 42px rgba(255,30,168,.18);
-}
-.washCard:hover{
-    border-color:#1e88e5;
-    box-shadow:
-        0 0 18px rgba(30,136,229,.35),
-        0 0 40px rgba(30,136,229,.25),
-        0 18px 40px rgba(0,0,0,.12);
+.ventureTagline {
+  font-size: 0.82rem;
+  margin-bottom: var(--space-2);
 }
 
-.zenCard:hover{
-    border-color:#d4af37;
-    box-shadow:
-        0 0 18px rgba(212,175,55,.35),
-        0 0 40px rgba(212,175,55,.25),
-        0 18px 40px rgba(0,0,0,.12);
-}
-.ventureTop{
-    display:flex;
-    align-items:flex-start;
-    gap:18px;
-}
-
-.ventureMark{
-    width:64px;
-    height:64px;
-    flex-shrink:0;
-    border-radius:14px;
-    background:#f3f3f3;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.ventureName{
-    font-size:1.45rem;
-    margin:0;
-}
-
-.ventureTagline{
-    margin-top:6px;
-    margin-bottom:0;
-    font-size:1rem;
-    line-height:1.45;
-    color:#626262;
-}
-
-.ventureExplore{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    margin-top:auto;
-    color:#000;
-    font-size:0.82rem;
-    font-weight:700;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    transition:all .3s ease;
-    cursor:pointer;
-}
-.ventureExplore svg{
-    stroke:currentColor;
-    transition:all .3s ease;
-}
-
-.ventureCard:hover .ventureExplore{
-    color:#ff1ea8;
-}
-
-.ventureCard:hover .ventureExplore svg{
-    transform:translateX(4px);
-}
-/* WashWala - Dark Blue */
-.washCard:hover .ventureExplore{
-    color:#0d47a1;
-}
-
-.washCard:hover .ventureExplore svg{
-    color:#0d47a1;
-    stroke:#0d47a1;
-}
-
-/* ZenTrax - Gold */
-.zenCard:hover .ventureExplore{
-    color:#d4af37;
-}
-
-.zenCard:hover .ventureExplore svg{
-    color:#d4af37;
-    stroke:#d4af37;
+.ventureExplore {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .viewAllWrap {
   display: flex;
   justify-content: center;
 }
-.ecosystemHeader{
-    margin-top:-65px;
-    margin-bottom:18px;
-}
 
-.ecosystemHeader :global(.eyebrow){
-    color:#ff1ea8;
-}
-.ventureWing{
-    width:30px;
-    height:30px;
-    object-fit:contain;
-}
 /* ===== INSIGHTS PREVIEW ===== */
 .insightsHeader {
   display: flex;
@@ -483,81 +247,26 @@
 }
 
 /* ===== IMPACT ===== */
-.impact{
-    display:grid;
-    grid-template-columns:1fr 2fr;
-    gap:60px;
-    align-items:center;
-    min-height:180px;
-    padding:10px 0;
+.impact {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-8);
+  align-items: center;
 }
 
 @media (max-width: 1080px) {
-  .ventureGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .impact {
-    grid-template-columns: 1fr;
-  }
+  .ventureGrid { grid-template-columns: repeat(3, 1fr); }
+  .impact { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px) {
-  .founderGrid {
-    grid-template-columns: 1fr;
-    gap: 120px;
-  }
-
-  .quoteCard {
-    width: 80%;
-  }
-
-  .insightsGrid {
-    grid-template-columns: 1fr;
-  }
+  .chairman { grid-template-columns: 1fr; }
+  .chairmanImageWrap { order: -1; margin-bottom: var(--space-6); }
+  .quoteCard { width: 80%; }
+  .insightsGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
-  .ventureGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .heroInner {
-    grid-template-columns: 1fr;
-  }
-
-  .heroDots {
-    flex-direction: row;
-    padding-bottom: 0;
-    order: 2;
-  }
-}
-.founderClosing{
-    max-width:900px;
-    margin:90px auto 0;
-    text-align:center;
-}
-
-.founderClosing p{
-    font-size:2rem;
-    line-height:1.9;
-    color:#fb029f;
-    font-weight:400;
-}
-/* Connect2Job, Connect2EdTech, Connect2Crevox, Connect2Space */
-.pinkTagline{
-    color:#ff1ea8;
-    font-weight:500;
-}
-
-/* Mr.WashWala */
-.washTagline{
-    color:#2f80ed;
-    font-weight:500;
-}
-
-/* ZenTrax */
-.zenTagline{
-    color:#b8860b;   /* Dark Gold */
-    font-weight:500;
+  .ventureGrid { grid-template-columns: repeat(2, 1fr); }
+  .heroInner { grid-template-columns: 1fr; }
 }
