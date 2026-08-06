@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import styles from './Hero.module.css';
 
-export default function Hero({ eyebrow, breadcrumb, title, subtitle, image, children }) {
+export default function Hero({ eyebrow, breadcrumb, title, subtitle, image, children, contentPaddingTop }) {
   return (
     <section className={styles.hero}>
       <motion.img
@@ -15,7 +15,11 @@ export default function Hero({ eyebrow, breadcrumb, title, subtitle, image, chil
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
       />
       <div className={styles.overlay} />
-      <Container wide className={styles.content}>
+      <Container
+        wide
+        className={styles.content}
+        style={contentPaddingTop ? { paddingTop: contentPaddingTop } : undefined}
+      >
         {breadcrumb && (
           <div className={styles.breadcrumb}>
             <Link to="/">Home</Link>

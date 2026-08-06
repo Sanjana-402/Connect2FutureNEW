@@ -39,3 +39,17 @@
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.92rem;
 }
+
+.heroStatsWrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .heroStatsWrap {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
