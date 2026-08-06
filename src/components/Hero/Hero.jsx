@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import styles from './Hero.module.css';
 
-export default function Hero({ eyebrow, breadcrumb, title, subtitle, image }) {
+export default function Hero({ eyebrow, breadcrumb, title, subtitle, image, children }) {
   return (
     <section className={styles.hero}>
       <motion.img
@@ -43,6 +43,12 @@ export default function Hero({ eyebrow, breadcrumb, title, subtitle, image }) {
           </motion.p>
         )}
       </Container>
+
+      {children && (
+        <Container wide className={styles.bottomOverlay}>
+          {children}
+        </Container>
+      )}
     </section>
   );
 }

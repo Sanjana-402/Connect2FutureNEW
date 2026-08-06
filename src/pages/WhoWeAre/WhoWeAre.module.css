@@ -19,7 +19,7 @@
   height: 48px;
   border-radius: 50%;
   background: var(--color-accent-15);
-  color: var(--color-accent);
+  color: #ff1ea8 ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@
 .purposeUnderline {
   width: 32px;
   height: 2px;
-  background: var(--color-accent);
+  background: #ff1ea8;
   margin-top: var(--space-3);
 }
 
@@ -66,10 +66,10 @@
   transition: all var(--duration-base) var(--ease-out);
 }
 
-.valueItem:hover .valueIcon {
-  background: var(--color-primary);
-  color: var(--color-accent);
-  border-color: var(--color-primary);
+.valueItem .valueIcon {
+  background: #ff1ea8;
+  border-color: #ff1ea8; /* Fixed: Was previously empty */
+  color: #fcfcfc;
 }
 
 .valueTitle {
@@ -84,54 +84,8 @@
 .valueUnderline {
   width: 24px;
   height: 2px;
-  background: var(--color-accent);
+  background: #ff1ea8;
   margin: var(--space-2) auto 0;
-}
-
-/* ===== LEADERSHIP ===== */
-.leadership {
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.9fr;
-  gap: var(--space-6);
-  align-items: center;
-}
-
-.leaderImage {
-  width: 100%;
-  aspect-ratio: 4 / 4.6;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-}
-
-.leaderText p {
-  margin: var(--space-3) 0 var(--space-4);
-}
-
-.quoteBox {
-  background: var(--color-primary);
-  color: #fff;
-  padding: var(--space-6) var(--space-4);
-  border-radius: var(--radius-md);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.quoteMark {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--color-accent);
-  line-height: 0.4;
-  margin-bottom: var(--space-3);
-  display: block;
-}
-
-.quoteText {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  line-height: 1.4;
-  color: #fff;
 }
 
 /* ===== MILESTONES ===== */
@@ -139,14 +93,107 @@
   padding-top: var(--space-4);
 }
 
+.heroTimelineWrap {
+  padding-bottom: var(--space-2);
+}
+
 @media (max-width: 1080px) {
   .purposeGrid { grid-template-columns: 1fr 1fr; }
   .valuesGrid { grid-template-columns: repeat(3, 1fr); }
-  .leadership { grid-template-columns: 1fr; }
-  .leaderImage { max-width: 420px; }
 }
 
 @media (max-width: 640px) {
   .purposeGrid { grid-template-columns: 1fr; }
   .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== CERTIFICATION ===== */
+.certificationCard {
+  background: #fff9fc; /* Very light pink background */
+  border: 1px solid #ffe6f0;
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px rgba(255, 30, 168, 0.04);
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.certLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 168px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.certLogo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.certDivider {
+  width: 100%;
+  height: 1px;
+  background: #f5dce6;
+  margin-bottom: 24px;
+}
+
+.certTextArea h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.certHighlight {
+  color: #ff1ea8;
+}
+
+.greenTick {
+  color: #00c853; /* Bright green */
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-left: 4px;
+}
+
+.certMeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--color-text-light, #6c757d);
+  font-size: 0.95rem;
+}
+
+.certCode {
+  color: #ff1ea8;
+  font-weight: 500;
+}
+
+.officialBadge {
+  background: #f2f3f5;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #495057;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .certLogos { gap: 24px; }
+  .certLogo { height: 35px; }
+  .certTextArea h3 { font-size: 1.1rem; }
+  .certMeta { flex-direction: column; gap: 8px; }
 }

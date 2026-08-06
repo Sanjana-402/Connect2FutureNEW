@@ -6,6 +6,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
 import StatBlock from '../../components/StatBlock/StatBlock';
 import InsightCard from '../../components/InsightCard/InsightCard';
+import EcosystemCards from '../../components/EcosystemCards/EcosystemCards'; // <-- new import
 import { images } from '../../utils/images';
 import { ventures } from '../../data/ventures';
 import { homeInsights } from '../../data/insights';
@@ -20,12 +21,12 @@ const impactStats = [
 ];
 
 export default function Home() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  // const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const id = setInterval(() => setActiveSlide((s) => (s + 1) % 3), 5000);
-    return () => clearInterval(id);
-  }, []);
+  // useEffect(() => {
+  //   const id = setInterval(() => setActiveSlide((s) => (s + 1) % 3), 5000);
+  //   return () => clearInterval(id);
+  // }, []);
 
   return (
     <>
@@ -38,13 +39,13 @@ export default function Home() {
 
         <Container wide className={styles.heroContent}>
           <div className={styles.heroInner}>
-            <div className={styles.heroDots}>
+            {/* <div className={styles.heroDots}>
               {['01', '02', '03'].map((n, i) => (
                 <span key={n} className={`${styles.heroDot} ${i === activeSlide ? styles.heroDotActive : ''}`}>
                   {n}
                 </span>
               ))}
-            </div>
+            </div> */}
 
             <div>
               <motion.h1
@@ -71,14 +72,17 @@ export default function Home() {
               >
                 <Button to="/our-ecosystem" variant="gold">Explore Our Ecosystem</Button>
               </motion.div>
+
+              {/* Ecosystem cards ΓÇô directly below the button, still inside hero */}
+              <EcosystemCards />
             </div>
           </div>
         </Container>
 
-        <div className={styles.scrollDown}>
+        {/* <div className={styles.scrollDown}>
           <span>Scroll Down</span>
           <span className={styles.scrollLine} />
-        </div>
+        </div> */}
       </section>
 
       {/* ============ OUR FOUNDERS ============ */}

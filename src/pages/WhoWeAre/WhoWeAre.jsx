@@ -2,7 +2,6 @@ import Container from '../../components/Container/Container';
 import Hero from '../../components/Hero/Hero';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import StatBlock from '../../components/StatBlock/StatBlock';
 import Timeline from '../../components/Timeline/Timeline';
 import { images } from '../../utils/images';
 import styles from './WhoWeAre.module.css';
@@ -43,10 +42,10 @@ const purpose = [
 const values = [
   { title: 'People First', desc: 'We put people at the heart of everything we do.' },
   { title: 'Innovation', desc: 'We embrace new ideas and create innovative solutions.' },
-  { title: 'Integrity', desc: 'We act with honesty, transparency and strong moral principles.' },
+  { title: 'Integrity', desc: 'We act with transparency and strong moral principles.' },
   { title: 'Collaboration', desc: 'We achieve more together through trust and teamwork.' },
   { title: 'Excellence', desc: 'We pursue excellence in quality and performance.' },
-  { title: 'Responsibility', desc: 'We are committed to creating sustainable, long-term impact.' },
+  { title: 'Responsibility', desc: 'We are committed to creating long-term impact.' },
 ];
 
 const valueIcons = [
@@ -66,12 +65,6 @@ const milestones = [
   { year: '2026', title: 'The Future Ahead', description: 'Continuing our journey of innovation, impact and creating a better tomorrow.' },
 ];
 
-const impactStats = [
-  { value: '6', label: 'Ventures' },
-  { value: '100+', label: 'Professionals' },
-  { value: '500K+', label: 'Lives Impacted' },
-];
-
 export default function WhoWeAre() {
   return (
     <>
@@ -80,7 +73,12 @@ export default function WhoWeAre() {
         title="Who We Are"
         subtitle="Connect2Future is a diversified ecosystem of companies united by a shared purpose — to build businesses that create opportunities, drive innovation and deliver lasting impact."
         image={images.whoWeAreHero}
-      />
+      >
+        <div className={styles.heroTimelineWrap}>
+          <SectionTitle  title="Milestones That Define Us" dark />
+          <Timeline milestones={milestones} light />
+        </div>
+      </Hero>
 
       {/* ===== PURPOSE ===== */}
       <section className="section bg-surface">
@@ -107,6 +105,8 @@ export default function WhoWeAre() {
         </Container>
       </section>
 
+      
+
       {/* ===== VALUES ===== */}
       <section className="section bg-background">
         <Container wide>
@@ -124,60 +124,36 @@ export default function WhoWeAre() {
         </Container>
       </section>
 
-      {/* ===== LEADERSHIP ===== */}
-      <section className="section bg-surface">
+            {/* ===== CERTIFICATION ===== */}
+      {/* ✅ Changed style to padding: '0' to eliminate the massive gap */}
+      <section className="section bg-surface" style={{ padding: '0' }}>
         <Container wide>
-          <div className={styles.leadership}>
-            <RevealOnScroll>
-              <img src={images.chairman} alt="Vikram N., Chairman, Connect2Future" className={styles.leaderImage} />
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.1} className={styles.leaderText}>
-              <span className="eyebrow">Leadership</span>
-              <h2 className="h-2" style={{ marginTop: '16px' }}>A Message From Our Chairman</h2>
-              <p className="text-body">
-                At Connect2Future, we don't just build companies — we build opportunities.
-                Our journey is fueled by a belief in people, a passion for innovation, and a
-                responsibility to create a better tomorrow. Together, we will continue to
-                shape a future of endless possibilities.
-              </p>
-              <div style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '1.5rem', color: 'var(--color-primary)' }}>
-                Vikram N.
+          <div className={styles.certificationCard}>
+            <div className={styles.certLogos}>
+              <img src={images.iitGuwahatiLogo} alt="IIT Guwahati" className={styles.certLogo} />
+              <img src={images.nsdcLogo} alt="NSDC" className={styles.certLogo} />
+              <img src={images.masaiLogo} alt="Masai" className={styles.certLogo} />
+            </div>
+            
+            <div className={styles.certDivider}></div>
+            
+            <div className={styles.certTextArea}>
+              <h3>
+                Certified / Associated with 
+                <span className={styles.certHighlight}> IIT Guwahati</span>
+                <span className={styles.greenTick}>✓</span>
+              </h3>
+              <div className={styles.certMeta}>
+                <span>Code: <span className={styles.certCode}>IITGCS/24091634</span></span>
+                <span className={styles.officialBadge}>
+                  <span>🛡️</span> Official Recognition
+                </span>
               </div>
-              <div className="text-body-sm" style={{ marginTop: '4px' }}>Chairman, Connect2Future</div>
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.2} className={styles.quoteBox}>
-              <span className={styles.quoteMark}>&ldquo;</span>
-              <p className={styles.quoteText}>
-                We don't just build companies, we build a future of opportunities.
-              </p>
-            </RevealOnScroll>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* ===== MILESTONES ===== */}
-      <section className="section bg-background">
-        <Container wide>
-          <SectionTitle center eyebrow="Our Journey" title="Milestones That Define Us" />
-          <div className={styles.timelineWrap}>
-            <Timeline milestones={milestones} />
-          </div>
-        </Container>
-      </section>
-
-      {/* ===== IMPACT BAR ===== */}
-      <section className="section-tight bg-primary">
-        <Container wide>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
-            <RevealOnScroll>
-              <h2 className="h-2 text-white">Building the future. Together.</h2>
-            </RevealOnScroll>
-            <StatBlock stats={impactStats} cols={3} />
-          </div>
-        </Container>
-      </section>
     </>
   );
 }

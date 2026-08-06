@@ -43,4 +43,9 @@ export const images = {
   homeInsight1: u('photo-1521737711867-e3b97375f902'),
   homeInsight2: u('photo-1486406146926-c627a92ad1ab'),
   homeInsight3: u('photo-1542601906990-b4d3fb778b09'),
+
+  // ✅ Updated to match the exact filenames in your VS Code screenshot
+  iitGuwahatiLogo: '/logos/iitGuwahatiLogo.png',
+  nsdcLogo: '/logos/nsdcLogo.png',
+  masaiLogo: '/logos/masai.png',
 };
