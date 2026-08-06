@@ -14,6 +14,11 @@ import {
   FaHardHat,
   FaSoap
 } from "react-icons/fa";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import axios from "axios";
+
 
 
 
@@ -108,14 +113,135 @@ const reachOptions = [
     icon: <FaSoap size={24} />,
   },
 ];
+const subServices = {
 
+  connect2edtech: [
+
+    "Technical Training",
+    "Non Technical Training",
+    "Career Mentorship",
+    "Certifications"
+
+  ],
+
+  connect2job: [
+
+    "White Collar Recruitment",
+    "Internships",
+    "Payroll Hiring",
+    "IT Sector Jobs",
+    "Staffing / Recruitment Services",
+    "Non Technical Sector Jobs"
+
+  ],
+
+  connect2creovox: [
+
+    "Auto Branding",
+    "Bus Branding",
+    "Automobile Branding",
+    "Static Websites",
+    "Dynamic Websites",
+    "E-Commerce",
+    "Digital Marketing",
+    "ERP Solutions",
+    "CRM Solutions",
+    "Mobile Apps",
+    "PVR Ads",
+    "Radio Ads",
+    "News Channel Ads",
+    "Water Bottle Ads",
+    "Sunboard Branding",
+    "Newspaper Ads",
+    "Delivery Boy Marketing",
+    "Flex Branding",
+    "Billboard Branding",
+    "Web Application Development",
+    "Custom Software Development",
+    "SEO",
+    "Meta Management",
+    "Google Business Management",
+    "Google Ads",
+    "Social Media Management"
+
+  ],
+
+  connect2space: [
+
+    "Premium Workspace",
+    "Creator Corner",
+    "Podcast Studio",
+    "Meeting Space",
+    "Event Space",
+    "Content Studio"
+
+  ],
+
+  mrwashwala: [
+
+    "Premium Laundry Services"
+
+  ],
+
+  zentrax: [
+
+    "Construction & Man Power"
+
+  ]
+
+};
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
 
-  function handleSubmit(e) {
+  const [service, setService] = useState("");
+
+  const [subService, setSubService] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+
+  const [countryName, setCountryName] = useState("India");
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-  }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/contact",
+        {
+          fullName,
+          email,
+          countryName,
+          countryCode,
+          phone,
+          service,
+          subService,
+          message,
+        }
+      );
+
+      console.log(response.data);
+
+      setSubmitted(true);
+
+      // Clear form
+      setFullName("");
+      setEmail("");
+      setPhone("");
+      setCountryCode("+91");
+      setCountryName("India");
+      setService("");
+      setSubService("");
+      setMessage("");
+
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error(error);
+
+      alert("Failed to send message.");
+    }
+  };
 
   return (
     <>
@@ -212,12 +338,117 @@ export default function Contact() {
 
               <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.formRow}>
-                  <input className={styles.field} type="text" placeholder="Full Name *" required />
-                  <input className={styles.field} type="email" placeholder="Email Address *" required />
+                  <input
+                    className={styles.field}
+                    type="text"
+                    placeholder="Full Name *"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    required
+                  />
+                  <input
+                    className={styles.field}
+                    type="email"
+                    placeholder="Email Address *"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
-                <input className={styles.field} type="text" placeholder="Company / Organization" />
-                <input className={styles.field} type="text" placeholder="Subject" />
-                <textarea className={styles.textarea} placeholder="Your Message *" required />
+                <PhoneInput
+                  country={"in"}
+                  value={phone}
+                  onChange={(value, country) => {
+
+                    setPhone(value);
+
+                    setCountryCode("+" + country.dialCode);
+
+                    setCountryName(country.name);
+
+                  }}
+                  enableSearch
+                  countryCodeEditable={false}
+                  inputProps={{
+                    required: true,
+                    name: "phone"
+                  }}
+                  containerClass={styles.phoneContainer}
+                  inputClass={styles.phoneInput}
+                  buttonClass={styles.phoneButton}
+                />
+                <select
+                  className={styles.field}
+                  value={service}
+                  onChange={(e) => {
+
+                    setService(e.target.value);
+                    setSubService("");
+
+                  }}
+                >
+
+                  <option value="">Select Service *</option>
+
+                  <option value="connect2edtech">
+                    Connect2EdTech
+                  </option>
+
+                  <option value="connect2job">
+                    Connect2Job
+                  </option>
+
+                  <option value="connect2creovox">
+                    Connect2Creovox
+                  </option>
+
+                  <option value="connect2space">
+                    Connect2Space
+                  </option>
+
+                  <option value="mrwashwala">
+                    Mr.WashWala - Premium Laundry Services
+                  </option>
+
+                  <option value="zentrax">
+                    ZenTrax - Construction & Man Power
+                  </option>
+
+                </select>
+                <select
+                  className={styles.field}
+                  value={subService}
+                  onChange={(e) => setSubService(e.target.value)}
+                  required
+                >
+
+                  <option value="">Select Sub Service *</option>
+
+                  {
+
+                    subServices[service]?.map(item => (
+
+                      <option
+                        key={item}
+                        value={item}
+                      >
+
+                        {item}
+
+                      </option>
+
+                    ))
+
+                  }
+
+                </select>
+                <textarea
+                  className={styles.textarea}
+                  placeholder="Your Message *"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                />
 
                 <div className={styles.formFooter}>
                   <Button type="submit" variant="primary">
