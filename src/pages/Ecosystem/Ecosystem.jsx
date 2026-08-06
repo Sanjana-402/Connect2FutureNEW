@@ -1,6 +1,7 @@
 import Container from '../../components/Container/Container';
 import Hero from '../../components/Hero/Hero';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import StatBlock from '../../components/StatBlock/StatBlock';
 import VentureCard from '../../components/VentureCard/VentureCard';
 import Button from '../../components/Button/Button';
 import RevealOnScroll from '../../components/RevealOnScroll/RevealOnScroll';
@@ -8,15 +9,32 @@ import { images } from '../../utils/images';
 import { ventures } from '../../data/ventures';
 import styles from './Ecosystem.module.css';
 
+const ecosystemStats = [
+  { value: '6', label: 'Companies' },
+  { value: '150+', label: 'Team Members' },
+  { value: '500K+', label: 'Customers Reached' },
+];
+
 export default function Ecosystem() {
   return (
     <>
       <Hero
-        breadcrumb="Our Ecosystem"
-        title="Our Ecosystem"
-        subtitle="Six ventures. One vision. Together, we are creating opportunities, driving innovation, and building a future that matters."
-        image={images.officeInterior}
-      />
+  breadcrumb="Our Ecosystem"
+  title="Our Ecosystem"
+  subtitle="Six ventures. One vision. Together, we are creating opportunities, driving innovation, and building a future that matters."
+  image={images.officeInterior}
+  contentPaddingTop="120px"
+>
+        <div className={styles.heroStatsWrap}>
+          <RevealOnScroll>
+            <span className="eyebrow">Our Impact</span>
+            <h2 className="h-2 text-white" style={{ marginTop: '16px' }}>
+              Powering Six Industries.
+            </h2>
+          </RevealOnScroll>
+          <StatBlock stats={ecosystemStats} cols={3}  />
+        </div>
+      </Hero>
 
       <section className="section bg-background">
         <Container wide>

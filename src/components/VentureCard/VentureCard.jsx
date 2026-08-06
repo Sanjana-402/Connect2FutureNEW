@@ -18,8 +18,21 @@ export default function VentureCard({ venture, reverse = false }) {
       <div className={styles.info}>
         <div>
           <div className={styles.header}>
-            <span className={styles.mark}>{venture.mark}</span>
-            <h3 className={`h-3 ${styles.name}`}>{venture.name}</h3>
+            {venture.logo ? (
+              <>
+                <img src={venture.logo} alt={venture.name} className={styles.standaloneLogo} />
+                <h3 className={`h-3 ${styles.name} ${styles.standaloneName}`}>{venture.name}</h3>
+              </>
+            ) : (
+              <>
+                <img src="/c2flooooo.png" alt="" className={styles.wingLogo} />
+                <div className={styles.verticalLine} />
+                <div className={styles.brandText}>
+                  <h3 className={`h-3 ${styles.name}`}>{venture.name}</h3>
+                  <p className={styles.brandTagline}>UNLOCK THE POWER OF CONNECTIVITY</p>
+                </div>
+              </>
+            )}
           </div>
           <p className={styles.tagline}>{venture.tagline}</p>
           <p className={`text-body ${styles.desc}`}>{venture.description}</p>

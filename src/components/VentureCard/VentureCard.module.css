@@ -47,27 +47,59 @@
 .header {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 10px;
   margin-bottom: var(--space-2);
 }
 
-.mark {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-08);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.1rem;
+.wingLogo {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
+.verticalLine {
+  width: 2px;
+  height: 42px;
+  background: #111827;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .name {
+  font-family: "Manrope", sans-serif;
   font-size: 1.3rem;
+  font-weight: 550;
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+  color: #111827;
+  margin: 0;
+}
+
+.brandTagline {
+  margin: 3px 0 0;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  color: #4b5563;
+}
+
+.standaloneLogo {
+  width: 84px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.standaloneName {
+  margin: 0;
 }
 
 .tagline {
