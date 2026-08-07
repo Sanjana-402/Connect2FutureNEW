@@ -20,7 +20,7 @@ export const images = {
   ventureConnect2Job: u('photo-1521737604893-d14cc237f11d'),      // two colleagues laptop
   ventureConnect2EdTech: u('photo-1580582932707-520aed937b7b'),   // students + tech classroom
   ventureConnect2Crevox: u('photo-1518770660439-4636190af475'),   // engineer at monitors
-  ventureConnect2Space: u('photo-1451187580459-43490279c0fa'),    // VR / immersive tech
+  ventureConnect2Space: u('photo-1647427854253-b92bb40c9330'),    // creative photo studio   
   ventureMrWashWala: u('photo-1545173168-9f1947eebb7f'),          // laundry service
   ventureZenTrax: u('photo-1551288049-bebda4e38f71'),             // dashboard analytics
 
