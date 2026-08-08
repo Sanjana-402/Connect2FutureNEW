@@ -1,0 +1,11 @@
+.settings{padding:32px;}
+.settings h1{margin-bottom:28px;font-size:32px;font-weight:700;color:#111827;}
+.form{max-width:620px;background:#fff;padding:30px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
+.group{display:flex;flex-direction:column;margin-bottom:22px;}
+.group label{display:flex;align-items:center;gap:10px;font-weight:600;margin-bottom:8px;color:#374151;}
+.group input{padding:14px 16px;border:1px solid #e5e7eb;border-radius:12px;font-size:15px;outline:none;transition:.25s;}
+.group input:focus{border-color:#ff1ea8;box-shadow:0 0 0 4px rgba(255,30,168,.12);}
+.group input:disabled{background:#f9fafb;color:#6b7280;}
+.saveBtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;border:none;border-radius:12px;background:#ff1ea8;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.25s;}
+.saveBtn:hover{background:#e6008d;}
+.saveBtn:disabled{opacity:.6;cursor:not-allowed;}

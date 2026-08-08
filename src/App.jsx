@@ -10,6 +10,18 @@ import Ecosystem from './pages/Ecosystem/Ecosystem';
 import Insights from './pages/Insights/Insights';
 import Contact from './pages/Contact/Contact';
 
+
+
+import AdminLayout from "./admin/layout/AdminLayout";
+import AdminLogin from "./admin/pages/AdminLogin";
+import AdminDashboard from "./admin/pages/AdminDashboard";
+import Analytics from "./admin/pages/Analytics";
+import Settings from "./admin/pages/Settings";
+import ProtectedRoute from "./admin/ProtectedRoute";
+import AllEnquiries from "./admin/pages/AllEnquiries";
+
+
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -32,6 +44,27 @@ export default function App() {
           <Route path="/our-ecosystem" element={<Ecosystem />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+
+            <Route path="dashboard" element={<AdminDashboard />} />
+
+            <Route path="analytics" element={<Analytics />} />
+
+            <Route path="settings" element={<Settings />} />
+            <Route path="enquiries" element={<AllEnquiries/>}/>
+
+
+            
+          </Route>
         </Routes>
       </main>
       <Footer />

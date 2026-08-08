@@ -1,0 +1,19 @@
+.wrapper{width:100%;overflow-x:auto;}
+.table{width:100%;border-collapse:collapse;}
+.table thead th{padding:16px;font-size:.82rem;font-weight:700;color:#6b7280;text-align:left;border-bottom:1px solid #ececec;}
+.table tbody td{padding:18px 16px;border-bottom:1px solid #f3f4f6;vertical-align:middle;}
+.table tbody tr:hover{background:#fafafa;}
+.user h4{margin:0;font-size:.95rem;font-weight:700;color:#111827;}
+.user p{margin:4px 0 0;font-size:.82rem;color:#6b7280;}
+.badge{padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:700;}
+.read{background:#dcfce7;color:#15803d;}
+.unread{background:#fee2e2;color:#dc2626;}
+.actions{display:flex;gap:10px;}
+.viewBtn,.deleteBtn{width:36px;height:36px;border:none;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s;}
+.viewBtn{background:#eff6ff;color:#2563eb;}
+.viewBtn:hover{background:#2563eb;color:#fff;}
+.deleteBtn{background:#fef2f2;color:#dc2626;}
+.deleteBtn:hover{background:#dc2626;color:#fff;}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center;}
+.empty h3{margin:0;color:#111827;font-size:1.1rem;}
+.empty p{margin-top:10px;color:#6b7280;}

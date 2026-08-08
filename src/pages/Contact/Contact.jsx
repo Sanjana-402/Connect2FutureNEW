@@ -357,15 +357,13 @@ export default function Contact() {
                 </div>
                 <PhoneInput
                   country={"in"}
-                  value={phone}
+                  value={`${countryCode.replace("+", "")}${phone}`}
                   onChange={(value, country) => {
-
-                    setPhone(value);
-
-                    setCountryCode("+" + country.dialCode);
-
+                    const dialCode = country.dialCode;
+                    setCountryCode("+" + dialCode);
                     setCountryName(country.name);
-
+                    const localNumber = value.slice(dialCode.length);
+                    setPhone(localNumber);
                   }}
                   enableSearch
                   countryCodeEditable={false}
