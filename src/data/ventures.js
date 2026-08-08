@@ -5,6 +5,7 @@ export const ventures = [
     id: 'connect2job',
     mark: 'C2j',
     name: 'Connect2Job',
+    website: 'https://connect2job.connect2future.com/',
     tagline: 'Bridging talent with opportunity.',
     description:
       'Connect2Job is our flagship platform that connects job seekers with the right opportunities and helps organizations find the talent they need to grow.',
@@ -27,6 +28,7 @@ export const ventures = [
     id: 'connect2edtech',
     mark: '🎓',
     name: 'Connect2EdTech',
+    website: 'https://connect2edtech.connect2future.com/',
     tagline: 'Reimagining education for the future.',
     description:
       'Connect2EdTech is building next-generation learning platforms and solutions that make quality education accessible, engaging and effective.',
@@ -42,6 +44,7 @@ export const ventures = [
     id: 'connect2crevox',
     mark: 'C',
     name: 'Connect2Crevox',
+    website: 'https://connect2creovox.connect2future.com/',
     tagline: 'Building intelligent digital solutions.',
     description:
       'Connect2Crevox is our technology innovation studio specializing in AI, automation, and custom software solutions for businesses.',
@@ -72,6 +75,7 @@ export const ventures = [
     id: 'connect2space',
     mark: '🪐',
     name: 'Connect2Space',
+    website: 'https://connect2space.connect2future.com/',
     tagline: 'Designing experiences beyond boundaries.',
     description:
       'Connect2Space explores the intersection of creativity, technology and design to build immersive digital experiences and products.',
@@ -94,7 +98,8 @@ export const ventures = [
     id: 'mrwashwala',
     mark: '💧',
     name: 'Mr.WashWala',
-    logo: '/public/washwalaMAN.png',
+    website: 'https://mrwashwala.com/home',
+    logo: '/washwalaMAN.png',
     tagline: 'Premium Wash - Shine Like New',
     description:
       'Mr.WashWala is transforming everyday laundry needs with convenient, reliable and eco-friendly doorstep laundry services.',
@@ -109,7 +114,8 @@ export const ventures = [
     id: 'zentrax',
     mark: 'Z',
     name: 'ZenTrax',
-    logo: '/public/ZENTRAXBUILDING.png',
+    website: 'https://zentraxconstructions.com',
+    logo: '/ZENTRAXBUILDING.png',
     tagline: 'Construction & Man Power',
     description:
       'ZenTrax provides performance-driven technology solutions and IT services that help businesses optimize, scale and succeed.',

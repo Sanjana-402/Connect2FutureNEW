@@ -19,12 +19,12 @@ export default function Ecosystem() {
   return (
     <>
       <Hero
-  breadcrumb="Our Ecosystem"
-  title="Our Ecosystem"
-  subtitle="Six ventures. One vision. Together, we are creating opportunities, driving innovation, and building a future that matters."
-  image={images.officeInterior}
-  contentPaddingTop="120px"
->
+        breadcrumb="Our Ecosystem"
+        title="Our Ecosystem"
+        subtitle="Six ventures. One vision. Together, we are creating opportunities, driving innovation, and building a future that matters."
+        image={images.officeInterior}
+        contentPaddingTop="120px"
+      >
         <div className={styles.heroStatsWrap}>
           <RevealOnScroll>
             <span className="eyebrow">Our Impact</span>
@@ -32,7 +32,7 @@ export default function Ecosystem() {
               Powering Six Industries.
             </h2>
           </RevealOnScroll>
-          <StatBlock stats={ecosystemStats} cols={3}  />
+          <StatBlock stats={ecosystemStats} cols={3} />
         </div>
       </Hero>
 

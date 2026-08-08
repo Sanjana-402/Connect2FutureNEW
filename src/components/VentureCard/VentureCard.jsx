@@ -36,7 +36,13 @@ export default function VentureCard({ venture, reverse = false }) {
           </div>
           <p className={styles.tagline}>{venture.tagline}</p>
           <p className={`text-body ${styles.desc}`}>{venture.description}</p>
-          <Button to="/our-ecosystem" variant="secondary" size="sm">Learn More</Button>
+          <Button
+            href={venture.website}
+            variant="secondary"
+            size="sm"
+          >
+            Learn More
+          </Button>
         </div>
 
         <div className={styles.statList}>

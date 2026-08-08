@@ -72,7 +72,11 @@ export default function EcosystemSpotlight() {
                 </div>
               )}
 
-              <Button to={`/our-ecosystem#${active.id}`} variant="gold" size="sm">
+              <Button
+                href={active.website}
+                variant="gold"
+                size="sm"
+              >
                 Explore {active.name}
               </Button>
             </div>
