@@ -1,0 +1,1495 @@
+/* ============================================================================
+   CONNECT2FUTURE — RESPONSIVE.CSS  v2
+   ----------------------------------------------------------------------------
+   One centralized responsive layer for the existing public site + admin panel.
+
+   IMPORTANT:
+   • Import this file LAST in main.jsx.
+   • It intentionally does not change desktop styling at >=1200px.
+   • It fixes MOBILE/TABLET layout only.
+   • It does not hide content just to make the page fit.
+   • Tables are allowed to scroll INSIDE their own wrapper instead of creating
+     page-level horizontal overflow.
+   • CSS Modules are targeted by their preserved local-name substring.
+
+   Screen-recording fixes applied:
+   1. Home ecosystem cards were too wide / clipped on mobile.
+   2. Mobile sections needed predictable 16px side gutters.
+   3. Home founder quote cards could escape the viewport.
+   4. Ecosystem impact/stat blocks needed true one-column mobile flow.
+   5. Contact form rows needed to become single-column before they collide.
+   6. Insights filters needed horizontal scrolling only for the pill row.
+   7. Admin content must remain full-width while the sidebar becomes a drawer.
+   8. Admin tables/modals must not widen the entire page.
+   9. Mobile typography/buttons need comfortable, non-overlapping sizing.
+   10. Images must remain inside their boxes without destroying aspect ratio.
+   ============================================================================ */
+
+
+/* ============================================================================
+   1. GLOBAL MOBILE SAFETY
+   ============================================================================ */
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+picture {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* ============================================================================
+   2. SHARED CONTAINER / SECTION GUTTERS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_container_"] {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_container_"] {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="_container_"] {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section {
+    padding-top: 72px;
+    padding-bottom: 52px;
+  }
+
+  .section-sm {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+}
+
+
+/* ============================================================================
+   3. PUBLIC NAVBAR
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_nav_"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [class*="_inner_"] {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_nav_"] {
+    height: 68px;
+  }
+
+  [class*="_nav_"][class*="_scrolled_"] {
+    height: 64px;
+  }
+
+  [class*="_inner_"] {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 8px;
+  }
+
+  [class*="_logoIcon_"] {
+    width: 48px;
+    height: auto;
+    flex: 0 0 48px;
+  }
+
+  [class*="_verticalLine_"] {
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 6px;
+    flex: 0 0 auto;
+  }
+
+  [class*="_title_"] {
+    font-size: clamp(1.08rem, 4.8vw, 1.4rem);
+    line-height: 1.05;
+    /* white-space:  */
+  }
+
+  [class*="_tagline_"] {
+    font-size: 0.38rem;
+    line-height: 1.1;
+    letter-spacing: 0.065rem;
+    white-space: nowrap;
+  }
+
+  [class*="_burger_"] {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex: 0 0 44px;
+  }
+
+  [class*="_mobilePanel_"] {
+    width: min(330px, 88vw);
+    max-width: 88vw;
+    max-height: calc(100svh - 68px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 18px max(24px, env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [class*="_mobileLink_"] {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="_logoIcon_"] {
+    width: 43px;
+    flex-basis: 43px;
+  }
+
+  [class*="_verticalLine_"] {
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 5px;
+  }
+
+  [class*="_title_"] {
+    font-size: 1.05rem;
+  }
+
+  [class*="_tagline_"] {
+      }
+
+  [class*="_burger_"] {
+    width: 42px;
+    min-width: 42px;
+    flex-basis: 42px;
+  }
+}
+
+
+/* ============================================================================
+   4. HOME — HERO & SUBPAGE HEROES
+   ----------------------------------------------------------------------------
+   Requirement:
+   • Hero background / image = FULL mobile viewport width (100% width, 0 side margins)
+   • Hero content = constrained internally with 16px–20px padding
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_hero_"],
+  [class*="Hero_hero_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: #081b33 !important;
+    overflow: visible !important;
+  }
+
+  [class*="Hero_hero_"] {
+    padding-bottom: 30px !important;
+  }
+
+  [class*="_heroContent_"],
+  [class*="_heroInner_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .h-display {
+    font-size: clamp(2.15rem, 7vw, 3.2rem);
+    line-height: 1.04;
+    padding-top: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_hero_"],
+  [class*="Hero_hero_"] {
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: #081b33 !important;
+    overflow: visible !important;
+    padding-bottom: 60px !important;
+  }
+
+  [class*="_heroContent_"] {
+    padding-top: 74px !important;
+  }
+
+  [class*="_heroInner_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .h-display {
+    font-size: clamp(1.85rem, 8.5vw, 2.7rem);
+    line-height: 1.05;
+    max-width: 100%;
+    padding-top: 12px !important;
+  }
+
+  [class*="_heroSubtitle_"] {
+    max-width: 100%;
+    margin-top: 12px;
+    margin-bottom: 18px;
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  /* Requirement 7, 13 & 23: Shared logo lockup flex alignment [WING] | CompanyName */
+  [class*="VentureCard"] [class*="_header_"],
+  [class*="EcosystemSpotlight"] [class*="_header_"],
+  [class*="EcosystemCards"] [class*="_top_"],
+  [class*="EcosystemCards"] [class*="_lockup_"],
+  [class*="VentureCard"] [class*="_lockup_"],
+  [class*="_lockup_"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  [class*="VentureCard"] [class*="_wingLogo_"],
+  [class*="EcosystemSpotlight"] [class*="_wingLogo_"],
+  [class*="EcosystemCards"] [class*="_wingLogo_"],
+  [class*="_wingLogo_"] {
+    height: 28px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+
+  [class*="VentureCard"] [class*="_verticalLine_"],
+  [class*="EcosystemSpotlight"] [class*="_verticalLine_"],
+  [class*="EcosystemCards"] [class*="_verticalLine_"],
+  [class*="_verticalLine_"] {
+    width: 1.5px !important;
+    height: 38px !important;
+    flex-shrink: 0 !important;
+    margin-left: 2px !important;
+    margin-right: 6px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  [class*="VentureCard"] [class*="_brandText_"],
+  [class*="EcosystemCards"] [class*="_brandText_"],
+  [class*="_brandText_"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  [class*="_heroDots_"] {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+    gap: 8px;
+  }
+
+  /* Compact Ecosystem cards inside Home Hero to fit cleanly inside hero image box */
+  [class*="_hero_"] [class*="_grid_"],
+  [class*="EcosystemCards_grid_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    margin-top: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [class*="_grid_"] > div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  [class*="_hero_"] [class*="_card_"],
+  [class*="EcosystemCards_card_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 80px !important;
+    height: auto !important;
+    padding: 2px 14px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="_grid_"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  [class*="_grid_"] > div {
+    grid-column: auto !important;
+    width: 100% !important;
+  }
+
+  [class*="_card_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 110px !important;
+  }
+}
+
+
+/* ============================================================================
+   5. HOME — FOUNDERS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_foundersSection_"] {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  [class*="_founderGrid_"] {
+    grid-template-columns: 1fr;
+    gap: 82px;
+  }
+
+  [class*="_quoteCard_"] {
+    width: min(82%, 420px);
+    max-width: calc(100% - 24px);
+    right: -4px;
+    bottom: -24px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_foundersSection_"] {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 30px !important;
+    padding-bottom: 36px !important;
+  }
+
+  [class*="_founderHeader_"] h2 {
+    font-size: clamp(1.9rem, 8vw, 2.55rem);
+    line-height: 1.08;
+  }
+
+  [class*="_founderGrid_"] {
+    gap: 72px;
+  }
+
+  [class*="_founderImage_"] {
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  [class*="_quoteCard_"] {
+    position: relative;
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    right: auto;
+    bottom: auto;
+    margin: -28px auto 0;
+    padding: 16px;
+  }
+
+  [class*="_founderClosing_"] {
+    margin-top: 40px;
+  }
+
+  [class*="_founderClosing_"] p {
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
+    line-height: 1.55;
+  }
+}
+
+
+/* ============================================================================
+   6. HOME — IMPACT / INSIGHTS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_impact_"] {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Requirement 6: Impact stats remain in a single horizontal line on mobile */
+  [class*="StatBlock_row_"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  [class*="StatBlock_stat_"] {
+    padding: 10px 0 10px 10px !important;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  }
+
+  [class*="StatBlock_value_"] {
+    font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  [class*="StatBlock_label_"] {
+    font-size: clamp(0.62rem, 2.2vw, 0.78rem) !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_insightsGrid_"] {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  [class*="_insightsHeader_"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="StatBlock_row_"] {
+    gap: 4px !important;
+  }
+
+  [class*="StatBlock_stat_"] {
+    padding-left: 6px !important;
+  }
+}
+
+
+/* ============================================================================
+   7. WHO WE ARE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_purposeGrid_"] {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  [class*="_valuesGrid_"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_purposeGrid_"] {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  [class*="_valuesGrid_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 14px;
+  }
+
+  [class*="_certificationCard_"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 26px 18px 46px;
+  }
+
+  [class*="_certLogos_"] {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  [class*="_certLogo_"] {
+    height: 40px;
+    max-width: 42%;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="_valuesGrid_"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================================
+   8. ECOSYSTEM PAGE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_heroStatsWrap_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  [class*="_row_"][class*="_info_"],
+  [class*="VentureCard"] [class*="_info_"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_heroStatsWrap_"] {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  [class*="_ctaBar_"] {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  [class*="_ctaLeft_"] {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  /* Every venture becomes a clean vertical block: IMAGE top, CONTENT below */
+  [class*="VentureCard"] [class*="_row_"],
+  [class*="VentureCard"] [class*="_reverse_"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 18px !important;
+  }
+
+  [class*="VentureCard"] [class*="_imageWrap_"] {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  [class*="VentureCard"] [class*="_info_"] {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  [class*="VentureCard"] [class*="_image_"] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  [class*="VentureCard"] [class*="_statList_"] {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+
+/* ============================================================================
+   9. ECOSYSTEM SPOTLIGHT
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_leftPanel_"] {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_spotlightBox_"],
+  [class*="_spotlight_"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [class*="_spotlight_"] {
+    grid-template-columns: 1fr;
+  }
+
+  [class*="_leftPanel_"],
+  [class*="_rightPanel_"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  [class*="_statsRow_"] {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  [class*="_stat_"] {
+    min-width: calc(50% - 7px);
+  }
+
+  [class*="_servicesGrid_"] {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  [class*="_chipWrap_"] {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [class*="_chipWrap_"] > * {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="_stat_"] {
+    min-width: 100%;
+  }
+
+  [class*="_strip_"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================================
+   10. INSIGHTS PAGE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_insightsHero_"] {
+    height: 340px;
+    min-height: 0;
+  }
+
+  [class*="_filterRow_"] ~ [class*="_grid_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_insightsHero_"] {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+  }
+
+  [class*="_heroTitle_"] {
+    font-size: clamp(1.75rem, 8vw, 2.3rem);
+    line-height: 1.08;
+  }
+
+  [class*="_heroSubtitle_"] {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  [class*="_filterRow_"] {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  /* Only the category pills scroll horizontally.
+     The whole page does NOT scroll sideways. */
+  [class*="_categoryPills_"] {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  [class*="_categoryPills_"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  [class*="_pillBtn_"] {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  [class*="_searchBox_"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  [class*="_filterRow_"] ~ [class*="_grid_"] {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  [class*="_companyLogosRow_"] {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  [class*="_featuredContainer_"] {
+    width: 100%;
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  [class*="_leftPanel_"] {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 8px;
+  }
+
+  [class*="_rightPanel_"] {
+    width: 100%;
+    min-width: 0;
+    min-height: 220px;
+  }
+
+  [class*="_title_"] {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+}
+
+
+/* ============================================================================
+   11. CONTACT PAGE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_infoStrip_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [class*="_formMapGrid_"] {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  [class*="_heroReachContent_"] {
+    margin-left: 0;
+  }
+
+  [class*="_heroReach_"] {
+    margin-top: 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    background: #081b33 !important;
+    padding: 36px 0 24px !important;
+  }
+
+  [class*="_heroReachEyebrow_"] {
+    margin-top: 0 !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_contactStripHeading_"] {
+    padding: 36px 0 18px !important;
+  }
+
+  [class*="_contactHeading_"] {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  [class*="_heroReach_"] {
+    margin-top: 0 !important;
+    padding: 30px 0 20px !important;
+  }
+
+  [class*="_infoStrip_"] {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  [class*="_formRow_"] {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  [class*="_phoneRow_"] {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  [class*="_heroReachGrid_"] {
+    width: 100%;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  [class*="_heroReachItem_"] {
+    width: 88px;
+    max-width: 88px;
+  }
+
+  [class*="_heroReachIcon_"] {
+    width: 48px;
+    height: 48px;
+  }
+
+  [class*="_mapWrap_"] {
+    width: 100%;
+    height: 260px;
+    max-width: 100%;
+  }
+
+  [class*="_field_"],
+  [class*="_textarea_"],
+  [class*="_countryCode_"],
+  [class*="_phoneInput_"] {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="_heroReachGrid_"] {
+    gap: 8px;
+  }
+
+  [class*="_heroReachItem_"] {
+    width: 78px;
+    max-width: 78px;
+  }
+
+  [class*="_heroReachIcon_"] {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* ============================================================================
+   12. FOOTER
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  footer[class*="_footer_"] [class*="_grid_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  footer [class*="_brandCol_"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 575px) {
+  footer[class*="_footer_"] [class*="_grid_"] {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  footer [class*="_bottomBar_"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  footer [class*="_desc_"] {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ============================================================================
+   13. SHARED CARDS / BUTTONS
+   ============================================================================ */
+
+@media (max-width: 575px) {
+  [class*="_btn_"] {
+    min-height: 44px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  [class*="InsightCard"] [class*="_body_"],
+  [class*="_imageWrap_"] + [class*="_body_"] {
+    padding: 16px;
+  }
+}
+
+
+/* ============================================================================
+   14. ADMIN — HIDE PUBLIC NAVBAR / FOOTER
+   ----------------------------------------------------------------------------
+   This prevents the public site shell from appearing behind admin pages.
+   ============================================================================ */
+
+body:has([class*="AdminLogin_loginPage"]) [class*="_nav_"],
+body:has([class*="AdminLogin_loginPage"]) footer[class*="_footer_"],
+body:has([class*="_sidebar_"]) [class*="_nav_"],
+body:has([class*="_sidebar_"]) footer[class*="_footer_"] {
+  display: none !important;
+}
+
+
+/* ============================================================================
+   15. ADMIN SIDEBAR — MOBILE DRAWER
+   ----------------------------------------------------------------------------
+   Desktop:
+      existing collapsed/expanded behavior remains unchanged.
+
+   <=991:
+      sidebar becomes an overlay drawer.
+      collapsed=true opens it because Sidebar.jsx already toggles that class.
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_sidebar_"] {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 88vw;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  [class*="_sidebar_"][class*="_collapsed_"] {
+    width: 280px !important;
+    min-width: 280px !important;
+    transform: translateX(0) !important;
+    box-shadow: 18px 0 45px rgba(0, 0, 0, 0.28);
+  }
+
+  [class*="_sidebar_"][class*="_collapsed_"] [class*="_logoSection_"] {
+    justify-content: flex-start !important;
+    padding: 20px 18px !important;
+  }
+
+  [class*="_sidebar_"][class*="_collapsed_"] [class*="_logoImage_"] {
+    width: 62px !important;
+    height: 62px !important;
+    flex: 0 0 62px !important;
+  }
+
+  [class*="_sidebar_"][class*="_collapsed_"] [class*="_link_"] {
+    justify-content: flex-start !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  [class*="_sidebar_"][class*="_collapsed_"] [class*="_bottom_"] {
+    padding: 18px 14px !important;
+  }
+
+  [class*="_sidebar_"][class*="_collapsed_"] [class*="_logout_"] {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_sidebar_"] {
+    width: min(290px, 88vw) !important;
+    min-width: min(290px, 88vw) !important;
+  }
+}
+
+
+/* ============================================================================
+   16. ADMIN CONTENT — FULL WIDTH WHEN SIDEBAR IS MOBILE DRAWER
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_mainWrapper_"],
+  [class*="_mainWrapper_"][class*="_expand_"] {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_mainContent_"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+
+/* ============================================================================
+   17. ADMIN TOPBAR
+   ============================================================================ */
+
+@media (max-width: 767px) {
+  [class*="_topbar_"] {
+    width: 100%;
+    height: 64px;
+    padding: 0 14px;
+  }
+
+  [class*="_avatar_"] {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="_profile_"] div:last-child {
+    display: none;
+  }
+}
+
+
+/* ============================================================================
+   18. ADMIN DASHBOARD
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_statsGrid_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [class*="_dashboard_"] > [class*="_grid_"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_statsGrid_"] {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  [class*="_heading_"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  [class*="_statCard_"] {
+    width: 100%;
+    padding: 16px;
+  }
+
+  [class*="_reportActions_"] {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="_mainContent_"] {
+    padding: 14px;
+  }
+
+  [class*="_heading_"] h1 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+}
+
+
+/* ============================================================================
+   19. ADMIN LOGIN
+   ============================================================================ */
+
+@media (max-width: 1199px) {
+  [class*="_loginPage_"] {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_loginPage_"] {
+    width: 100%;
+    min-height: 100svh;
+    padding: 76px 16px 30px;
+  }
+
+  [class*="_rightSection_"] {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  [class*="_loginCard_"] {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  [class*="_logo_"] img {
+    width: 54px !important;
+  }
+
+  [class*="_logoText_"] h1 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="_loginPage_"] {
+    padding: 72px 12px 26px;
+  }
+
+  [class*="_loginCard_"] {
+    padding: 26px 18px !important;
+  }
+}
+
+
+/* ============================================================================
+   20. ADMIN — ALL ENQUIRIES
+   ============================================================================ */
+
+@media (max-width: 767px) {
+  [class*="AllEnquiries"] [class*="_card_"],
+  [class*="_page_"] > [class*="_card_"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  [class*="_header_"] {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  [class*="_header_"] h1 {
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+
+  [class*="_viewBtn_"] {
+    max-width: 100%;
+  }
+}
+
+
+/* ============================================================================
+   21. ADMIN TABLES — SCROLL INSIDE THE TABLE, NOT THE PAGE
+   ============================================================================ */
+
+@media (max-width: 767px) {
+  [class*="_tableWrap_"],
+  [class*="_tableWrapper_"],
+  [class*="ContactsTable"] [class*="_wrapper_"],
+  [class*="ManageInsights"] [class*="_tableWrap_"] {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  [class*="_tableWrap_"] table,
+  [class*="_tableWrapper_"] table,
+  [class*="ContactsTable"] table,
+  [class*="ManageInsights"] table {
+    width: 100%;
+    max-width: none;
+    min-width: 680px;
+  }
+}
+
+
+/* ============================================================================
+   22. ADMIN — CONTACT MODAL
+   ============================================================================ */
+
+[class*="ContactModal"] [class*="_overlay_"] {
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  [class*="ContactModal"] [class*="_overlay_"] {
+    padding: 12px;
+    align-items: center;
+  }
+
+  [class*="ContactModal"] [class*="_modal_"] {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100svh - 24px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 18px;
+  }
+
+  [class*="ContactModal"] [class*="_header_"] {
+    padding: 16px 18px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 5;
+  }
+
+  [class*="ContactModal"] [class*="_body_"] {
+    padding: 18px;
+  }
+
+  [class*="ContactModal"] [class*="_footer_"] {
+    padding: 14px 18px;
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="ContactModal"] [class*="_label_"] {
+    min-width: 90px;
+    width: 90px;
+  }
+}
+
+
+/* ============================================================================
+   23. ADMIN ANALYTICS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="_analytics_"] [class*="_grid_"] {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  [class*="_analytics_"] {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="_analytics_"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  [class*="_analytics_"] [class*="_grid_"] {
+    width: 100%;
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  [class*="_analytics_"] [class*="_card_"] {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 16px;
+  }
+}
+
+
+/* ============================================================================
+   24. ADMIN SETTINGS / CREATE / MANAGE INSIGHTS
+   ============================================================================ */
+
+@media (max-width: 767px) {
+  [class*="_settings_"],
+  [class*="CreateInsight"] [class*="_page_"],
+  [class*="ManageInsights"] [class*="_page_"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  [class*="_form_"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  [class*="_companyGrid_"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  [class*="ManageInsights"] [class*="_header_"],
+  [class*="CreateInsight"] [class*="_header_"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="_companyGrid_"] {
+    grid-template-columns: 1fr;
+  }
+
+  [class*="_saveBtn_"] {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+
+/* ============================================================================
+   25. LANDSCAPE MOBILE
+   ============================================================================ */
+
+@media (max-width: 900px) and (orientation: landscape) {
+  [class*="_hero_"] {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  [class*="_mobilePanel_"] {
+    max-height: calc(100svh - 64px);
+    overflow-y: auto;
+  }
+
+  [class*="_loginPage_"] {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* ============================================================================
+   26. REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ============================================================================
+   27. SAFE AREA
+   ============================================================================ */
+
+@supports (padding: max(0px, env(safe-area-inset-bottom))) {
+  @media (max-width: 767px) {
+    [class*="_mobilePanel_"] {
+      padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+
+    [class*="_sidebar_"] {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+}

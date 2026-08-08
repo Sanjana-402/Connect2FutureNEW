@@ -161,3 +161,42 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .wingLogo {
+    width: 32px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .verticalLine {
+    width: 1.5px;
+    height: 28px;
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+
+  .brandText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 1.1rem;
+    line-height: 1.1;
+  }
+
+  .brandTagline {
+    font-size: 0.45rem;
+    letter-spacing: 0.06rem;
+  }
+}

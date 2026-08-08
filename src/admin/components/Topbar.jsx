@@ -1,29 +1,33 @@
 import {FaBars,FaBell,FaSearch} from "react-icons/fa";
 import styles from "../styles/Topbar.module.css";
 
-export default function Topbar({collapsed,setCollapsed}){
+export default function Topbar({ collapsed, setCollapsed, mobileOpen, setMobileOpen }) {
+  const today = new Date();
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  };
 
-const today=new Date();
+  const handleToggle = () => {
+    if (window.innerWidth <= 992 && setMobileOpen) {
+      setMobileOpen(!mobileOpen);
+    } else {
+      setCollapsed(!collapsed);
+    }
+  };
 
-const options={
-weekday:"long",
-day:"numeric",
-month:"long",
-year:"numeric"
-};
-
-return(
-
-<header className={styles.topbar}>
-
-<div className={styles.left}>
-
-<button
-className={styles.menuBtn}
-onClick={()=>setCollapsed(!collapsed)}
->
-<FaBars/>
-</button>
+  return (
+    <header className={styles.topbar}>
+      <div className={styles.left}>
+        <button
+          className={styles.menuBtn}
+          onClick={handleToggle}
+          aria-label="Toggle Navigation"
+        >
+          <FaBars />
+        </button>
 
 <div>
 

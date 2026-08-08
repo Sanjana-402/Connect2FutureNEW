@@ -8,6 +8,7 @@ import './styles/typography.css';
 import './styles/animations.css';
 import './styles/globals.css';
 import './styles/utilities.css';
+import './styles/responsive.css';
 
 
 
