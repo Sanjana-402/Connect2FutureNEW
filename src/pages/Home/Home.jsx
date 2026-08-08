@@ -8,7 +8,8 @@ import StatBlock from '../../components/StatBlock/StatBlock';
 import InsightCard from '../../components/InsightCard/InsightCard';
 import EcosystemCards from '../../components/EcosystemCards/EcosystemCards'; // <-- new import
 import { images } from '../../utils/images';
-import { ventures } from '../../data/ventures';
+// import { ventures } from '../../data/ventures';
+import EcosystemSpotlight from '../../components/EcosystemSpotlight/EcosystemSpotlight';
 import { homeInsights } from '../../data/insights';
 import styles from './Home.module.css';
 
@@ -56,7 +57,7 @@ export default function Home() {
               >
                 Building the Future, Creating Possibilities.
               </motion.h1>
-              <motion.p
+              {/* <motion.p
                 className={`text-body-lg ${styles.heroSubtitle}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -64,11 +65,11 @@ export default function Home() {
               >
                 Connect2Future is a diversified ecosystem of companies empowering people,
                 businesses and communities through innovation.
-              </motion.p>
-              <motion.div
+              </motion.p> */}
+             <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Button to="/our-ecosystem" variant="gold">Explore Our Ecosystem</Button>
               </motion.div>
@@ -173,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* ============ ECOSYSTEM PREVIEW ============ */}
-      <section className="section bg-surface">
+      {/* <section className="section bg-surface">
         <Container wide>
           <div className={styles.ecosystemHeader}>
             <SectionTitle
@@ -254,6 +255,23 @@ export default function Home() {
               </RevealOnScroll>
             ))}
           </div>
+          <div className={styles.viewAllWrap}>
+            <Button to="/our-ecosystem" variant="gold">View All Ventures</Button>
+          </div>
+        </Container>
+      </section> */}
+
+      {/* ============ ECOSYSTEM PREVIEW ============ */}
+      <section className="section bg-surface">
+        <Container wide>
+          <div className={styles.ecosystemHeader}>
+            <SectionTitle
+              center
+              eyebrow="Our Ecosystem"
+              title="Six Ventures. One Vision."
+            />
+          </div>
+          <EcosystemSpotlight />
           <div className={styles.viewAllWrap}>
             <Button to="/our-ecosystem" variant="gold">View All Ventures</Button>
           </div>

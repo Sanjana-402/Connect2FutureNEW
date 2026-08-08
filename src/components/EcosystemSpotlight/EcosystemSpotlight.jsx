@@ -1,0 +1,129 @@
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import Button from '../Button/Button';
+import RevealOnScroll from '../RevealOnScroll/RevealOnScroll';
+import { ventures } from '../../data/ventures';
+import styles from './EcosystemSpotlight.module.css';
+
+function getLogo(venture) {
+  return venture.logo || '/c2flooooo.png';
+}
+
+const ArrowIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+    <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ServiceIcon = ({ label }) => {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M4 12L10 18L20 6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default function EcosystemSpotlight() {
+  const [activeId, setActiveId] = useState(ventures[0].id);
+  const active = ventures.find((v) => v.id === activeId) || ventures[0];
+
+  return (
+    <div className={styles.wrap}>
+      <div className={styles.spotlightBox}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active.id}
+            className={styles.spotlight}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className={styles.leftPanel}>
+              <div className={styles.header}>
+                {active.logo ? (
+                  <img src={getLogo(active)} alt={active.name} className={styles.standaloneLogo} />
+                ) : (
+                  <>
+                    <img src="/c2flooooo.png" alt="" className={styles.wingLogo} />
+                    <div className={styles.verticalLine} />
+                  </>
+                )}
+                <h3 className={styles.name}>{active.name}</h3>
+              </div>
+
+              <h2 className={styles.tagline}>{active.tagline}</h2>
+              <p className={styles.description}>{active.description}</p>
+
+              {active.stats && active.stats.length > 0 && (
+                <div className={styles.statsRow}>
+                  {active.stats.map((s) => (
+                    <div className={styles.stat} key={s.label}>
+                      <span className={styles.statValue}>{s.value}</span>
+                      <span className={styles.statLabel}>{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <Button to={`/our-ecosystem#${active.id}`} variant="gold" size="sm">
+                Explore {active.name}
+              </Button>
+            </div>
+
+            <div className={styles.divider} />
+
+            <div
+              className={styles.rightPanel}
+              style={{ backgroundImage: `url(${active.image})` }}
+            >
+              <div className={styles.rightOverlay} />
+              {active.services && active.services.length > 0 && (
+                <div className={styles.servicesBlock}>
+                  <span className={styles.servicesHeading}>What We Offer</span>
+                  <div className={styles.servicesGrid}>
+                    {active.services.map((s) => (
+                      <span className={styles.serviceChip} key={s}>
+                        <span className={styles.serviceIcon}>
+                          <ServiceIcon label={s} />
+                        </span>
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className={styles.strip}>
+        {ventures.map((v, i) => (
+          <RevealOnScroll key={v.id} delay={i * 0.05} className={styles.chipWrap}>
+            <button
+              className={`${styles.chip} ${v.id === activeId ? styles.chipActive : ''}`}
+              onClick={() => setActiveId(v.id)}
+            >
+              <span className={styles.chipLeft}>
+                <span className={styles.chipMark}>
+                  <img src={getLogo(v)} alt="" className={styles.chipMarkImg} />
+                </span>
+                <span className={styles.chipName}>{v.name}</span>
+              </span>
+              <span className={styles.chipArrow}>
+                <ArrowIcon />
+              </span>
+            </button>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </div>
+  );
+}
