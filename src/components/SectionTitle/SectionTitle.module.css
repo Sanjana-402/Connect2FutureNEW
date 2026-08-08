@@ -21,3 +21,40 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ======================================== */
+/* ============ RESPONSIVE ================ */
+/* ======================================== */
+
+@media (max-width: 640px) {
+  .wrap {
+    margin-bottom: var(--space-4); /* reduce from space-6 (24px → 16px) */
+  }
+
+  .title {
+    margin-top: var(--space-1); /* reduce from space-2 (8px → 4px) */
+    font-size: clamp(1.6rem, 5vw, 2.2rem); /* ensure it scales */
+    word-break: break-word; /* prevent long words breaking layout */
+  }
+
+  .subtitle {
+    margin-top: var(--space-1);
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    max-width: 100%; /* remove fixed max-width so it doesn't overflow */
+    padding: 0 4px; /* tiny breathing room */
+  }
+}
+
+@media (max-width: 400px) {
+  .wrap {
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: clamp(1.4rem, 4.5vw, 1.8rem);
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+}
