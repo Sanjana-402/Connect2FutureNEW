@@ -1,15 +1,18 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const contactRoutes = require("./routes/contactRoutes");
-const connectDB = require("./config/database");
-const adminRoutes=require("./routes/adminRoutes");
-const analyticsRoutes=require("./routes/analyticsRoutes");
-const settingsRoutes=require("./routes/settingsRoutes");
-const reportRoutes=require("./routes/reportRoutes");
 
-
+// Load environment variables before requiring controllers/routes that rely on process.env
 dotenv.config();
+
+const connectDB = require("./config/database");
+const contactRoutes = require("./routes/contactRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+const analyticsRoutes = require("./routes/analyticsRoutes");
+const settingsRoutes = require("./routes/settingsRoutes");
+const reportRoutes = require("./routes/reportRoutes");
+const companyRoutes = require("./routes/companyRoutes");
+const insightRoutes = require("./routes/insightRoutes");
 
 connectDB();
 
@@ -18,17 +21,16 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/contact", contactRoutes);
-app.use("/api/admin",adminRoutes);
-app.use("/api/analytics",analyticsRoutes);
-app.use("/api/settings",settingsRoutes);
-app.use("/api/report",reportRoutes);
-
-
+app.use("/api/admin", adminRoutes);
+app.use("/api/analytics", analyticsRoutes);
+app.use("/api/settings", settingsRoutes);
+app.use("/api/report", reportRoutes);
+app.use("/api/companies", companyRoutes);
+app.use("/api/insights", insightRoutes);
 
 app.get("/", (req, res) => {
   res.send("Connect2Future Backend Running...");
 });
-
 
 const PORT = process.env.PORT || 5000;
 

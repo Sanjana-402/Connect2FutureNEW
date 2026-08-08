@@ -1,5 +1,5 @@
 import{NavLink,useNavigate}from"react-router-dom";
-import{FaChartPie,FaChartLine,FaCog,FaSignOutAlt,FaChevronLeft,FaChevronRight}from"react-icons/fa";
+import{FaChartPie,FaChartLine,FaCog,FaNewspaper,FaSignOutAlt,FaChevronLeft,FaChevronRight}from"react-icons/fa";
 import styles from"../styles/Sidebar.module.css";
 
 export default function Sidebar({collapsed,setCollapsed}){
@@ -10,9 +10,11 @@ navigate("/admin/login");
 };
 const menu=[
 {title:"Dashboard",icon:<FaChartPie/>,path:"/admin/dashboard"},
+{title:"Insights",icon:<FaNewspaper/>,path:"/admin/insights"},
 {title:"Analytics",icon:<FaChartLine/>,path:"/admin/analytics"},
 {title:"Settings",icon:<FaCog/>,path:"/admin/settings"}
 ];
+
 return(
 <aside className={`${styles.sidebar} ${collapsed?styles.collapsed:""}`}>
 <div className={styles.logoSection}>

@@ -11,7 +11,52 @@ import { images } from '../../utils/images';
 // import { ventures } from '../../data/ventures';
 import EcosystemSpotlight from '../../components/EcosystemSpotlight/EcosystemSpotlight';
 import { homeInsights } from '../../data/insights';
+import { getInsights } from '../../services/insightService';
 import styles from './Home.module.css';
+
+function HomeInsightsPreview() {
+  const [insights, setInsights] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLatest = async () => {
+      try {
+        const res = await getInsights({ page: 1, limit: 3 });
+        if (res.success && res.data && res.data.length > 0) {
+          setInsights(res.data);
+        } else {
+          setInsights(homeInsights);
+        }
+      } catch (err) {
+        setInsights(homeInsights);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchLatest();
+  }, []);
+
+  const displayItems = insights.length > 0 ? insights : homeInsights;
+
+  return (
+    <section className="section bg-background">
+      <Container wide>
+        <div className={styles.insightsHeader}>
+          <RevealOnScroll>
+            <span className="eyebrow">Latest Insights</span>
+            <h2 className="h-2" style={{ marginTop: '16px' }}>Ideas. Innovation. Impact.</h2>
+          </RevealOnScroll>
+          <Button to="/insights" variant="ghost">View All Insights</Button>
+        </div>
+        <div className={styles.insightsGrid}>
+          {displayItems.map((item, i) => (
+            <InsightCard key={item._id || item.title || i} item={item} delay={i * 0.1} />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
 
 const heroSlides = [images.heroHome1, images.heroHome2, images.heroHome3];
 
@@ -279,22 +324,7 @@ export default function Home() {
       </section>
 
       {/* ============ INSIGHTS PREVIEW ============ */}
-      <section className="section bg-background">
-        <Container wide>
-          <div className={styles.insightsHeader}>
-            <RevealOnScroll>
-              <span className="eyebrow">Latest Insights</span>
-              <h2 className="h-2" style={{ marginTop: '16px' }}>Ideas. Innovation. Impact.</h2>
-            </RevealOnScroll>
-            <Button to="/insights" variant="ghost">View All Insights</Button>
-          </div>
-          <div className={styles.insightsGrid}>
-            {homeInsights.map((item, i) => (
-              <InsightCard key={item.title} item={item} delay={i * 0.1} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <HomeInsightsPreview />
 
 
 
