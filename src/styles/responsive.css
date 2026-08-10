@@ -1,0 +1,1201 @@
+/* ============================================================================
+   CONNECT2FUTURE — RESPONSIVE.CSS v4
+   Mobile-first corrections for the existing project.
+
+   IMPORTANT:
+   - Import this file LAST in main.jsx.
+   - Desktop (>=1200px) is intentionally untouched.
+   - Component CSS remains the source of truth; this file only corrects
+     responsive behavior and prevents cross-component selector collisions.
+   ============================================================================ */
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+picture {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+  overflow-wrap: break-word;
+}
+
+/* ============================================================================
+   SHARED CONTAINERS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Container-module_container"] {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Container-module_container"] {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ============================================================================
+   NAVBAR
+   ============================================================================ */
+
+@media (max-width: 960px) {
+  [class*="Navbar-module_links"],
+  [class*="Navbar-module_actions"] [class*="Navbar-module_ctaBtn"],
+  [class*="Navbar-module_actions"] [class*="Navbar-module_iconBtn"] {
+    display: none;
+  }
+
+  button[class*="Navbar-module_burger_"] {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Navbar-module_nav"] {
+    height: 68px;
+    width: 100%;
+  }
+
+  [class*="Navbar-module_nav"][class*="scrolled"] {
+    height: 64px;
+  }
+
+  [class*="Navbar-module_inner"] {
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 8px;
+  }
+
+  a[class*="Navbar-module_logo_"] {
+    min-width: 0;
+    max-width: calc(100% - 58px);
+  }
+
+  [class*="Navbar-module_logoIcon"] {
+    width: 48px;
+    height: auto;
+    flex: 0 0 48px;
+  }
+
+  [class*="Navbar-module_brand"] {
+    min-width: 0;
+  }
+
+  [class*="Navbar-module_verticalLine"] {
+    width: 2px;
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 6px;
+    flex: 0 0 2px;
+  }
+
+  [class*="Navbar-module_title"] {
+    font-size: clamp(1.08rem, 4.8vw, 1.4rem);
+    line-height: 1.05;
+    white-space: nowrap;
+  }
+
+  [class*="Navbar-module_tagline"] {
+    font-size: 0.38rem;
+    line-height: 1.1;
+    letter-spacing: 0.065rem;
+    white-space: nowrap;
+  }
+
+  button[class*="Navbar-module_burger_"] {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex: 0 0 44px;
+  }
+
+  [class*="Navbar-module_mobilePanel"] {
+    width: min(330px, 88vw);
+    max-width: 88vw;
+    max-height: 100svh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 18px max(24px, env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [class*="Navbar-module_mobileLink"] {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="Navbar-module_logoIcon"] {
+    width: 43px;
+    flex-basis: 43px;
+  }
+
+  [class*="Navbar-module_verticalLine"] {
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 5px;
+  }
+
+  [class*="Navbar-module_title"] {
+    font-size: 1.05rem;
+  }
+
+  [class*="Navbar-module_tagline"] {
+    font-size: 0.34rem;
+    letter-spacing: 0.055rem;
+  }
+
+  button[class*="Navbar-module_burger_"] {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    flex-basis: 42px;
+  }
+}
+
+/* ============================================================================
+   HOME HERO
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  section[class*="Home-module_hero_"] {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100svh !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  [class*="Home-module_heroImage"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  [class*="Home-module_heroOverlay"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  [class*="Home-module_heroContent"] {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  [class*="Home-module_heroInner"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    gap: 0 !important;
+    padding: 105px 0 32px !important;
+  }
+
+  [class*="Home-module_heroTitle"] {
+    width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 15px !important;
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  [class*="Home-module_heroInner"] > div > [class*="Button-module_btn"] {
+    margin-top: 4px;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 24px 0 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  section[class*="Home-module_hero_"] {
+    min-height: 100svh !important;
+  }
+
+  [class*="Home-module_heroContent"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  [class*="Home-module_heroInner"] {
+    padding-top: 92px !important;
+    padding-bottom: 28px !important;
+  }
+
+  [class*="Home-module_heroTitle"] {
+    font-size: clamp(1.9rem, 8.5vw, 2.65rem) !important;
+    line-height: 1.05 !important;
+    padding: 0 0 14px !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 82px !important;
+    height: 82px !important;
+    padding: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  [class*="EcosystemCards-module_top"] {
+    margin-bottom: 0 !important;
+  }
+
+  [class*="EcosystemCards-module_lockup"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+  }
+
+  [class*="EcosystemCards-module_wingLogo"] {
+    width: 24px !important;
+    height: auto !important;
+    flex: 0 0 24px !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+  }
+
+  [class*="EcosystemCards-module_verticalLine"] {
+    width: 1.5px !important;
+    height: 24px !important;
+    flex: 0 0 1.5px !important;
+    margin: 0 3px !important;
+  }
+
+  [class*="EcosystemCards-module_brandText"] {
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  [class*="EcosystemCards-module_name"] {
+    font-size: 0.66rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-break: normal !important;
+  }
+
+  [class*="EcosystemCards-module_tagline"] {
+    font-size: 0.3rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-break: normal !important;
+  }
+
+  [class*="EcosystemCards-module_description"] {
+    display: none !important;
+  }
+
+  [class*="EcosystemCards-module_arrow"] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 390px) {
+  [class*="Home-module_heroInner"] {
+    padding-top: 88px !important;
+  }
+
+  [class*="Home-module_heroTitle"] {
+    font-size: clamp(1.8rem, 8.8vw, 2.35rem) !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
+    min-height: 78px !important;
+    height: 78px !important;
+    padding: 7px !important;
+  }
+
+  [class*="EcosystemCards-module_wingLogo"] {
+    width: 22px !important;
+    flex-basis: 22px !important;
+  }
+
+  [class*="EcosystemCards-module_verticalLine"] {
+    height: 22px !important;
+  }
+}
+
+@media (max-width: 340px) {
+  [class*="Home-module_heroContent"] {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  [class*="Home-module_heroInner"] {
+    padding-top: 84px !important;
+  }
+
+  [class*="Home-module_heroTitle"] {
+    font-size: 1.78rem !important;
+    line-height: 1.06 !important;
+  }
+
+  [class*="EcosystemCards-module_grid"] {
+    gap: 10px !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
+    min-height: 76px !important;
+    height: 76px !important;
+    padding: 7px !important;
+  }
+
+  [class*="EcosystemCards-module_wingLogo"] {
+    width: 20px !important;
+    flex-basis: 20px !important;
+  }
+
+  [class*="EcosystemCards-module_name"] {
+    font-size: 0.62rem !important;
+  }
+
+}
+
+/* ============================================================================
+   GENERIC SUBPAGE HERO
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Hero-module_hero"] {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  [class*="Hero-module_heroContent"],
+  [class*="Hero-module_heroInner"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ============================================================================
+   HOME FOUNDERS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Home-module_foundersSection"] {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  [class*="Home-module_founderGrid"] {
+    grid-template-columns: 1fr !important;
+    gap: 82px !important;
+  }
+
+  [class*="Home-module_quoteCard"] {
+    width: min(82%, 420px) !important;
+    max-width: calc(100% - 24px) !important;
+    right: -4px;
+    bottom: -24px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Home-module_foundersSection"] {
+    padding-top: 30px !important;
+    padding-bottom: 36px !important;
+  }
+
+  [class*="Home-module_founderHeader"] h2 {
+    font-size: clamp(1.9rem, 8vw, 2.55rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  [class*="Home-module_founderGrid"] {
+    gap: 72px !important;
+  }
+
+  [class*="Home-module_founderImage"] {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+  }
+
+  [class*="Home-module_quoteCard"] {
+    position: relative !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100% - 24px) !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: -28px auto 0 !important;
+    padding: 16px !important;
+  }
+}
+
+/* ============================================================================
+   HOME IMPACT / INSIGHTS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Home-module_impact"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  [class*="StatBlock-module_row"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  [class*="StatBlock-module_stat"] {
+    padding: 10px 0 10px 10px !important;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+    min-width: 0 !important;
+  }
+
+  [class*="StatBlock-module_value"] {
+    font-size: clamp(1.35rem, 5vw, 2.2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  [class*="StatBlock-module_label"] {
+    font-size: clamp(0.6rem, 2.2vw, 0.78rem) !important;
+    letter-spacing: 0.03em !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Home-module_insightsGrid"] {
+    width: 100%;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  [class*="Home-module_insightsHeader"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+/* ============================================================================
+   WHO WE ARE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="WhoWeAre-module_purposeGrid"] {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  [class*="WhoWeAre-module_valuesGrid"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="WhoWeAre-module_purposeGrid"] {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  [class*="WhoWeAre-module_valuesGrid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 14px;
+  }
+
+  [class*="WhoWeAre-module_certificationCard"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [class*="WhoWeAre-module_certLogos"] {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="WhoWeAre-module_valuesGrid"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================================
+   ECOSYSTEM PAGE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Ecosystem-module_heroStatsWrap"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  [class*="Ecosystem-module_row"][class*="info"],
+  [class*="VentureCard-module_row"][class*="info"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Ecosystem-module_heroStatsWrap"] {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  [class*="Ecosystem-module_ctaBar"] {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  [class*="Ecosystem-module_ctaLeft"] {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  [class*="VentureCard-module_row"],
+  [class*="VentureCard-module_reverse"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 18px !important;
+  }
+
+  [class*="VentureCard-module_imageWrap"] {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  [class*="VentureCard-module_info"] {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  [class*="VentureCard-module_image"] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* ============================================================================
+   ECOSYSTEM SPOTLIGHT
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="EcosystemSpotlight-module_leftPanel"] {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="EcosystemSpotlight-module_spotlightBox"],
+  [class*="EcosystemSpotlight-module_spotlight"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [class*="EcosystemSpotlight-module_spotlight"] {
+    grid-template-columns: 1fr;
+  }
+
+  [class*="EcosystemSpotlight-module_leftPanel"],
+  [class*="EcosystemSpotlight-module_rightPanel"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  [class*="EcosystemSpotlight-module_statsRow"] {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  [class*="EcosystemSpotlight-module_stat"] {
+    min-width: calc(50% - 7px);
+  }
+
+  [class*="EcosystemSpotlight-module_servicesGrid"] {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  [class*="EcosystemSpotlight-module_chipWrap"] {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [class*="EcosystemSpotlight-module_chipWrap"] > * {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 374px) {
+  [class*="EcosystemSpotlight-module_stat"] {
+    min-width: 100%;
+  }
+}
+
+/* ============================================================================
+   INSIGHTS PAGE
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Insights-module_insightsHero"] {
+    height: 340px;
+    min-height: 0;
+  }
+
+  [class*="Insights-module_filterRow"] ~ [class*="Insights-module_grid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Insights-module_insightsHero"] {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+  }
+
+  [class*="Insights-module_heroTitle"] {
+    font-size: clamp(1.75rem, 8vw, 2.3rem);
+    line-height: 1.08;
+  }
+
+  [class*="Insights-module_heroSubtitle"] {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  [class*="Insights-module_filterRow"] {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  [class*="Insights-module_categoryPills"] {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [class*="Insights-module_categoryPills"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  [class*="Insights-module_pillBtn"] {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  [class*="Insights-module_searchBox"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [class*="Insights-module_filterRow"] ~ [class*="Insights-module_grid"] {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* ============================================================================
+   CONTACT
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Contact-module_infoStrip"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [class*="Contact-module_formMapGrid"] {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  [class*="Contact-module_heroReachContent"] {
+    margin-left: 0;
+  }
+
+  section[class*="Contact-module_heroReach_"] {
+    margin-top: -270px !important;
+    position: relative !important;
+    z-index: 3 !important;
+    padding: 24px 0 20px !important;
+  }
+
+  [class*="Contact-module_heroReachContent"] {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    color: #fff !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background: rgba(8, 27, 51, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  [class*="Contact-module_heroReachGrid"] {
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  [class*="Contact-module_heroReachItem"] {
+    width: min(30%, 170px) !important;
+  }
+
+  [class*="Contact-module_heroReachItem"] h3 {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Contact-module_contactStripHeading"] {
+    padding: 36px 0 18px !important;
+  }
+
+  [class*="Contact-module_contactHeading"] {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  section[class*="Contact-module_heroReach_"] {
+    margin-top: -300px !important;
+    padding: 20px 0 16px !important;
+  }
+
+  [class*="Contact-module_heroReachContent"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  [class*="Contact-module_heroReachGrid"] {
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  [class*="Contact-module_heroReachItem"] {
+    width: min(30%, 128px) !important;
+  }
+
+  [class*="Contact-module_heroReachIcon"] {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  [class*="Contact-module_heroReachItem"] h3 {
+    margin-top: 6px !important;
+    font-size: 0.62rem !important;
+    line-height: 1.25 !important;
+  }
+
+  [class*="Contact-module_infoStrip"] {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  [class*="Contact-module_formRow"] {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  [class*="Contact-module_phoneRow"] {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  [class*="Contact-module_mapWrap"] {
+    width: 100%;
+    height: 260px;
+    max-width: 100%;
+  }
+
+  [class*="Contact-module_field"],
+  [class*="Contact-module_textarea"],
+  [class*="Contact-module_countryCode"],
+  [class*="Contact-module_phoneInput"] {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="Footer-module_footer"] [class*="Footer-module_grid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  [class*="Footer-module_brandCol"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="Footer-module_footer"] [class*="Footer-module_grid"] {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  [class*="Footer-module_bottomBar"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ============================================================================
+   SHARED BUTTONS
+   ============================================================================ */
+
+@media (max-width: 575px) {
+  [class*="Button-module_btn"] {
+    min-height: 44px;
+    height: 52px;
+    max-width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* ============================================================================
+   ADMIN SHELL
+   ============================================================================ */
+
+body:has([class*="AdminLogin-module_loginPage"]) [class*="Navbar-module_nav"],
+body:has([class*="AdminLogin-module_loginPage"]) [class*="Footer-module_footer"],
+body:has([class*="Sidebar-module_sidebar"]) [class*="Navbar-module_nav"],
+body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  [class*="Sidebar-module_sidebar"] {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 88vw;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  [class*="Sidebar-module_sidebar"][class*="collapsed"] {
+    width: 280px !important;
+    min-width: 280px !important;
+    transform: translateX(0) !important;
+    box-shadow: 18px 0 45px rgba(0, 0, 0, 0.28);
+  }
+
+  [class*="Sidebar-module_collapseBtn"],
+  [class*="Sidebar-module_logout"] {
+    display: none !important;
+  }
+
+  [class*="AdminLayout-module_mainWrapper"],
+  [class*="AdminLayout-module_mainWrapper"][class*="expand"] {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Sidebar-module_sidebar"] {
+    width: min(290px, 88vw) !important;
+    min-width: min(290px, 88vw) !important;
+  }
+
+  [class*="AdminLayout-module_mainContent"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ============================================================================
+   ADMIN DASHBOARD / TOPBAR / FORMS
+   ============================================================================ */
+
+@media (max-width: 991px) {
+  [class*="AdminDashboard-module_statsGrid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="Topbar-module_topbar"] {
+    width: 100%;
+    height: 64px;
+    padding: 0 14px;
+  }
+
+  [class*="Topbar-module_avatar"] {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  }
+
+  [class*="AdminDashboard-module_statsGrid"] {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  [class*="AdminDashboard-module_statCard"] {
+    width: 100%;
+  }
+
+  [class*="AdminDashboard-module_heading"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  [class*="AdminDashboard-module_reportActions"] {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="AdminLayout-module_mainContent"] {
+    padding: 14px;
+  }
+}
+
+/* ============================================================================
+   ADMIN LOGIN
+   ============================================================================ */
+
+@media (max-width: 1199px) {
+  [class*="AdminLogin-module_loginPage"] {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="AdminLogin-module_loginPage"] {
+    width: 100%;
+    min-height: 100svh;
+    padding: 76px 16px 30px;
+  }
+
+  [class*="AdminLogin-module_rightSection"] {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  [class*="AdminLogin-module_loginCard"] {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 575px) {
+  [class*="AdminLogin-module_loginPage"] {
+    padding: 72px 12px 26px;
+  }
+
+  [class*="AdminLogin-module_loginCard"] {
+    padding: 26px 18px !important;
+  }
+}
+
+/* ============================================================================
+   ADMIN TABLES / MODALS
+   ============================================================================ */
+
+@media (max-width: 767px) {
+  [class*="ContactsTable-module_wrapper"],
+  [class*="ContactsTable-module_tableWrap"],
+  [class*="ManageInsights-module_tableWrap"] {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [class*="ContactsTable-module_wrapper"] table,
+  [class*="ContactsTable-module_tableWrap"] table,
+  [class*="ManageInsights-module_tableWrap"] table {
+    min-width: 680px;
+  }
+
+  [class*="ContactModal-module_overlay"] {
+    padding: 12px;
+    align-items: center;
+  }
+
+  [class*="ContactModal-module_modal"] {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100svh - 24px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================================================
+   SAFE AREA / REDUCED MOTION
+   ============================================================================ */
+
+@supports (padding: max(0px, env(safe-area-inset-bottom))) {
+  @media (max-width: 767px) {
+    [class*="Navbar-module_mobilePanel"] {
+      padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+
+    [class*="Sidebar-module_sidebar"] {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

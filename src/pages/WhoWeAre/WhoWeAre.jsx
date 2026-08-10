@@ -81,7 +81,7 @@ export default function WhoWeAre() {
       </Hero>
 
       {/* ===== PURPOSE ===== */}
-      <section className="section bg-surface">
+      <section className="section section-tight bg-surface">
         <Container wide>
           <div className={styles.purposeGrid}>
             <RevealOnScroll className={styles.purposeIntro}>
@@ -108,7 +108,7 @@ export default function WhoWeAre() {
       
 
       {/* ===== VALUES ===== */}
-      <section className="section bg-background">
+      <section className="section section-tight bg-background">
         <Container wide>
           <SectionTitle center eyebrow="Our Values" title="The Principles That Guide Us" />
           <div className={styles.valuesGrid}>
