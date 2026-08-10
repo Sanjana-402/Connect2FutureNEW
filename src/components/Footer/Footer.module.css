@@ -6,7 +6,7 @@
 
 .grid{
     display:grid;
-    grid-template-columns:2fr 1fr 1.3fr 1fr;
+    grid-template-columns:minmax(260px, 1.7fr) minmax(130px, .8fr) minmax(170px, 1fr);
     column-gap:55px;
     row-gap:0;
     align-items:flex-start;
@@ -16,16 +16,38 @@
 
 .brandCol{
     max-width:320px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 .col{
     display:flex;
     flex-direction:column;
 }
 
+/* Keep the brand at the left, place the two main link groups side by side,
+   and center the Company group beneath them. */
+.brandCol {
+  grid-row: 1 / span 2;
+}
+
+.grid > .col:nth-child(4) {
+  grid-column: 2 / 4;
+  grid-row: 2;
+  align-items: center;
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
+.grid > .col:nth-child(4) .colTitle::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .logo {
   display: flex;
-  align-items: baseline;
-  gap: var(--space-1);
+  align-items: center;
+  gap: 0;
   font-family: var(--font-body);
   font-weight: 700;
   color: #fff;
@@ -125,8 +147,14 @@
   }
   .brandCol {
     grid-column: 1 / -1;
+    grid-row: auto;
     padding-right: 0;
     margin-bottom: var(--space-3);
+  }
+
+  .grid > .col:nth-child(4) {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
 }
 
@@ -139,6 +167,40 @@
     gap: var(--space-1);
     text-align: center;
   }
+
+  .brandCol {
+    max-width: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .title {
+    font-size: clamp(1.4rem, 4vw, 1.7rem);
+    line-height: 1.05;
+    margin-left: 0;
+  }
+
+  .tagline {
+    font-size: 0.55rem;
+  }
+
+  .desc { max-width: 340px; }
+  .social { justify-content: center; }
+  .col { align-items: center; text-align: center; }
+  .colTitle::after { left: 50%; transform: translateX(-50%); }
 }
 .logo{
     display:flex;
@@ -173,7 +235,7 @@
     margin-left:-3px;
     padding:0;
     font-family:"Manrope",sans-serif;
-    font-size:2rem;
+    font-size:1.8rem;
     font-weight:700;
     line-height:1;
     letter-spacing:-.6px;
