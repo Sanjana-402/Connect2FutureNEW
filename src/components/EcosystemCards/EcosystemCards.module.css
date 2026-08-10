@@ -1,14 +1,9 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-2);
   width: 100%;
-  margin-top: var(--space-6);
-  align-items: stretch;
-}
-
-.grid > div {
-  min-width: 0;
+  margin-top: var(--space-12);
 }
 
 .grid > div:nth-child(5) {
@@ -26,9 +21,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 128px;
-  min-height: 128px;
-  padding: 10px 12px;
+  height: 100%;
+  min-height: 8px;
+  padding: 12px;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(14px);
@@ -37,7 +32,6 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0);
   text-decoration: none;
   color: #fff;
-  overflow: hidden;
   transition:
     transform 0.35s var(--ease-out),
     border-color 0.35s var(--ease-out),
@@ -69,18 +63,16 @@
 }
 
 .top {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .lockup {
   display: flex;
   align-items: center;
-  min-width: 0;
-  overflow: hidden;
 }
 
 .wingLogo {
-  width: 28px;
+  width: 34px;
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -88,8 +80,8 @@
 }
 
 .standaloneLogo {
-  width: 38px;
-  height: 32px;
+  width: 54px;
+  height: 44px;
   object-fit: contain;
   border-radius: 5px;
   flex-shrink: 0;
@@ -104,7 +96,7 @@
 
 .verticalLine {
   width: 1.5px;
-  height: 25px;
+  height: 22px;
   background: rgba(255, 255, 255, 0.35);
   margin: 0 6px;
   flex-shrink: 0;
@@ -120,13 +112,12 @@
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  overflow: hidden;
 }
 
 .name {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   font-weight: 700;
   line-height: 1.15;
   color: #fff;
@@ -137,7 +128,7 @@
 
 .tagline {
   margin: 2px 0 0;
-  font-size: 0.38rem;
+  font-size: 0.42rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.2;
@@ -147,24 +138,12 @@
   text-overflow: ellipsis;
 }
 
-@media (max-width: 640px) {
-  .name,
-  .tagline {
-    font-size: clamp(0.72rem, 2.5vw, 0.82rem);
-    line-height: 1.2;
-  }
-}
-
 .description {
-  margin: 4px 0 0;
-  font-size: 0.62rem;
-  line-height: 1.25;
+  margin: 6px 0 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
   color: rgba(255, 255, 255, 0.7);
   flex: 1;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
 }
 
 .arrow {
@@ -172,12 +151,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
-  margin-top: 4px;
+  margin-top: 6px;
   transition:
     transform 0.35s var(--ease-out),
     border-color 0.35s var(--ease-out),
@@ -196,18 +175,17 @@
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
   .grid > div:nth-child(5),
   .grid > div:nth-child(6) {
     grid-column: auto;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: var(--space-6);
   }
   .grid > div:nth-child(5),
   .grid > div:nth-child(6) {
@@ -216,34 +194,7 @@
   .card {
     width: 100%;
     max-width: 100%;
-    height: 82px;
-    min-height: 82px;
-    padding: 8px;
-    border-radius: 10px;
-  }
-  .description,
-  .arrow {
-    display: none;
-  }
-  .wingLogo {
-    width: 24px;
-  }
-  .standaloneLogo {
-    width: 30px;
-    height: 28px;
-    margin-right: 5px;
-  }
-  .verticalLine {
-    height: 24px;
-    margin: 0 4px;
-  }
-  .name {
-    font-size: 0.66rem;
-    white-space: nowrap;
-  }
-  .tagline {
-    margin-top: 1px;
-    font-size: 0.3rem;
-    white-space: nowrap;
+    min-height: 110px;
+    padding: 14px;
   }
 }

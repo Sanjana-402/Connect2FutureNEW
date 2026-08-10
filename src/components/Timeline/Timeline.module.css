@@ -2,9 +2,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(var(--count), 1fr);
-  gap: var(--space-2);
-  max-width: 1080px;
-  margin: 0 auto;
+  gap: var(--space-3);
 }
 
 .track::before {
@@ -44,7 +42,7 @@
 
 .item {
   position: relative;
-  padding-top: var(--space-3);
+  padding-top: var(--space-4);
 }
 
 .dot {
@@ -72,21 +70,20 @@
 
 .year {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--color-primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .title {
   font-weight: 600;
   color: var(--color-text);
-  font-size: 0.84rem;
-  margin-bottom: 4px;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
 }
 
 .desc {
-  font-size: 0.76rem;
-  line-height: 1.4;
+  font-size: 0.85rem;
 }
 
 .trackLight .year,
@@ -101,7 +98,7 @@
 @media (max-width: 900px) {
   .track {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
+    gap: var(--space-6);
   }
   .track::before,
   .trackBase,
