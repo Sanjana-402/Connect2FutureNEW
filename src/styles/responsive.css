@@ -1631,3 +1631,24 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
     background: var(--color-background);
   }
 }
+
+/* Match Home's centered hero composition for the Ecosystem page. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) {
+    justify-content: center;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_image"] {
+    object-position: center;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_content"] {
+    padding-top: 76px !important;
+    padding-bottom: 0;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_bottomOverlay"] {
+    margin-top: 26px;
+    padding-bottom: 0;
+  }
+}
