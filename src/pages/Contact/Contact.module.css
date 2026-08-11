@@ -249,7 +249,8 @@
 .heroReachContent {
   max-width: 760px;
   color: white;
-  margin-left:-75px; 
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -299,6 +300,7 @@
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .heroReachItem {
@@ -482,4 +484,32 @@ box-shadow:0 0 18px rgba(255,30,168,.28);
 
     border-radius:8px;
 
+}
+
+/* Keep the contact hero composition aligned with the centered Home hero. */
+.contactHero {
+  justify-content: center;
+}
+
+.contactHero :global([class*="Hero-module_content"]) {
+  flex: 0 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.contactHero :global([class*="Hero-module_breadcrumb"]) {
+  justify-content: center;
+}
+
+.contactHero :global([class*="Hero-module_title"]),
+.contactHero :global([class*="Hero-module_subtitle"]) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactHero :global([class*="Hero-module_bottomOverlay"]) {
+  flex: 0 0 auto;
+  margin-top: clamp(28px, 4vh, 48px);
+  padding-bottom: 0;
 }
