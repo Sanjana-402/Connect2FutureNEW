@@ -250,11 +250,8 @@ export default function Contact() {
         breadcrumb="Contact"
         title="Let's Build the Future. Together."
         subtitle="We are always open to new ideas, partnerships, and opportunities. Get in touch with us."
-        image={images.contactOffice}
-      />
-      <section className={styles.heroReach}>
-        <Container>
-
+        image={images.heroHome1}
+      >
           <RevealOnScroll className={styles.heroReachContent}>
 
             <span className={styles.heroReachEyebrow}>
@@ -281,9 +278,7 @@ export default function Contact() {
             </div>
 
           </RevealOnScroll>
-
-        </Container>
-      </section>
+      </Hero>
       {/* ===== CONTACT STRIP HEADING ===== */}
       <section className={styles.contactStripHeading}>
         <Container>
