@@ -502,6 +502,11 @@ box-shadow:0 0 18px rgba(255,30,168,.28);
   justify-content: center;
 }
 
+.contactHero :global([class*="Hero-module_underline"]) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contactHero :global([class*="Hero-module_title"]),
 .contactHero :global([class*="Hero-module_subtitle"]) {
   margin-left: auto;
