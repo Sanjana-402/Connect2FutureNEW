@@ -1762,7 +1762,7 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
 
 @media (min-width: 768px) and (max-width: 1100px) {
   [class*="Navbar-module_links"] {
-    gap: 20px;
+    gap: 30px;
   }
 
   [class*="Navbar-module_link"] {
