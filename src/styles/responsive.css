@@ -212,8 +212,8 @@ span {
   }
 
   [class*="Navbar-module_mobilePanel"] {
-    width: min(330px, 88vw);
-    max-width: 88vw;
+    width: min(330px, 80vw);
+    max-width: 80vw;
     max-height: 100svh;
     overflow-y: auto;
     overflow-x: hidden;
