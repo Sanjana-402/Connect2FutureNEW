@@ -1140,6 +1140,69 @@ span {
 /* Android desktop-site mode: retain the same readable vertical milestone
    timeline instead of reverting to the compressed horizontal desktop track. */
 @media (min-width: 768px) and (max-width: 1100px) {
+  /* Our Ecosystem: use the full hero viewport and turn its impact figures
+     into a generous vertical stack for desktop-site mode on phones. */
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) {
+    min-height: 100svh;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_content"] {
+    padding-top: 128px;
+    text-align: center;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_title"],
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_subtitle"] {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_title"] {
+    font-size: clamp(2.55rem, 5.5vw, 3.35rem);
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_bottomOverlay"] {
+    margin-top: 38px;
+    padding-bottom: 42px;
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 520px);
+    margin: 0 auto;
+    gap: 24px;
+    text-align: center;
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] [class*="StatBlock-module_row"] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] [class*="StatBlock-module_stat"] {
+    min-height: 94px;
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 4px solid #ff1ea8;
+    border-radius: 12px;
+    background: rgba(8, 27, 51, 0.36);
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] [class*="StatBlock-module_value"] {
+    font-size: clamp(2.25rem, 5.5vw, 3.1rem);
+    line-height: 1;
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] [class*="StatBlock-module_label"] {
+    margin-top: 6px;
+    font-size: 0.82rem;
+  }
+
   /* Keep the Who We Are photo within the first viewport; timeline content
      continues below it instead of stretching the background image. */
   [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) {
@@ -1469,5 +1532,50 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Keep every footer group on a single row in Android desktop-site mode. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [class*="Footer-module_footer"] [class*="Footer-module_grid"] {
+    grid-template-columns: minmax(180px, 1.45fr) repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  [class*="Footer-module_brandCol"] {
+    grid-column: auto;
+    grid-row: auto;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  [class*="Footer-module_grid"] > [class*="Footer-module_col"]:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  [class*="Footer-module_logoIcon"] { width: 48px; }
+  [class*="Footer-module_verticalLine"] { height: 36px; margin: 0 7px 0 5px; }
+  [class*="Footer-module_title"] { font-size: 1.2rem; }
+  [class*="Footer-module_tagline"] { font-size: 0.35rem; letter-spacing: 0.06rem; }
+  [class*="Footer-module_desc"] { font-size: 0.76rem; line-height: 1.45; }
+  [class*="Footer-module_socialIcon"] { width: 32px; height: 32px; }
+
+  [class*="Footer-module_colTitle"] {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  [class*="Footer-module_colTitle"]::after { width: 100%; }
+
+  [class*="Footer-module_colLink"] {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
   }
 }
