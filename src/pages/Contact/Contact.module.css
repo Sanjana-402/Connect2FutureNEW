@@ -252,6 +252,39 @@
   margin-left:-75px; 
 }
 
+@media (max-width: 991px) {
+  .heroReach {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .heroReachContent {
+    margin-left: 0;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .heroReachGrid {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .heroReachItem {
+    width: min(48%, 170px);
+  }
+}
+
+@media (max-width: 640px) {
+  .heroReachGrid {
+    gap: 12px;
+  }
+
+  .heroReachItem {
+    width: min(50%, 145px);
+  }
+}
+
 .heroReachEyebrow {
   display: block;
   color: #ff1ea8;
