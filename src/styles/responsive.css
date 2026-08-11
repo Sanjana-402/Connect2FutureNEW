@@ -1064,6 +1064,75 @@ span {
   }
 }
 
+/* Who We Are mirrors the compact card rhythm of the Home hero on phones.
+   Its milestone content becomes a two-column card grid instead of a tall,
+   congested timeline inside the hero image. */
+@media (max-width: 767px) {
+  [class*="WhoWeAre-module_heroTimelineWrap"] {
+    padding-top: 4px;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="SectionTitle-module_wrapper"] {
+    margin-bottom: 14px;
+    text-align: left;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="SectionTitle-module_title"] {
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem);
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_track"] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackBase"],
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackFill"],
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_dot"] {
+    display: block;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_item"] {
+    min-height: 0;
+    padding: 10px 12px 10px 36px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(8, 27, 51, 0.42);
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_item"]:last-child {
+    grid-column: auto;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_year"] {
+    margin-bottom: 2px;
+    font-size: 0.95rem;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_title"] {
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_desc"] {
+    display: block;
+    margin: 4px 0 0;
+    font-size: 0.66rem;
+    line-height: 1.35;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_content"] {
+    padding-top: 96px;
+    padding-bottom: 14px;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_bottomOverlay"] {
+    margin-top: 20px;
+    padding-bottom: 28px;
+  }
+}
+
 /* ============================================================================
    SHARED BUTTONS
    ============================================================================ */
