@@ -21,6 +21,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/contact", contactRoutes);
+app.get("/api/admin/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "Admin route is working"
+  });
+});
 app.use("/api/admin", adminRoutes);
 app.use("/api/analytics", analyticsRoutes);
 app.use("/api/settings", settingsRoutes);

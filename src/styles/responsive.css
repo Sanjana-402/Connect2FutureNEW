@@ -1023,12 +1023,14 @@ span {
 /* ============================================================================
    14. ADMIN — HIDE PUBLIC NAVBAR / FOOTER
    ----------------------------------------------------------------------------
-   This prevents the public site shell from appearing behind admin pages.
+   Hide only the PUBLIC Navbar and Footer on admin pages.
+   Do NOT target generic "_nav_" classes because the Admin Sidebar
+   also contains its own <nav>.
    ============================================================================ */
 
-body:has([class*="AdminLogin_loginPage"]) [class*="_nav_"],
+body:has([class*="AdminLogin_loginPage"]) header[class*="_nav_"],
 body:has([class*="AdminLogin_loginPage"]) footer[class*="_footer_"],
-body:has([class*="_sidebar_"]) [class*="_nav_"],
+body:has([class*="_sidebar_"]) header[class*="_nav_"],
 body:has([class*="_sidebar_"]) footer[class*="_footer_"] {
   display: none !important;
 }

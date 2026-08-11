@@ -42,7 +42,7 @@ export const ecosystemCompanies = [
   {
     id: 5,
     name: 'Zentrax',
-    logo: '/public/ZENTRAXBUILDING.png',
+    logo: '/ZENTRAXBUILDING.png',
     tagline: 'PERFORMANCE-DRIVEN TECHNOLOGY',
     description: '• IT Services • Enterprise Solutions',
     link: 'https://zentraxconstructions.com',
@@ -52,7 +52,7 @@ export const ecosystemCompanies = [
   {
     id: 6,
     name: 'Mr.WashWala',
-    logo: '/public/washwalaMAN.png',
+    logo: '/washwalaMAN.png',
     tagline: 'DOORSTEP LAUNDRY, DONE RIGHT',
     description: '• Laundry • Home Services',
     link: 'https://mrwashwala.com/home',
