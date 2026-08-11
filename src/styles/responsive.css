@@ -1137,6 +1137,61 @@ span {
    SHARED BUTTONS
    ============================================================================ */
 
+/* Android desktop-site mode: retain the same readable vertical milestone
+   timeline instead of reverting to the compressed horizontal desktop track. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [class*="WhoWeAre-module_heroTimelineWrap"] {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 8px;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_track"] {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackBase"],
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackFill"],
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_dot"] {
+    display: block;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackBase"],
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackFill"] {
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_item"] {
+    min-height: 0;
+    padding: 12px 16px 12px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(8, 27, 51, 0.42);
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_dot"] {
+    top: 16px;
+    left: 0;
+    transform: none;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_year"] {
+    font-size: 1rem;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_desc"] {
+    margin: 4px 0 0;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+}
+
 @media (max-width: 575px) {
   [class*="Button-module_btn"] {
     min-height: 44px;
