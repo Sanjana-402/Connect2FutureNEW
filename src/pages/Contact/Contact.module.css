@@ -483,34 +483,3 @@ box-shadow:0 0 18px rgba(255,30,168,.28);
     border-radius:8px;
 
 }
-
-/* In mobile desktop-site mode, use the same centered full-viewport hero
-   composition as the Home page. */
-@media (min-width: 768px) and (max-width: 1100px) {
-  .contactHero {
-    min-height: 100svh;
-    justify-content: center;
-  }
-
-  .heroReach {
-    margin-top: 0;
-    padding: 42px 0;
-    background: #081b33;
-  }
-
-  .heroReachContent {
-    width: min(100%, 760px);
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-    background: rgba(8, 27, 51, 0.68);
-  }
-
-  .heroReachEyebrow {
-    margin-bottom: 20px;
-  }
-
-  .heroReachGrid {
-    justify-content: center;
-  }
-}
