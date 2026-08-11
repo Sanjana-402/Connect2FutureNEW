@@ -1579,3 +1579,55 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
     overflow-wrap: anywhere;
   }
 }
+
+/* Ecosystem venture stories need a single readable column in desktop-site
+   mode on phones: image first, followed by the full company content. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_content"] {
+    text-align: center;
+    padding-top: 118px !important;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_breadcrumb"] {
+    justify-content: center;
+  }
+
+  [class*="VentureCard-module_row"],
+  [class*="VentureCard-module_reverse"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: min(100%, 760px);
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+  }
+
+  [class*="VentureCard-module_row"] [class*="VentureCard-module_imageWrap"],
+  [class*="VentureCard-module_reverse"] [class*="VentureCard-module_imageWrap"] {
+    order: 1 !important;
+    width: 100%;
+    aspect-ratio: 16 / 8.5;
+  }
+
+  [class*="VentureCard-module_row"] [class*="VentureCard-module_info"],
+  [class*="VentureCard-module_reverse"] [class*="VentureCard-module_info"] {
+    order: 2 !important;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  [class*="VentureCard-module_statList"] {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  [class*="VentureCard-module_statItem"] {
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-background);
+  }
+}
