@@ -97,6 +97,59 @@ span {
   }
 }
 
+/* Android browsers can request the desktop site while still rendering it on a
+   phone.  This is typically a 768–1100px CSS viewport: keep the desktop
+   navigation visible, but scale and tighten it so its labels stay intact. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [class*="Navbar-module_nav"] {
+    height: 72px;
+  }
+
+  [class*="Navbar-module_inner"] {
+    padding-left: 24px;
+    padding-right: 24px;
+    gap: 18px;
+  }
+
+  [class*="Navbar-module_logoIcon"] {
+    width: 46px;
+    flex-basis: 46px;
+  }
+
+  [class*="Navbar-module_verticalLine"] {
+    height: 34px;
+    margin-left: 4px;
+    margin-right: 7px;
+  }
+
+  [class*="Navbar-module_title"] {
+    font-size: 1.32rem;
+    white-space: nowrap;
+  }
+
+  [class*="Navbar-module_tagline"] {
+    font-size: 0.36rem;
+    letter-spacing: 0.065rem;
+    white-space: nowrap;
+  }
+
+  [class*="Navbar-module_links"] {
+    gap: 16px;
+  }
+
+  [class*="Navbar-module_link"] {
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  [class*="Navbar-module_ctaBtn"] {
+    height: 38px;
+    padding: 0 12px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 767px) {
   [class*="Navbar-module_nav"] {
     height: 68px;
@@ -275,6 +328,44 @@ span {
     width: 100% !important;
     max-width: 100% !important;
     margin: 24px 0 0 !important;
+  }
+}
+
+/* Desktop-site mode on a phone: centre the home hero and retain an easily
+   readable two-column venture grid without changing true desktop layouts. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  section[class*="Home-module_hero_"] {
+    align-items: center !important;
+  }
+
+  [class*="Home-module_heroContent"] {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  [class*="Home-module_heroInner"] {
+    justify-items: center !important;
+    text-align: center;
+    padding-top: 88px !important;
+    padding-bottom: 40px !important;
+  }
+
+  [class*="Home-module_heroTitle"],
+  [class*="Home-module_heroSubtitle"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 760px !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] > div:nth-child(5),
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] > div:nth-child(6) {
+    grid-column: auto !important;
   }
 }
 
