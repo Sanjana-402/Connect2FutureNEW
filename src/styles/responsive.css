@@ -543,43 +543,35 @@ span {
 @media (max-width: 767px) {
   section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
     height: auto !important;
-    min-height: 184px !important;
+    min-height: 132px !important;
     padding: 9px !important;
     justify-content: flex-start !important;
   }
 
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_top"],
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_lockup"],
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_brandText"] {
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_top"] {
     display: flex !important;
-    flex-direction: column !important;
     align-items: flex-start !important;
     width: 100% !important;
     overflow: visible !important;
   }
 
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_wingLogo"],
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_standaloneLogo"] {
-    margin: 0 0 7px !important;
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_lockup"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    overflow: visible !important;
   }
 
   section[class*="Home-module_hero_"] [class*="EcosystemCards-module_verticalLine"] {
-    display: none !important;
+    display: block !important;
   }
 
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_name"],
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_tagline"] {
-    overflow: visible !important;
-    text-overflow: clip !important;
-    white-space: normal !important;
-  }
-
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_name"] {
-    font-size: 0.72rem !important;
-  }
-
-  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_tagline"] {
-    font-size: 0.38rem !important;
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_brandText"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
   }
 
   section[class*="Home-module_hero_"] [class*="EcosystemCards-module_description"] {
@@ -851,7 +843,7 @@ span {
 
 @media (max-width: 991px) {
   [class*="EcosystemSpotlight-module_leftPanel"] {
-    padding: 24px 20px;
+    padding: 0px 0px;
   }
 }
 
