@@ -1652,3 +1652,110 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
     padding-bottom: 0;
   }
 }
+
+/* Final scale and alignment refinements for Android desktop-site mode. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  /* Home: make the centered hero copy and venture cards more prominent. */
+  [class*="Home-module_heroInner"] {
+    padding-top: 112px !important;
+  }
+
+  [class*="Home-module_heroTitle"] {
+    max-width: 820px !important;
+    font-size: clamp(2.7rem, 6.2vw, 3.65rem) !important;
+  }
+
+  [class*="Home-module_heroSubtitle"] {
+    max-width: 650px;
+    font-size: 1.08rem;
+  }
+
+  section[class*="Home-module_hero_"] [class*="Button-module_btn"] {
+    min-height: 52px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 0.95rem;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
+    min-height: 108px;
+    height: 108px;
+    padding: 12px;
+  }
+
+  /* Ecosystem: enlarge the centred hero and its vertical impact cards. */
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_title"] {
+    font-size: clamp(2.85rem, 6.4vw, 3.8rem);
+  }
+
+  [class*="Hero-module_hero"]:has([class*="Ecosystem-module_heroStatsWrap"]) [class*="Hero-module_subtitle"] {
+    font-size: 1.06rem;
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] {
+    width: min(100%, 580px);
+  }
+
+  [class*="Ecosystem-module_heroStatsWrap"] [class*="StatBlock-module_stat"] {
+    min-height: 108px;
+    padding: 18px 24px;
+  }
+
+  /* Who We Are: reduce the hero and vertical timeline scale to fit cleanly. */
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_title"] {
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_subtitle"] {
+    max-width: 460px;
+    font-size: 0.8rem;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] {
+    max-width: 620px;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_item"] {
+    padding: 9px 14px 9px 34px;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_year"] {
+    font-size: 0.88rem;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_title"] {
+    font-size: 0.74rem;
+  }
+
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_desc"] {
+    font-size: 0.64rem;
+  }
+
+  /* Recreate the laptop timeline's smooth progressing line vertically. */
+  [class*="WhoWeAre-module_heroTimelineWrap"] [class*="Timeline-module_trackFill"] {
+    width: 1px !important;
+    height: 0 !important;
+    animation: mobileDesktopTimelineFill 12s linear forwards;
+  }
+
+  /* Contact: centre hero copy and preserve the Home-style full image balance. */
+  [class*="Contact-module_contactHero"] [class*="Hero-module_content"] {
+    padding-top: 76px;
+    padding-bottom: 76px;
+    text-align: center;
+  }
+
+  [class*="Contact-module_contactHero"] [class*="Hero-module_breadcrumb"] {
+    justify-content: center;
+  }
+
+  [class*="Contact-module_contactHero"] [class*="Hero-module_title"],
+  [class*="Contact-module_contactHero"] [class*="Hero-module_subtitle"] {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@keyframes mobileDesktopTimelineFill {
+  to { height: 100%; }
+}

@@ -483,3 +483,12 @@ box-shadow:0 0 18px rgba(255,30,168,.28);
     border-radius:8px;
 
 }
+
+/* In mobile desktop-site mode, use the same centered full-viewport hero
+   composition as the Home page. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .contactHero {
+    min-height: 100svh;
+    justify-content: center;
+  }
+}
