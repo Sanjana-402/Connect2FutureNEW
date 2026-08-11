@@ -168,6 +168,14 @@
   overflow: hidden;
 }
 
+.descriptionItem {
+  display: inline;
+}
+
+.descriptionItem + .descriptionItem {
+  margin-left: 0.4em;
+}
+
 .arrow {
   align-self: flex-end;
   display: inline-flex;
