@@ -1140,6 +1140,51 @@ span {
 /* Android desktop-site mode: retain the same readable vertical milestone
    timeline instead of reverting to the compressed horizontal desktop track. */
 @media (min-width: 768px) and (max-width: 1100px) {
+  /* Keep the Who We Are photo within the first viewport; timeline content
+     continues below it instead of stretching the background image. */
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) {
+    min-height: 100svh;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_image"],
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_overlay"] {
+    top: 0;
+    bottom: auto;
+    height: 100svh;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_content"] {
+    padding-top: 92px;
+    padding-bottom: 20px;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_breadcrumb"] {
+    margin-bottom: 12px;
+    font-size: 0.72rem;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_title"] {
+    max-width: 520px;
+    font-size: clamp(2rem, 4.5vw, 2.7rem);
+    line-height: 1.05;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_underline"] {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_subtitle"] {
+    max-width: 520px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_bottomOverlay"] {
+    margin-top: 28px;
+    padding-bottom: 32px;
+  }
+
   [class*="WhoWeAre-module_heroTimelineWrap"] {
     max-width: 720px;
     margin: 0 auto;
