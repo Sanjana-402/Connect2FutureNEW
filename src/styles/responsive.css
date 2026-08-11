@@ -387,13 +387,13 @@ span {
   [class*="Home-module_heroTitle"] {
     font-size: clamp(1.9rem, 8.5vw, 2.65rem) !important;
     line-height: 1.05 !important;
-    padding: 0 0 14px !important;
+    padding: 0 0 34px !important;
   }
 
   section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-    margin-top: 14px !important;
+    gap: 10px !important;
+    margin-top: 24px !important;
   }
 
   section[class*="Home-module_hero_"] [class*="EcosystemCards-module_grid"] > div {
@@ -514,7 +514,7 @@ span {
 
   [class*="Home-module_heroTitle"] {
     font-size: 1.78rem !important;
-    line-height: 1.06 !important;
+    line-height: 1.26 !important;
   }
 
   [class*="EcosystemCards-module_grid"] {
