@@ -1,12 +1,12 @@
 .page {
-  padding: 24px;
+  padding: 10px;
 }
 
 .card {
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
-  padding: 32px;
+  padding: 2px;
   max-width: 900px;
   margin: 0 auto;
 }

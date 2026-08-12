@@ -2101,38 +2101,32 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
   }
 }
 
-/* Match the centered full-viewport hero composition used by Contact on
-   desktop-site mobile widths. */
+/* Insights-only compact hero for desktop-site mobile widths. */
 @media (min-width: 768px) and (max-width: 1100px) {
   [class*="Insights-module_insightsHero"] {
-    height: 100svh !important;
-    min-height: 620px !important;
-    display: flex;
-    align-items: center;
+    height: 420px !important;
+    min-height: 420px !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  [class*="Insights-module_heroContent"] {
-    width: min(100%, 620px);
-    margin: 0 auto;
-    padding: 76px 32px 40px !important;
-    text-align: center;
+  [class*="Insights-module_insightsHero"] [class*="Insights-module_heroContent"] {
+    width: min(100%, 560px) !important;
+    margin: 0 auto !important;
+    padding: 72px 24px 24px !important;
+    text-align: center !important;
   }
 
-  [class*="Insights-module_heroTitle"] {
-    font-size: clamp(2rem, 4vw, 2.75rem) !important;
-    line-height: 1.08;
-    margin-bottom: 12px;
+  [class*="Insights-module_insightsHero"] [class*="Insights-module_heroTitle"] {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 10px !important;
   }
 
-  [class*="Insights-module_heroSubtitle"] {
-    max-width: 560px;
-    margin: 0 auto;
-    font-size: 0.9rem !important;
-    line-height: 1.5;
-  }
-
-  [class*="Insights-module_filterRow"] {
-    justify-content: center;
-    margin-top: 30px;
+  [class*="Insights-module_insightsHero"] [class*="Insights-module_heroSubtitle"] {
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
   }
 }
