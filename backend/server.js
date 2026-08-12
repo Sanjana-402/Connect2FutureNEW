@@ -2,10 +2,10 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-// Load environment variables before requiring controllers/routes that rely on process.env
 dotenv.config();
 
 const connectDB = require("./config/database");
+
 const contactRoutes = require("./routes/contactRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
@@ -19,14 +19,18 @@ connectDB();
 const app = express();
 
 app.use(express.json());
+
 app.use(cors());
+
 app.use("/api/contact", contactRoutes);
+
 app.get("/api/admin/test", (req, res) => {
   res.json({
     success: true,
     message: "Admin route is working"
   });
 });
+
 app.use("/api/admin", adminRoutes);
 app.use("/api/analytics", analyticsRoutes);
 app.use("/api/settings", settingsRoutes);
@@ -38,8 +42,13 @@ app.get("/", (req, res) => {
   res.send("Connect2Future Backend Running...");
 });
 
-const PORT = process.env.PORT || 5000;
+// Local development only
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
