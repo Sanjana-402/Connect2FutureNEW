@@ -131,10 +131,11 @@
     grid-row: auto;
     padding-right: 0;
     margin-bottom: var(--space-3);
+    display: flex;
   }
 
   .grid > .col:nth-child(4) {
-    grid-column: 1 / -1;
+    /* grid-column: 1 / -1; */
     grid-row: auto;
   }
 }
