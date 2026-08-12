@@ -12,8 +12,8 @@ export const ventures = [
     image: images.ventureConnect2Job,
     stats: [
       { value: '500K+', label: 'Job Seekers' },
-      { value: '10K+', label: 'Employers' },
-      { value: '50K+', label: 'Successful Placements' },
+      { value: '1000+', label: 'Employers' },
+      { value: '500+', label: 'Successful Placements' },
     ],
     services: [
     'White Collar Recruitment',
@@ -34,9 +34,9 @@ export const ventures = [
       'Connect2EdTech is building next-generation learning platforms and solutions that make quality education accessible, engaging and effective.',
     image: images.ventureConnect2EdTech,
     stats: [
-      { value: '200+', label: 'Institutions' },
-      { value: '1M+', label: 'Learners' },
-      { value: '100+', label: 'Courses' },
+      { value: '100+', label: 'Institutions' },
+      { value: '5k+', label: 'Learners' },
+      { value: '50+', label: 'Courses' },
     ],
     services: ['Technical Training', 'Non-Technical Training', 'Career Mentorship', 'Certifications'],
   },
@@ -47,7 +47,7 @@ export const ventures = [
     website: 'https://connect2creovox.connect2future.com/',
     tagline: 'Building intelligent digital solutions.',
     description:
-      'Connect2Crevox is our technology innovation studio specializing in AI, automation, and custom software solutions for businesses.',
+      'Connect2Crevox is our technological innovation studio specializing in Branding & Identity ,AI, automation, and custom software solutions for businesses.',
     image: images.ventureConnect2Crevox,
     stats: [
       { value: '150+', label: 'Projects' },
@@ -78,12 +78,12 @@ export const ventures = [
     website: 'https://connect2space.connect2future.com/',
     tagline: 'Designing experiences beyond boundaries.',
     description:
-      'Connect2Space explores the intersection of creativity, technology and design to build immersive digital experiences and products.',
+      'Connect2Space explores the intersection of creativity, technology and design to build immersive premium spaces for digital experiences and products.',
     image: images.ventureConnect2Space,
     stats: [
-      { value: '80+', label: 'Projects' },
+      { value: '50+', label: 'Projects' },
       { value: '20+', label: 'Creative Experts' },
-      { value: '15+', label: 'Countries' },
+      { value: '10+', label: 'Desired spaces' },
     ],
     services: [
     'Premium Workspace',
@@ -105,9 +105,9 @@ export const ventures = [
       'Mr.WashWala is transforming everyday laundry needs with convenient, reliable and eco-friendly doorstep laundry services.',
     image: images.ventureMrWashWala,
     stats: [
-      { value: '100K+', label: 'Happy Customers' },
-      { value: '50+', label: 'Cities' },
-      { value: '1M+', label: 'Loads Delivered' },
+      { value: '100+', label: 'Happy Customers' },
+      { value: '5+', label: 'Bramches' },
+      { value: '100kg+', label: 'Loads Delivered' },
     ],
   },
   {
@@ -118,12 +118,12 @@ export const ventures = [
     logo: '/ZENTRAXBUILDING.png',
     tagline: 'Construction & Man Power',
     description:
-      'ZenTrax provides performance-driven technology solutions and IT services that help businesses optimize, scale and succeed.',
+      'ZenTrax provides construction , man power requirements and be your real estate partner.',
     image: images.ventureZenTrax,
     stats: [
       { value: '120+', label: 'Clients' },
       { value: '250+', label: 'Solutions' },
-      { value: '10+', label: 'Industries' },
+      { value: '10+', label: 'Dreams Successful' },
     ],
   },
 ];

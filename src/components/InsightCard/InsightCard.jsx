@@ -26,9 +26,9 @@ export default function InsightCard({ item, delay = 0, isFeatured = false, onSel
   let companyTagline = companyObj.tagline || '';
   if (!companyTagline) {
     if (companyName.toLowerCase().includes('zentrax')) {
-      companyTagline = 'PERFORMANCE-DRIVEN TECHNOLOGY';
+      companyTagline = 'CONSTRUCTION AND MAN POWER';
     } else if (companyName.toLowerCase().includes('washwala')) {
-      companyTagline = 'DOORSTEP LAUNDRY, DONE RIGHT';
+      companyTagline = 'PREMIUM WASH , SHINE LIKE NEW';
     } else {
       companyTagline = 'UNLOCK THE POWER OF CONNECTIVITY';
     }

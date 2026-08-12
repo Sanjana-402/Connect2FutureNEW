@@ -21,9 +21,9 @@ export default function FeaturedInsight({ item, isUserSelected = false, onBackTo
   let companyTagline = companyObj.tagline || '';
   if (!companyTagline) {
     if (companyName.toLowerCase().includes('zentrax')) {
-      companyTagline = 'PERFORMANCE-DRIVEN TECHNOLOGY';
+      companyTagline = 'CONSTRUCTION AND MAN POWER';
     } else if (companyName.toLowerCase().includes('washwala')) {
-      companyTagline = 'DOORSTEP LAUNDRY, DONE RIGHT';
+      companyTagline = 'PREMIUM WASH , SHINE LIKE NEW';
     } else {
       companyTagline = 'UNLOCK THE POWER OF CONNECTIVITY';
     }

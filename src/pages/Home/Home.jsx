@@ -63,7 +63,7 @@ const heroSlides = [images.heroHome1, images.heroHome2, images.heroHome3];
 const impactStats = [
   { value: '6', label: 'Ventures' },
   { value: '100+', label: 'Professionals' },
-  { value: '500K+', label: 'Lives Impacted' },
+  { value: '500+', label: 'Lives Impacted' },
 ];
 
 export default function Home() {

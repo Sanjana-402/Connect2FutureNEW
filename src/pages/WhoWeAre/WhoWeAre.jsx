@@ -58,10 +58,10 @@ const valueIcons = [
 ];
 
 const milestones = [
-  { year: '2022', title: 'The Beginning', description: 'Connect2Future was founded with a vision to build meaningful businesses.' },
-  { year: '2023', title: 'First Ventures', description: 'Launch of our early ventures focused on solving real-world challenges.' },
-  { year: '2024', title: 'Growing Together', description: 'Our ecosystem expanded, bringing together passionate teams and ideas.' },
-  { year: '2025', title: 'Scaling Impact', description: 'Stronger businesses, greater impact and growing communities across India.' },
+  { year: '2019', title: 'The Beginning', description: 'Connect2Future was founded with a vision to build meaningful businesses.' },
+  { year: '2022', title: 'First Ventures', description: 'Launch of our Connect2Edtech & Connect2Job ventures focused on solving real-world challenges.' },
+  { year: '2023', title: 'Growing Together', description: 'Our ecosystem expanded, bringing together Connect2Creovox & Connect2Space.' },
+  { year: '2024', title: 'Expansion to other industries', description: 'Strengthening businesses with Mr.Washwala Laundary Service and Zentrax Constructions.' },
   { year: '2026', title: 'The Future Ahead', description: 'Continuing our journey of innovation, impact and creating a better tomorrow.' },
 ];
 
