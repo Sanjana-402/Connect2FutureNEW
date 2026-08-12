@@ -38,13 +38,13 @@ const companyDefinitions = [
   },
   {
     name: "Zentrax",
-    tagline: "PERFORMANCE-DRIVEN TECHNOLOGY",
+    tagline: "CONSTRUCTION AND MAN POWER",
     description: "Enterprise IT solutions focusing on digital logistics, supply chain optimization, and operational intelligence.",
     localLogoPath: path.join(__dirname, "../public/logos/zentrax.png"),
   },
   {
     name: "Mr.WashWala",
-    tagline: "DOORSTEP LAUNDRY, DONE RIGHT",
+    tagline: "PREMIUM WASH , SHINE LIKE NEW",
     description: "A tech-enabled urban services platform professionalizing doorstep laundry, cleaning, and care services.",
     localLogoPath: path.join(__dirname, "../public/logos/mrwashwala.png"),
   },
