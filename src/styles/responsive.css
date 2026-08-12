@@ -1219,6 +1219,30 @@ span {
   }
 }
 
+@media (max-width: 640px) {
+  [class*="Footer-module_logoIcon"] {
+    width: 48px !important;
+    flex-basis: 48px !important;
+  }
+
+  [class*="Footer-module_verticalLine"] {
+    height: 36px !important;
+    margin-left: 4px !important;
+    margin-right: 6px !important;
+  }
+
+  [class*="Footer-module_title"] {
+    font-size: 1.25rem !important;
+    white-space: nowrap;
+  }
+
+  [class*="Footer-module_tagline"] {
+    font-size: 0.38rem !important;
+    letter-spacing: 0.07rem !important;
+    white-space: nowrap;
+  }
+}
+
 /* Center the footer lockup and its existing three-column content layout for
    the compact tablet viewport shown (for example, 678px wide). */
 @media (min-width: 641px) and (max-width: 767px) {
@@ -1253,18 +1277,25 @@ span {
 
 @media (min-width: 768px) and (max-width: 1100px) {
   [class*="Insights-module_companyLogosRow"] {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: center;
-    justify-content: space-between;
+    justify-items: center;
     gap: 16px;
-    flex-wrap: nowrap;
   }
 
   [class*="Insights-module_companyBrandItem"] {
     min-width: 0;
-    flex: 1 1 0;
     justify-content: center;
     white-space: nowrap;
+  }
+
+  [class*="Insights-module_companyBrandItem"]:nth-child(5) {
+    grid-column: 2;
+  }
+
+  [class*="Insights-module_companyBrandItem"]:nth-child(6) {
+    grid-column: 3;
   }
 }
 

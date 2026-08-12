@@ -242,6 +242,12 @@
     justify-content:center;
     margin-top:-2px;
 }
+
+.footer{
+    background:#0d0d0d;
+    color:#fff;
+    padding:15px 0 18px;
+}
 @keyframes footerUnderline{
     0%{
         background-position:200% 0;
