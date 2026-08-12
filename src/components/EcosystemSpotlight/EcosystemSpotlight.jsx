@@ -84,7 +84,7 @@ export default function EcosystemSpotlight() {
             <div className={styles.divider} />
 
             <div
-              className={styles.rightPanel}
+              className={`${styles.rightPanel} ${!active.services?.length ? styles.imageOnly : ''}`}
               style={{ backgroundImage: `url(${active.image})` }}
             >
               <div className={styles.rightOverlay} />

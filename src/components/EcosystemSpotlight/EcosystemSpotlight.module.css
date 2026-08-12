@@ -123,6 +123,8 @@
   align-items: flex-start;
 }
 
+.imageOnly {}
+
 .rightOverlay {
   position: absolute;
   inset: 0;
