@@ -544,7 +544,7 @@ span {
   section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
     height: auto !important;
     min-height: 132px !important;
-    padding: 9px !important;
+    padding: 5px !important;
     justify-content: flex-start !important;
   }
 

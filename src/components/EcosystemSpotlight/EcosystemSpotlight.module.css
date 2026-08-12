@@ -1,7 +1,7 @@
 .wrap {
   background: var(--color-primary, #081b33);
   border-radius: 16px;
-  padding: 24px;
+  padding: 14px;
 }
 
 .spotlightBox {
@@ -56,7 +56,7 @@
 
 .name {
   font-family: "Manrope", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #fff;
   font-weight: 600;
 }
