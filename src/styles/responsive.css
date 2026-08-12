@@ -2100,3 +2100,39 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
     margin-top: auto !important;
   }
 }
+
+/* Match the centered full-viewport hero composition used by Contact on
+   desktop-site mobile widths. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  [class*="Insights-module_insightsHero"] {
+    height: 100svh !important;
+    min-height: 620px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  [class*="Insights-module_heroContent"] {
+    width: min(100%, 620px);
+    margin: 0 auto;
+    padding: 76px 32px 40px !important;
+    text-align: center;
+  }
+
+  [class*="Insights-module_heroTitle"] {
+    font-size: clamp(2rem, 4vw, 2.75rem) !important;
+    line-height: 1.08;
+    margin-bottom: 12px;
+  }
+
+  [class*="Insights-module_heroSubtitle"] {
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  [class*="Insights-module_filterRow"] {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
