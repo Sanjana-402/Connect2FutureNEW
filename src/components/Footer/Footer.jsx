@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import { footerLinks } from '../../data/navigation';
-import { ventures } from '../../data/ventures';
+import { ecosystemCompanies } from '../../data/ecosystemCompanies';
 import styles from './Footer.module.css';
 import { FaLinkedinIn, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa6";
 const socials = [
@@ -82,8 +82,16 @@ export default function Footer() {
 
           <div className={styles.col}>
             <div className={styles.colTitle}>Our Ecosystem</div>
-            {ventures.map((v) => (
-              <Link key={v.id} to="/our-ecosystem" className={styles.colLink}>{v.name}</Link>
+            {ecosystemCompanies.map((v) => (
+              <a
+                key={v.id}
+                href={v.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.colLink}
+              >
+                {v.name}
+              </a>
             ))}
           </div>
 

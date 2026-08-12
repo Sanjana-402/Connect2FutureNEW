@@ -27,7 +27,7 @@ export default function Insights() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const categories = ['ALL', 'BUSINESS', 'TECHNOLOGY', 'PEOPLE', 'INNOVATION', 'IMPACT', 'ECOSYSTEM'];
+  const categories = ['ALL'];
 
   // Handle location state navigation (e.g. from Home page click)
   useEffect(() => {
