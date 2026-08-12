@@ -334,6 +334,35 @@ span {
 /* Desktop-site mode on a phone: centre the home hero and retain an easily
    readable two-column venture grid without changing true desktop layouts. */
 @media (min-width: 768px) and (max-width: 1100px) {
+  /* Match the navbar lockup order and spacing: wing, divider, then brand text. */
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_lockup"] {
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_wingLogo"] {
+    width: 28px !important;
+    flex: 0 0 28px !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_verticalLine"] {
+    height: 25px !important;
+    margin: 0 6px !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_brandText"] {
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_name"] {
+    font-size: 0.76rem !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_tagline"] {
+    font-size: 0.38rem !important;
+  }
+
   section[class*="Home-module_hero_"] {
     align-items: center !important;
   }
@@ -1145,6 +1174,26 @@ span {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+}
+
+/* Center the footer lockup and its existing three-column content layout for
+   the compact tablet viewport shown (for example, 678px wide). */
+@media (min-width: 641px) and (max-width: 767px) {
+  [class*="Footer-module_brandCol"],
+  [class*="Footer-module_col"] {
+    align-items: center;
+    text-align: center;
+  }
+
+  [class*="Footer-module_logo"],
+  [class*="Footer-module_social"] {
+    justify-content: center;
+  }
+
+  [class*="Footer-module_colTitle"]::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

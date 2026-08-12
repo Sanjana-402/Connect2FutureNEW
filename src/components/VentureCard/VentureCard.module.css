@@ -192,19 +192,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 3px;
     margin-bottom: 12px;
   }
 
   .wingLogo {
-    width: 32px;
+    width: 42px;
     height: auto;
     flex-shrink: 0;
   }
 
   .verticalLine {
     width: 1.5px;
-    height: 28px;
+    height: 42px;
     margin: 0 4px;
     flex-shrink: 0;
   }
@@ -261,7 +261,7 @@
 
 @media (max-width: 380px) {
   .header {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .name {
