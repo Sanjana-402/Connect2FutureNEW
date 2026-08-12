@@ -363,6 +363,14 @@ span {
     font-size: 0.38rem !important;
   }
 
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_descriptionItem"] {
+    display: block;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_descriptionItem"] + [class*="EcosystemCards-module_descriptionItem"] {
+    margin-left: 0;
+  }
+
   section[class*="Home-module_hero_"] {
     align-items: center !important;
   }
@@ -1910,5 +1918,35 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
   [class*="Navbar-module_link"] {
     padding-left: 2px;
     padding-right: 2px;
+  }
+
+  /* Match the phone card structure in desktop-site mobile view: content is
+     left-aligned and each card can accommodate every detail line. */
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_card"] {
+    height: auto !important;
+    min-height: 132px !important;
+    padding: 8px !important;
+    justify-content: flex-start !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_top"],
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_lockup"],
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_brandText"] {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_description"] {
+    display: block !important;
+    margin: 7px 0 0 !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+    white-space: normal !important;
+  }
+
+  section[class*="Home-module_hero_"] [class*="EcosystemCards-module_arrow"] {
+    display: inline-flex !important;
+    align-self: flex-end !important;
+    margin-top: auto !important;
   }
 }
