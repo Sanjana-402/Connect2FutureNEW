@@ -18,6 +18,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import axios from "axios";
+const API = `${import.meta.env.VITE_API_URL}/api/contact/submit`;
 
 
 
@@ -208,7 +209,7 @@ export default function Contact() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact",
+        API,
         {
           fullName,
           email,

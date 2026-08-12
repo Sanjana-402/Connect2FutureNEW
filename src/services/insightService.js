@@ -1,9 +1,10 @@
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem("adminToken");
+
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
@@ -29,12 +30,17 @@ export const getInsightById = async (id) => {
 
 export const createInsight = async (formData) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/insights`, formData, {
-      headers: {
-        ...getAuthHeaders(),
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const response = await axios.post(
+      `${API_BASE_URL}/insights`,
+      formData,
+      {
+        headers: {
+          ...getAuthHeaders(),
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
     return response.data;
   } catch (error) {
     console.error("Failed to create insight:", error);
@@ -44,12 +50,17 @@ export const createInsight = async (formData) => {
 
 export const updateInsight = async (id, formData) => {
   try {
-    const response = await axios.put(`${API_BASE_URL}/insights/${id}`, formData, {
-      headers: {
-        ...getAuthHeaders(),
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const response = await axios.put(
+      `${API_BASE_URL}/insights/${id}`,
+      formData,
+      {
+        headers: {
+          ...getAuthHeaders(),
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
     return response.data;
   } catch (error) {
     console.error(`Failed to update insight ${id}:`, error);
@@ -59,9 +70,13 @@ export const updateInsight = async (id, formData) => {
 
 export const deleteInsight = async (id) => {
   try {
-    const response = await axios.delete(`${API_BASE_URL}/insights/${id}`, {
-      headers: getAuthHeaders(),
-    });
+    const response = await axios.delete(
+      `${API_BASE_URL}/insights/${id}`,
+      {
+        headers: getAuthHeaders(),
+      }
+    );
+
     return response.data;
   } catch (error) {
     console.error(`Failed to delete insight ${id}:`, error);

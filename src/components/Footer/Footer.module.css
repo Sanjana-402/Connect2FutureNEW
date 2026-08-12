@@ -142,7 +142,7 @@
 
 @media (max-width: 640px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
   }
   .bottomBar {
     flex-direction: column;
