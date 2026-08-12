@@ -19,6 +19,7 @@ export default function Ecosystem() {
   return (
     <>
       <Hero
+        className={styles.hero}
         breadcrumb="Our Ecosystem"
         title="Our Ecosystem"
         subtitle="Six ventures. One vision. Together, we are creating opportunities, driving innovation, and building a future that matters."

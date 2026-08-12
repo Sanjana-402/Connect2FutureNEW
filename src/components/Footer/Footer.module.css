@@ -6,7 +6,7 @@
 
 .grid{
     display:grid;
-    grid-template-columns:minmax(260px, 1.7fr) minmax(130px, .8fr) minmax(170px, 1fr);
+    grid-template-columns:minmax(260px, 1.7fr) minmax(130px, .8fr) minmax(170px, 1fr) minmax(130px, .8fr);
     column-gap:55px;
     row-gap:0;
     align-items:flex-start;
@@ -23,25 +23,6 @@
 .col{
     display:flex;
     flex-direction:column;
-}
-
-/* Keep the brand at the left, place the two main link groups side by side,
-   and center the Company group beneath them. */
-.brandCol {
-  grid-row: 1 / span 2;
-}
-
-.grid > .col:nth-child(4) {
-  grid-column: 2 / 4;
-  grid-row: 2;
-  align-items: center;
-  text-align: center;
-  margin-top: var(--space-2);
-}
-
-.grid > .col:nth-child(4) .colTitle::after {
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .logo {
@@ -150,17 +131,18 @@
     grid-row: auto;
     padding-right: 0;
     margin-bottom: var(--space-3);
+    display: flex;
   }
 
   .grid > .col:nth-child(4) {
-    grid-column: 1 / -1;
+    /* grid-column: 1 / -1; */
     grid-row: auto;
   }
 }
 
 @media (max-width: 640px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
   }
   .bottomBar {
     flex-direction: column;

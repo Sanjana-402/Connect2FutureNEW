@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const API="http://localhost:5000/api/analytics";
+const API = `${import.meta.env.VITE_API_URL}/api/analytics`;
 
-export const getAnalytics=async()=>{
-const token=localStorage.getItem("adminToken");
+export const getAnalytics = async () => {
+  const token = localStorage.getItem("adminToken");
 
-const response=await axios.get(API,{
-headers:{
-Authorization:`Bearer ${token}`
-}
-});
+  const response = await axios.get(API, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-return response.data;
+  return response.data;
 };

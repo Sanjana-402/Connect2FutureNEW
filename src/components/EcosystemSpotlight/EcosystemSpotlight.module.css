@@ -1,7 +1,7 @@
 .wrap {
   background: var(--color-primary, #081b33);
   border-radius: 16px;
-  padding: 16px;
+  padding: 24px;
 }
 
 .spotlightBox {
@@ -218,7 +218,7 @@
 .chipLeft {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 1px;
   min-width: 0;
 }
 
@@ -284,4 +284,14 @@
   .strip {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .chipName {
+  color: #fff;
+  font-size: 0.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 }

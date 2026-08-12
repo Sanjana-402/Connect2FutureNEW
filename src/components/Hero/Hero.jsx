@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import styles from './Hero.module.css';
 
-export default function Hero({ eyebrow, breadcrumb, title, subtitle, image, children, contentPaddingTop }) {
+export default function Hero({ eyebrow, breadcrumb, title, subtitle, image, children, contentPaddingTop, className = '' }) {
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero} ${className}`}>
       <motion.img
         src={image}
         alt=""
