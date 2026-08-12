@@ -1,27 +1,9 @@
 {
-  "services": {
-    "frontend": {
-      "root": "./",
-      "framework": "vite"
-    },
-    "backend": {
-      "root": "backend/",
-      "framework": "express",
-      "entrypoint": "server.js"
-    }
-  },
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": {
-        "service": "backend"
-      }
-    },
-    {
       "source": "/(.*)",
-      "destination": {
-        "service": "frontend"
-      }
+      "destination": "/index.html"
     }
   ]
 }
