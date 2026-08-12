@@ -1,12 +1,13 @@
 {
   "services": {
     "frontend": {
-      "root": "frontend/",
+      "root": "./",
       "framework": "vite"
     },
     "backend": {
       "root": "backend/",
-      "framework": "express"
+      "framework": "express",
+      "entrypoint": "server.js"
     }
   },
   "rewrites": [
