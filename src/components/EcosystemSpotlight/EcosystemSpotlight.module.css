@@ -15,18 +15,34 @@
   position: relative;
   display: flex;
   align-items: stretch;
+
+  height: 460px;
   min-height: 460px;
+  max-height: 460px;
+
+  box-sizing: border-box;
 }
 
 /* LEFT PANEL */
 .leftPanel {
   flex: 0 0 42%;
+  width: 42%;
   max-width: 460px;
-  padding: 2px 28px;
+
+  height: 460px;
+  min-height: 460px;
+  max-height: 460px;
+
+  padding: 28px;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   background: #0b1b2e;
+
+  overflow: hidden;
 }
 
 .header {
@@ -115,12 +131,23 @@
 /* RIGHT PANEL */
 .rightPanel {
   position: relative;
-  flex: 1;
-  padding: 32px 28px;
+
+  flex: 1 1 auto;
+  width: 58%;
+  height: 460px;
+  min-height: 460px;
+  max-height: 460px;
+
+  padding: 0;
+
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: flex-start;
+
+  box-sizing: border-box;
 }
 
 .imageOnly {}
@@ -180,7 +207,61 @@
   color: #ff1ea8;
   flex-shrink: 0;
 }
+/* SERVICES STRIP */
+.servicesStrip {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px 18px;
+  background: rgba(8, 27, 51, 0.96);
+  border: 1px solid rgba(255, 30, 168, 0.25);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
 
+.servicesStripHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.servicesStripHeader .servicesHeading {
+  margin: 0;
+}
+
+.servicesCompany {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.servicesStripList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.servicesStripItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.servicesStripItem .serviceIcon {
+  color: #ff1ea8;
+}
 /* BOTTOM STRIP */
 .strip {
   display: grid;
@@ -258,43 +339,407 @@
   color: #ff1ea8;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* ---------- TABLET ---------- */
+
 @media (max-width: 1024px) {
+
   .spotlight {
+    display: flex;
     flex-direction: column;
+    min-height: 0;
+    height: auto;
   }
+
+  /*
+   * LEFT CONTENT
+   * Never give this the image height.
+   */
   .leftPanel {
+    width: 100%;
+    max-width: none;
     flex: none;
-    max-width: 100%;
+    min-height: 420px;
+    height: 420px;
+    box-sizing: border-box;
+    padding: 28px;
+    justify-content: center;
   }
+
+  /*
+   * IMAGE
+   * Fixed image area for every company.
+   */
+  .rightPanel {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    flex: none;
+
+    padding: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    box-sizing: border-box;
+  }
+
   .divider {
     width: 100%;
     height: 1px;
+    flex-shrink: 0;
   }
+
+  /*
+   * SERVICES STRIP
+   */
+  .servicesStrip {
+    margin-top: 12px;
+  }
+
+  /*
+   * COMPANY BUTTONS
+   */
   .strip {
     grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 }
 
+
+/* ---------- MOBILE ---------- */
+
 @media (max-width: 640px) {
-  .leftPanel,
+
+  .wrap {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .spotlightBox {
+    border-radius: 12px;
+  }
+
+  /*
+   * IMPORTANT:
+   * The complete company information gets its own fixed
+   * height. It is NOT the image height.
+   */
+  .leftPanel {
+    width: 100%;
+    height: 410px;
+    min-height: 410px;
+    max-height: 410px;
+
+    flex: none;
+
+    padding: 20px 18px;
+    box-sizing: border-box;
+
+    justify-content: flex-start;
+  }
+
+  /*
+   * FIXED IMAGE CONTAINER
+   *
+   * Every company gets exactly the same image area.
+   * Only the photograph changes.
+   */
   .rightPanel {
-    padding: 24px 20px;
+    width: 100%;
+
+    height: 190px;
+    min-height: 190px;
+    max-height: 190px;
+
+    flex: none;
+
+    padding: 0;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    box-sizing: border-box;
+
+    border-radius: 0;
   }
+
+  /*
+   * Keep divider small.
+   */
+  .divider {
+    width: 100%;
+    height: 1px;
+    flex-shrink: 0;
+  }
+
+  /*
+   * HEADER
+   */
+  .header {
+    margin-bottom: 14px;
+    padding-top: 12px;
+    gap: 6px;
+  }
+
+  .wingLogo {
+    height: 23px;
+  }
+
+  .verticalLine {
+    height: 22px;
+  }
+
+  .standaloneLogo {
+    height: 42px;
+    width: 58px;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  /*
+   * TAGLINE
+   */
   .tagline {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+    line-height: 1.18;
+    margin-bottom: 12px;
   }
+
+  /*
+   * DESCRIPTION
+   */
+  .description {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  /*
+   * STATS
+   */
+  .statsRow {
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.58rem;
+  }
+
+  /*
+   * BUTTON
+   */
+  .leftPanel .btn,
+  .leftPanel button {
+    width: 100%;
+  }
+
+  /*
+   * SERVICES STRIP
+   */
+  .servicesStrip {
+    margin-top: 10px;
+    padding: 11px 10px;
+
+    border-radius: 10px;
+  }
+
+  .servicesStripHeader {
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  .servicesStripHeader .servicesHeading {
+    font-size: 0.62rem;
+    margin-bottom: 0;
+  }
+
+  .servicesCompany {
+    font-size: 0.55rem;
+  }
+
+  .servicesStripList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .servicesStripItem {
+    padding: 5px 8px;
+    font-size: 0.62rem;
+    gap: 4px;
+  }
+
+  /*
+   * SIX COMPANY BUTTONS
+   */
   .strip {
     grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .chip {
+    min-width: 0;
+    padding: 9px 5px;
+    border-radius: 8px;
+    gap: 4px;
+  }
+
+  .chipLeft {
+    min-width: 0;
+    gap: 2px;
+  }
+
+  .chipMark {
+    height: 15px;
+  }
+
+  .chipMarkImg {
+    width: 17px;
+    height: 19px;
   }
 
   .chipName {
-  color: #fff;
-  font-size: 0.5rem;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: 0.55rem;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .chipArrow {
+    transform: scale(0.75);
+  }
 }
 
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+  .wrap {
+    padding: 8px;
+  }
+
+  /*
+   * Keep EXACTLY the same image height.
+   * Do NOT shrink the image further.
+   */
+  .rightPanel {
+    height: 180px;
+    min-height: 180px;
+    max-height: 180px;
+
+    background-size: cover;
+    background-position: center center;
+  }
+
+  /*
+   * Keep enough room for all company information.
+   */
+  .leftPanel {
+    height: 410px;
+    min-height: 410px;
+    max-height: 410px;
+
+    padding: 18px 14px;
+  }
+
+  .tagline {
+    font-size: 1.35rem;
+  }
+
+  .description {
+    font-size: 0.72rem;
+    line-height: 1.42;
+  }
+
+  .statsRow {
+    gap: 14px;
+  }
+
+  .statValue {
+    font-size: 1.15rem;
+  }
+
+  .statLabel {
+    font-size: 0.54rem;
+  }
+
+  .servicesStrip {
+    padding: 10px 8px;
+  }
+
+  .servicesStripItem {
+    font-size: 0.58rem;
+    padding: 5px 7px;
+  }
+
+  .chip {
+    padding: 8px 4px;
+  }
+
+  .chipName {
+    font-size: 0.52rem;
+  }
+}
+
+
+/* ---------- VERY SMALL PHONES ---------- */
+
+@media (max-width: 360px) {
+
+  .leftPanel {
+    height: 425px;
+    min-height: 425px;
+    max-height: 425px;
+
+    padding: 16px 12px;
+  }
+
+  .rightPanel {
+    height: 170px;
+    min-height: 170px;
+    max-height: 170px;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 0.68rem;
+  }
+
+  .statsRow {
+    gap: 10px;
+  }
+
+  .statValue {
+    font-size: 1.05rem;
+  }
+
+  .servicesStripItem {
+    font-size: 0.54rem;
+    padding: 4px 6px;
+  }
+
+  .chipName {
+    font-size: 0.48rem;
+  }
 }

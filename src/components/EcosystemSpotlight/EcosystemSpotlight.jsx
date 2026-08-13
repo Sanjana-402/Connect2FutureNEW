@@ -88,25 +88,32 @@ export default function EcosystemSpotlight() {
               style={{ backgroundImage: `url(${active.image})` }}
             >
               <div className={styles.rightOverlay} />
-              {active.services && active.services.length > 0 && (
-                <div className={styles.servicesBlock}>
-                  <span className={styles.servicesHeading}>What We Offer</span>
-                  <div className={styles.servicesGrid}>
-                    {active.services.map((s) => (
-                      <span className={styles.serviceChip} key={s}>
-                        <span className={styles.serviceIcon}>
-                          <ServiceIcon label={s} />
-                        </span>
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {active.services && active.services.length > 0 && (
+        <div className={styles.servicesStrip}>
+          <div className={styles.servicesStripHeader}>
+            <span className={styles.servicesHeading}>What We Offer</span>
+            <span className={styles.servicesCompany}>
+              {active.name}
+            </span>
+          </div>
+
+          <div className={styles.servicesStripList}>
+            {active.services.map((service) => (
+              <span className={styles.servicesStripItem} key={service}>
+                <span className={styles.serviceIcon}>
+                  <ServiceIcon label={service} />
+                </span>
+                {service}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className={styles.strip}>
         {ventures.map((v, i) => (

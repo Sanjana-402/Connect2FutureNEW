@@ -72,3 +72,16 @@
   margin-top: 10px;
   padding-bottom: var(--space-8);
 }
+/* PHONE ONLY — REMOVE HERO IMAGE */
+@media screen and (max-width: 767px) {
+  .image {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .hero {
+    background-image: none !important;
+    background-color: var(--color-primary) !important;
+  }
+}

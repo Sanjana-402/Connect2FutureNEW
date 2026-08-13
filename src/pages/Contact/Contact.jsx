@@ -251,7 +251,7 @@ export default function Contact() {
         breadcrumb="Contact"
         title="Let's Build the Future. Together."
         subtitle="We are always open to new ideas, partnerships, and opportunities. Get in touch with us."
-        image={images.heroHome1}
+        image={images.contactOffice}
       >
           <RevealOnScroll className={styles.heroReachContent}>
 

@@ -58,7 +58,7 @@ function HomeInsightsPreview() {
   );
 }
 
-const heroSlides = [images.heroHome1, images.heroHome2, images.heroHome3];
+
 
 const impactStats = [
   { value: '6', label: 'Ventures' },
@@ -78,9 +78,11 @@ export default function Home() {
     <>
       {/* ============ HERO ============ */}
       <section className={styles.hero}>
-        {heroSlides.map((src, i) => (
-          <img key={src} src={src} alt="" className={styles.heroImage} />
-        ))}
+        <img
+          src={images.heroHome1}
+          alt="Connect2Future"
+          className={styles.heroImage}
+        />
         <div className={styles.heroOverlay} />
 
         <Container wide className={styles.heroContent}>
@@ -111,7 +113,7 @@ export default function Home() {
                 Connect2Future is a diversified ecosystem of companies empowering people,
                 businesses and communities through innovation.
               </motion.p> */}
-             <motion.div
+              <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}

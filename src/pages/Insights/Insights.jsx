@@ -153,7 +153,7 @@ export default function Insights() {
         breadcrumb="Insights"
         title="Ideas. Innovation. Impact."
         subtitle="Explore perspectives, ideas, and stories that look beyond the present and into what comes next. From emerging technologies and evolving business landscapes to innovation, creativity, and digital transformation, our insights bring together ideas that inspire better thinking, meaningful conversations, and new possibilities across the Connect2Future ecosystem."
-        image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop"
+        image="/insights.png"
       />
 
       <section className="section bg-background">

@@ -11,7 +11,7 @@ import styles from './Ecosystem.module.css';
 
 const ecosystemStats = [
   { value: '6', label: 'Companies' },
-  { value: '150+', label: 'Team Members' },
+  { value: '300+', label: 'Team Members' },
   { value: '500K+', label: 'Customers Reached' },
 ];
 
@@ -23,7 +23,7 @@ export default function Ecosystem() {
         breadcrumb="Our Ecosystem"
         title="Our Ecosystem"
         subtitle="Six ventures. One vision. Together, we are creating opportunities, driving innovation, and building a future that matters."
-        image={images.officeInterior}
+        image="/oureco.png"
         contentPaddingTop="120px"
       >
         <div className={styles.heroStatsWrap}>
