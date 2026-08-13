@@ -540,6 +540,23 @@
     visibility: hidden !important;
     opacity: 0 !important;
   }
+  /* HOME HERO SUBTITLE — PHONE */
+@media screen and (max-width: 767px) {
+  .heroSubtitle {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    max-width: 330px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .heroSubtitle {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    max-width: 300px;
+  }
+}
 
   .hero {
     background-image: none !important;

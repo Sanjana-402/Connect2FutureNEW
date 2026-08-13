@@ -81,21 +81,20 @@
 }
 
 .wingLogo {
-  width: 28px;
-  height: auto;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-  flex-shrink: 0;
-  transition: transform 0.35s var(--ease-out);
+  object-position: center;
+  flex: 0 0 30px;
 }
 
 .standaloneLogo {
-  width: 38px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
-  border-radius: 5px;
-  flex-shrink: 0;
-  margin-right: 8px;
-  transition: transform 0.35s var(--ease-out);
+  object-position: center;
+  margin-right: 5px;
+  flex: 0 0 34px;
 }
 
 .card:hover .wingLogo,
