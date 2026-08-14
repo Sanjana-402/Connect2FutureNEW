@@ -909,15 +909,15 @@ span {
   [class*="EcosystemSpotlight-module_rightPanel"] {
     order: 1 !important;
     width: 100% !important;
-    height: 240px !important;
-    min-height: 240px !important;
-    max-height: 240px !important;
+    height: 440px !important;
+    min-height: 440px !important;
+    max-height: 440px !important;
     background-size: cover !important;
   }
 
   /* Only ventures without service chips need a reserved image area. */
   [class*="EcosystemSpotlight-module_imageOnly"] {
-    min-height: clamp(180px, 32vw, 260px) !important;
+    /* min-height: clamp(180px, 32vw, 260px) !important; */
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
