@@ -150,6 +150,7 @@ export default function Insights() {
     <>
       {/* 1. HERO SECTION */}
       <Hero
+        className={styles.insightsHeroSection}
         breadcrumb="Insights"
         title="Ideas. Innovation. Impact."
         subtitle="Explore perspectives, ideas, and stories that look beyond the present and into what comes next. From emerging technologies and evolving business landscapes to innovation, creativity, and digital transformation, our insights bring together ideas that inspire better thinking, meaningful conversations, and new possibilities across the Connect2Future ecosystem."

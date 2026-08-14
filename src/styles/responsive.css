@@ -761,6 +761,10 @@ span {
     align-items: flex-start;
     gap: 14px;
   }
+
+  [class*="StatBlock-module_label"] {
+    white-space: normal !important;
+  }
 }
 
 /* ============================================================================
@@ -2196,31 +2200,33 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
 
 /* Insights-only compact hero for desktop-site mobile widths. */
 @media (min-width: 768px) and (max-width: 1100px) {
-  [class*="Insights-module_insightsHero"] {
-    height: 420px !important;
-    min-height: 420px !important;
-    display: flex !important;
-    align-items: center !important;
+  [class*="Insights-module_insightsHeroSection"] {
+    min-height: 100svh !important;
   }
 
-  [class*="Insights-module_insightsHero"] [class*="Insights-module_heroContent"] {
-    width: min(100%, 560px) !important;
-    margin: 0 auto !important;
-    padding: 72px 24px 24px !important;
+  [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_content"] {
+    padding-top: 128px !important;
     text-align: center !important;
   }
 
-  [class*="Insights-module_insightsHero"] [class*="Insights-module_heroTitle"] {
-    font-size: clamp(1.8rem, 3.8vw, 2.5rem) !important;
-    line-height: 1.08 !important;
-    margin-bottom: 10px !important;
+  [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_title"],
+  [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_subtitle"] {
+    max-width: 620px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  [class*="Insights-module_insightsHero"] [class*="Insights-module_heroSubtitle"] {
-    max-width: 500px !important;
-    margin: 0 auto !important;
-    font-size: 0.78rem !important;
-    line-height: 1.45 !important;
+  [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_title"] {
+    font-size: clamp(2.55rem, 5.5vw, 3.35rem) !important;
+  }
+
+  [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_underline"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_breadcrumb"] {
+    justify-content: center !important;
   }
 }
 /* =========================================================
