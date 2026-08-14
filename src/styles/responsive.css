@@ -895,29 +895,37 @@ span {
 /* On phone and desktop-site/mobile-tablet widths, lead each spotlight with its
    visual before showing the venture details. */
 @media (max-width: 1100px) {
+  [class*="EcosystemSpotlight-module_wrap"] {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
   [class*="EcosystemSpotlight-module_spotlightBox"] {
-    overflow: visible !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
   }
 
   [class*="EcosystemSpotlight-module_spotlight"] {
-    /* flex-direction: column !important; */
+    flex-direction: column !important;
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
+    max-width: 100% !important;
   }
 
   [class*="EcosystemSpotlight-module_rightPanel"] {
     order: 1 !important;
     width: 100% !important;
-    height: 440px !important;
-    min-height: 440px !important;
-    max-height: 440px !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
     background-size: cover !important;
   }
 
   /* Only ventures without service chips need a reserved image area. */
   [class*="EcosystemSpotlight-module_imageOnly"] {
-    /* min-height: clamp(180px, 32vw, 260px) !important; */
+    min-height: clamp(180px, 32vw, 260px) !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -932,6 +940,7 @@ span {
   [class*="EcosystemSpotlight-module_leftPanel"] {
     order: 3 !important;
     width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
@@ -960,7 +969,7 @@ span {
 
   [class*="EcosystemSpotlight-module_stat"] {
     display: flex !important;
-    /* flex-direction: column !important; */
+    flex-direction: column !important;
     min-width: 0 !important;
     flex: 1 1 auto !important;
   }
@@ -982,6 +991,16 @@ span {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+
+  [class*="EcosystemSpotlight-module_strip"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 100% !important;
+  }
+
+  [class*="EcosystemSpotlight-module_servicesStrip"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
