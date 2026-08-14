@@ -66,23 +66,37 @@ const impactStats = [
   { value: '500+', label: 'Lives Impacted' },
 ];
 
-export default function Home() {
-  // const [activeSlide, setActiveSlide] = useState(0);
+const heroImages = [
+  images.heroHome1,
+  images.heroHome2,
+  images.heroHome3,
+];
 
-  // useEffect(() => {
-  //   const id = setInterval(() => setActiveSlide((s) => (s + 1) % 3), 5000);
-  //   return () => clearInterval(id);
-  // }, []);
+export default function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setActiveSlide((s) => (s + 1) % heroImages.length), 5000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <>
       {/* ============ HERO ============ */}
       <section className={styles.hero}>
-        <img
-          src={images.heroHome1}
-          alt="Connect2Future"
-          className={styles.heroImage}
-        />
+        {heroImages.map((imgSrc, index) => (
+          <img
+            key={imgSrc}
+            src={imgSrc}
+            alt="Connect2Future"
+            className={styles.heroImage}
+            style={{
+              opacity: index === activeSlide ? 1 : 0,
+              transition: 'opacity 1s ease-in-out',
+              pointerEvents: 'none',
+            }}
+          />
+        ))}
         <div className={styles.heroOverlay} />
 
         <Container wide className={styles.heroContent}>
@@ -121,7 +135,7 @@ export default function Home() {
                 <Button to="/our-ecosystem" variant="gold">Explore Our Ecosystem</Button>
               </motion.div>
 
-              {/* Ecosystem cards ΓÇô directly below the button, still inside hero */}
+              {/* Ecosystem cards – directly below the button, still inside hero */}
               <EcosystemCards />
             </div>
           </div>

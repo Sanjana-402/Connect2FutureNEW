@@ -75,13 +75,13 @@
 /* PHONE ONLY — REMOVE HERO IMAGE */
 @media screen and (max-width: 767px) {
   .image {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    object-position: center center;
   }
 
   .hero {
-    background-image: none !important;
-    background-color: var(--color-primary) !important;
+    min-height: 100svh;
   }
 }

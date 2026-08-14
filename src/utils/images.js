@@ -11,9 +11,13 @@ const u = (id, w = 1600) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 export const images = {
-  heroHome1: '/por2.png',
-  heroHome2: '/hero222.png',  // corporate lobby
-  heroHome3:  '/por3.png',  // office building exterior
+  // heroHome1: '/por2.png',
+  // heroHome2: '/hero222.png',  // corporate lobby
+  // heroHome3:  '/por3.png',  // office building exterior
+
+  heroHome1: u('photo-1497366754035-f200968a6e72'), // modern glass HQ, dusk
+  heroHome2: u('photo-1486406146926-c627a92ad1ab'),  // corporate lobby
+  heroHome3: u('photo-1497366811353-6870744d04b2'),  // office building exterior
 
   chairman: u('photo-1560250097-0b93528c311a', 1000), // executive portrait
 

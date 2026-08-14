@@ -25,24 +25,23 @@
 
 /* LEFT PANEL */
 .leftPanel {
-  flex: 0 0 42%;
-  width: 42%;
-  max-width: 460px;
+  flex: 0 0 44%;
+  width: 44%;
+  max-width: 480px;
 
-  height: 460px;
   min-height: 460px;
-  max-height: 460px;
+  height: auto;
 
   padding: 28px;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 
   background: #0b1b2e;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 .header {
@@ -362,11 +361,13 @@
     width: 100%;
     max-width: none;
     flex: none;
-    min-height: 420px;
-    height: 420px;
+    min-height: auto;
+    height: auto;
+    max-height: none;
     box-sizing: border-box;
-    padding: 28px;
-    justify-content: center;
+    padding: 24px 20px;
+    justify-content: flex-start;
+    overflow: visible;
   }
 
   /*
@@ -432,9 +433,9 @@
    */
   .leftPanel {
     width: 100%;
-    height: 410px;
-    min-height: 410px;
-    max-height: 410px;
+    height: auto;
+    min-height: auto;
+    max-height: none;
 
     flex: none;
 
@@ -442,6 +443,7 @@
     box-sizing: border-box;
 
     justify-content: flex-start;
+    overflow: visible;
   }
 
   /*
@@ -653,11 +655,12 @@
    * Keep enough room for all company information.
    */
   .leftPanel {
-    height: 410px;
-    min-height: 410px;
-    max-height: 410px;
+    height: auto;
+    min-height: auto;
+    max-height: none;
 
     padding: 18px 14px;
+    overflow: visible;
   }
 
   .tagline {
@@ -705,11 +708,12 @@
 @media (max-width: 360px) {
 
   .leftPanel {
-    height: 425px;
-    min-height: 425px;
-    max-height: 425px;
+    height: auto;
+    min-height: auto;
+    max-height: none;
 
     padding: 16px 12px;
+    overflow: visible;
   }
 
   .rightPanel {
