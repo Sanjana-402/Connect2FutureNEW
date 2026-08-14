@@ -2205,7 +2205,7 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
   }
 
   [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_content"] {
-    padding-top: 638px !important;
+    padding-top: 678px !important;
     text-align: center !important;
   }
 
