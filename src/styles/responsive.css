@@ -918,7 +918,7 @@ span {
     order: 1 !important;
     width: 100% !important;
     height: 300px !important;
-    min-height: 300px !important;
+    min-height: 580px !important;
     max-height: 300px !important;
     background-size: cover !important;
   }
