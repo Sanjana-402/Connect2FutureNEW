@@ -1108,7 +1108,7 @@ span {
   [class*="Insights-module_insightsHero"] {
     width: 100%;
     height: 280px;
-    min-height: 280px;
+    min-height: 100svh;
   }
 
   [class*="Insights-module_heroTitle"] {
@@ -2205,7 +2205,7 @@ body:has([class*="Sidebar-module_sidebar"]) [class*="Footer-module_footer"] {
   }
 
   [class*="Insights-module_insightsHeroSection"] [class*="Hero-module_content"] {
-    padding-top: 128px !important;
+    padding-top: 328px !important;
     text-align: center !important;
   }
 
