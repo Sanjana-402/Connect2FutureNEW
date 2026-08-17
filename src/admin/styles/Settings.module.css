@@ -9,3 +9,5 @@
 .saveBtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;border:none;border-radius:12px;background:#ff1ea8;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.25s;}
 .saveBtn:hover{background:#e6008d;}
 .saveBtn:disabled{opacity:.6;cursor:not-allowed;}
+@media(max-width:1024px){.settings{padding:24px;}}
+@media(max-width:640px){.settings{padding:0;}.settings h1{font-size:1.5rem;margin-bottom:20px;}.form{padding:20px;border-radius:16px;}.group{margin-bottom:18px;}.group input{padding:13px 14px;}}

@@ -174,3 +174,12 @@ align-items:flex-start;
 min-width:800px;
 }
 }
+@media(max-width:640px){
+.page{padding:0;}
+.card{padding:16px;border-radius:16px;}
+.header{gap:14px;margin-bottom:20px;}
+.header h1{font-size:1.35rem;}
+.backBtn{width:100%;text-align:center;}
+.search{padding:13px 14px;}
+.tableWrap{margin:0 -4px;width:calc(100% + 8px);}
+}

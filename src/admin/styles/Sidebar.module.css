@@ -16,6 +16,9 @@ transition:width .35s ease;
 z-index:1000;
 overflow:hidden;
 }
+.scrim{
+display:none;
+}
 .collapsed{
 width:90px;
 min-width:90px;
@@ -161,8 +164,21 @@ padding:0;
 @media(max-width:992px){
 .sidebar{
 transform:translateX(-100%);
+width:min(280px,88vw);
+min-width:min(280px,88vw);
+box-shadow:18px 0 45px rgba(0,0,0,.28);
 }
 .sidebar.show{
 transform:translateX(0);
+}
+.scrim.show{
+display:block;
+position:fixed;
+inset:0;
+background:rgba(8,27,51,.48);
+z-index:999;
+}
+.collapseBtn{
+display:none;
 }
 }

@@ -457,11 +457,30 @@
   font-size: 0.875rem;
 }
 
+@media (max-width: 1024px) {
+  .card { max-width: none; padding: 24px; }
+  .companyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 640px) {
+  .page { padding: 0; }
+  .card { padding: 16px; border-radius: 16px; }
+  .header { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
+  .header h1 { font-size: 1.3rem; }
+  .backBtn { width: 100%; text-align: center; }
+  .form { gap: 22px; }
   .formatGrid {
     grid-template-columns: 1fr;
   }
   .companyGrid {
     grid-template-columns: 1fr;
   }
+  .companyPreview { padding: 14px; gap: 12px; }
+  .typeBtn { flex: 1 1 calc(50% - 10px); padding: 10px 12px; }
+  .cropBox, .finalPreviewBox { padding: 14px; }
+  .cropCropperWrap { height: 260px; }
+  .cropActions, .previewMetaRow { align-items: stretch; flex-direction: column; }
+  .applyCropBtn, .previewBtnGroup { width: 100%; }
+  .previewBtnGroup button { flex: 1; }
+  .submitBtn { width: 100%; }
 }
