@@ -524,6 +524,91 @@
     color:#fb029f;
     font-weight:400;
 }
+
+/* ===== HOME CONTACT INFORMATION ===== */
+.homeContactSection {
+  padding: 6px 0 48px;
+  background: #fff3f8;
+}
+
+.homeContactHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.homeContactHeader span {
+  color: #ff1ea8;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.homeInfoStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.homeInfoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.homeInfoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ff1ea8;
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(255, 30, 168, .28);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.homeInfoItem:hover .homeInfoIcon {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 0 28px rgba(255, 30, 168, .6);
+}
+
+.homeInfoTitle {
+  margin-top: 6px;
+  color: #081b33;
+  font-size: .98rem;
+  font-weight: 700;
+}
+
+.homeInfoText {
+  color: #5e6474;
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1080px) {
+  .homeInfoStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .homeContactSection {
+    padding: 42px 0 36px;
+  }
+
+  .homeContactHeader {
+    margin-bottom: 26px;
+  }
+
+  .homeInfoStrip {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
 /* Connect2Job, Connect2EdTech, Connect2Crevox, Connect2Space */
 .pinkTagline{
     color:#ff1ea8;

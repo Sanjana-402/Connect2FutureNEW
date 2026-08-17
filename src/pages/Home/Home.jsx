@@ -66,6 +66,29 @@ const impactStats = [
   { value: '500+', label: 'Lives Impacted' },
 ];
 
+const contactInfoItems = [
+  {
+    title: 'Our Office',
+    lines: ['970, Nirmithi Kendra Rd,', 'Vijayanagar, Bogadi 2nd Stage North,', 'Mysuru, Karnataka 570006'],
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z" stroke="currentColor" strokeWidth="1.4" /><circle cx="10" cy="8" r="2.2" stroke="currentColor" strokeWidth="1.4" /></svg>,
+  },
+  {
+    title: 'Call Us',
+    lines: ['+91 70194 36720', 'Monday – Saturday', '10:00 AM – 6:00 PM'],
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3h3l1.5 4-2 1.5a10 10 0 004.5 4.5L12.5 11l4 1.5V16a1.5 1.5 0 01-1.6 1.5A14 14 0 014 4.6 1.5 1.5 0 015.5 3H4z" stroke="currentColor" strokeWidth="1.3" /></svg>,
+  },
+  {
+    title: 'Email Us',
+    lines: ['hr@connect2future.com', 'karthikgowdaja@connect2future.com', 'support@connect2future.com'],
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.3" /><path d="M3 5.5L10 11l7-5.5" stroke="currentColor" strokeWidth="1.3" /></svg>,
+  },
+  {
+    title: 'Visit Us',
+    lines: ['Monday – Saturday', '10:00 AM – 6:00 PM'],
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.3" /><path d="M10 5.5V10l3 2" stroke="currentColor" strokeWidth="1.3" /></svg>,
+  },
+];
+
 const heroImages = [
   images.heroHome1,
   images.heroHome2,
@@ -341,6 +364,26 @@ export default function Home() {
 
       {/* ============ INSIGHTS PREVIEW ============ */}
       <HomeInsightsPreview />
+
+      {/* ============ CONTACT INFORMATION ============ */}
+      <section className={styles.homeContactSection}>
+        <Container wide>
+          <RevealOnScroll className={styles.homeContactHeader}>
+            <span>CONTACT US THROUGH</span>
+          </RevealOnScroll>
+          <div className={styles.homeInfoStrip}>
+            {contactInfoItems.map((item, index) => (
+              <RevealOnScroll key={item.title} delay={index * 0.08} className={styles.homeInfoItem}>
+                <div className={styles.homeInfoIcon}>{item.icon}</div>
+                <div className={styles.homeInfoTitle}>{item.title}</div>
+                <div>
+                  {item.lines.map((line) => <p key={line} className={styles.homeInfoText}>{line}</p>)}
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </Container>
+      </section>
 
 
 

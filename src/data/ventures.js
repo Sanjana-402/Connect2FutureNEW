@@ -106,7 +106,7 @@ export const ventures = [
     image: images.ventureMrWashWala,
     stats: [
       { value: '100+', label: 'Happy Customers' },
-      { value: '5+', label: 'Bramches' },
+      { value: '2+', label: 'Branches' },
       { value: '100kg+', label: 'Loads Delivered' },
     ],
   },
@@ -122,7 +122,7 @@ export const ventures = [
     image: images.ventureZenTrax,
     stats: [
       { value: '120+', label: 'Clients' },
-      { value: '250+', label: 'Solutions' },
+      { value: '15+', label: 'years of Experience' },
       { value: '10+', label: 'Dreams Successful' },
     ],
   },
