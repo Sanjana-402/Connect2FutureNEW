@@ -86,11 +86,11 @@ export default function FeaturedInsight({ item, isUserSelected = false, onBackTo
           </div>
 
           {/* CTA Link */}
-          <div className={styles.ctaRow}>
+          {/* <div className={styles.ctaRow}>
             <span className={styles.ctaText}>
               Explore {companyName} &rarr;
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* RIGHT PANEL - IMAGE DISPLAYED FULLY WITHOUT CROPPING */}

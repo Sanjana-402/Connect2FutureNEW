@@ -177,6 +177,12 @@
   .featuredContainer {
     grid-template-columns: 1fr;
   }
+
+  /* Keep the visual story first when the two-column card becomes stacked. */
+  .rightPanel {
+    order: -1;
+  }
+
   .leftPanel {
     padding: 30px;
   }
