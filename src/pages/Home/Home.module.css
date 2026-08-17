@@ -218,8 +218,7 @@
 }
 
 .founderHeader :global(.eyebrow){
-    display:block;
-    color:#ff1ea8;
+    display:inline-flex;
     margin-bottom:16px;
 }
 
@@ -431,7 +430,25 @@
 }
 
 .ecosystemHeader :global(.eyebrow){
-    color:#ff1ea8;
+    display: inline-flex;
+}
+
+/* Shared highlighted labels for key Home-page sections. */
+.sectionHighlight,
+.ecosystemHeader :global(.eyebrow) {
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 30, 168, .25);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 30, 168, .12), rgba(255, 30, 168, .03));
+  box-shadow: 0 8px 22px rgba(255, 30, 168, .12);
+  color: #d90085;
+  font-size: clamp(.68rem, 1.2vw, .8rem);
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 .ventureWing{
     width:30px;
@@ -537,10 +554,7 @@
 }
 
 .homeContactHeader span {
-  color: #ff1ea8;
-  font-size: .82rem;
-  font-weight: 700;
-  letter-spacing: .18em;
+  display: inline-flex;
 }
 
 .homeInfoStrip {
@@ -596,6 +610,12 @@
 }
 
 @media (max-width: 640px) {
+  .sectionHighlight,
+  .ecosystemHeader :global(.eyebrow) {
+    padding: 7px 12px;
+    letter-spacing: .11em;
+  }
+
   .homeContactSection {
     padding: 42px 0 36px;
   }

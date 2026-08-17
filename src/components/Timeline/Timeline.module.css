@@ -126,4 +126,16 @@
     left: 0; 
     transform: none; 
   }
+
+  /* Preserve the laptop timeline's progressive line animation when it
+     switches to the vertical mobile/tablet layout. */
+  .trackLight .trackFill {
+    width: 1px !important;
+    height: 0;
+    animation: timelineFillVertical 12s linear forwards;
+  }
+}
+
+@keyframes timelineFillVertical {
+  to { height: 100%; }
 }

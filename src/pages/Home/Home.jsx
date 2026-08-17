@@ -43,7 +43,7 @@ function HomeInsightsPreview() {
       <Container wide>
         <div className={styles.insightsHeader}>
           <RevealOnScroll>
-            <span className="eyebrow">Latest Insights</span>
+            <span className={`eyebrow ${styles.sectionHighlight}`}>Latest Insights</span>
             <h2 className="h-2" style={{ marginTop: '16px' }}>Ideas. Innovation. Impact.</h2>
           </RevealOnScroll>
           <Button to="/insights" variant="ghost">View All Insights</Button>
@@ -175,7 +175,7 @@ export default function Home() {
         <Container wide>
 
           <RevealOnScroll className={styles.founderHeader}>
-            <span className="eyebrow">OUR FOUNDERS</span>
+            <span className={`eyebrow ${styles.sectionHighlight}`}>OUR FOUNDERS</span>
 
             <h2 className="h-2" style={{ marginTop: "18px" }}>
               A Vision for a Better Tomorrow
@@ -369,7 +369,7 @@ export default function Home() {
       <section className={styles.homeContactSection}>
         <Container wide>
           <RevealOnScroll className={styles.homeContactHeader}>
-            <span>CONTACT US THROUGH</span>
+            <span className={styles.sectionHighlight}>CONTACT US THROUGH</span>
           </RevealOnScroll>
           <div className={styles.homeInfoStrip}>
             {contactInfoItems.map((item, index) => (

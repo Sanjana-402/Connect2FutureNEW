@@ -1603,8 +1603,7 @@ span {
     font-size: 0.82rem;
   }
 
-  /* Keep the Who We Are photo within the first viewport; timeline content
-     continues below it instead of stretching the background image. */
+  /* Keep the Who We Are photo covering the complete timeline on tablet widths. */
   [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) {
     min-height: 100svh;
   }
@@ -1612,8 +1611,8 @@ span {
   [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_image"],
   [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_overlay"] {
     top: 0;
-    bottom: auto;
-    height: 100svh;
+    bottom: 0;
+    height: 100%;
   }
 
   [class*="Hero-module_hero"]:has([class*="WhoWeAre-module_heroTimelineWrap"]) [class*="Hero-module_content"] {
