@@ -699,8 +699,10 @@ span {
 
   [class*="Home-module_founderImage"] {
     width: 100% !important;
-    height: 220px !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
     object-fit: cover !important;
+    object-position: center top !important;
   }
 
   [class*="Home-module_quoteCard"] {

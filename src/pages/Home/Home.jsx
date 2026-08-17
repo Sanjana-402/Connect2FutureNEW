@@ -164,8 +164,8 @@ export default function Home() {
             <RevealOnScroll className={styles.founderCard}>
 
               <img
-                src="/founder1.jpg"
-                alt="Founder 1"
+                src="/founder.jpeg"
+                alt="Founder"
                 className={styles.founderImage}
               />
 
@@ -190,8 +190,8 @@ export default function Home() {
             >
 
               <img
-                src="/founder2.jpg"
-                alt="Founder 2"
+                src="/MD.jpeg"
+                alt="Co-founder"
                 className={styles.founderImage}
               />
 
