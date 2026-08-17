@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* ============ OUR FOUNDERS ============ */}
-      <section className={`${styles.foundersSection} bg-background`}>
+      <section id="founders" className={`${styles.foundersSection} bg-background`}>
         <Container wide>
 
           <RevealOnScroll className={styles.founderHeader}>

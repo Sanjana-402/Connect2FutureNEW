@@ -98,7 +98,19 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.colTitle}>Company</div>
             {footerLinks.company.map((l) => (
-              <Link key={l.label} to={l.path} className={styles.colLink}>{l.label}</Link>
+              l.href ? (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.colLink}
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.label} to={l.path} className={styles.colLink}>{l.label}</Link>
+              )
             ))}
           </div>
         </div>

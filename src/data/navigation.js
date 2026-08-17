@@ -16,8 +16,8 @@ export const footerLinks = {
   ],
   company: [
     { label: 'About Us', path: '/who-we-are' },
-    { label: 'Leadership', path: '/who-we-are' },
-    { label: 'Careers', path: '/contact' },
+    { label: 'Leadership', path: '/#founders' },
+    { label: 'Careers', href: 'https://connect2job.connect2future.com/' },
     { label: 'Newsroom', path: '/insights' },
   ],
   legal: [
