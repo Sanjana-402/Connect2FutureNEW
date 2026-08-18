@@ -11,9 +11,9 @@ export const ventures = [
       'Connect2Job is our flagship platform that connects job seekers with the right opportunities and helps organizations find the talent they need to grow.',
     image: images.ventureConnect2Job,
     stats: [
-      { value: '500K+', label: 'Job Seekers' },
-      { value: '1000+', label: 'Employers' },
-      { value: '500+', label: 'Successful Placements' },
+      { value: '10K+', label: 'Jobs' },
+      { value: '5K+', label: 'Companies' },
+      { value: '45k+', label: 'Candidates' },
     ],
     services: [
     'White Collar Recruitment',
@@ -34,9 +34,9 @@ export const ventures = [
       'Connect2EdTech is building next-generation learning platforms and solutions that make quality education accessible, engaging and effective.',
     image: images.ventureConnect2EdTech,
     stats: [
-      { value: '100+', label: 'Institutions' },
-      { value: '5k+', label: 'Learners' },
-      { value: '50+', label: 'Courses' },
+      { value: '13k+', label: 'Students Trained' },
+      { value: '27+', label: 'Partners' },
+      { value: '97+', label: 'Hiring Partners' },
     ],
     services: ['Technical Training', 'Non-Technical Training', 'Career Mentorship', 'Certifications'],
   },
@@ -50,9 +50,9 @@ export const ventures = [
       'Connect2Crevox is our technological innovation studio specializing in Branding & Identity ,AI, automation, and custom software solutions for businesses.',
     image: images.ventureConnect2Crevox,
     stats: [
-      { value: '150+', label: 'Projects' },
-      { value: '30+', label: 'Enterprise Clients' },
-      { value: '25+', label: 'AI Solutions' },
+      { value: '200+', label: 'Projects Delivered' },
+      { value: '50+', label: 'Happy Clients' },
+      { value: '2+', label: 'Years of Experience' },
     ],
     services: [
     'Auto Branding',
@@ -81,9 +81,9 @@ export const ventures = [
       'Connect2Space explores the intersection of creativity, technology and design to build immersive premium spaces for digital experiences and products.',
     image: images.ventureConnect2Space,
     stats: [
-      { value: '50+', label: 'Projects' },
-      { value: '20+', label: 'Creative Experts' },
-      { value: '10+', label: 'Desired spaces' },
+      { value: '12+', label: 'Spaces' },
+      { value: '300+', label: 'Happy Clients' },
+      { value: '80+', label: 'Events Hosted' },
     ],
     services: [
     'Premium Workspace',
@@ -106,7 +106,7 @@ export const ventures = [
     image: images.ventureMrWashWala,
     stats: [
       { value: '100+', label: 'Happy Customers' },
-      { value: '2+', label: 'Branches' },
+      { value: '3+', label: 'Branches' },
       { value: '100kg+', label: 'Loads Delivered' },
     ],
   },
@@ -121,9 +121,9 @@ export const ventures = [
       'ZenTrax provides construction , man power requirements and be your real estate partner.',
     image: images.ventureZenTrax,
     stats: [
-      { value: '120+', label: 'Clients' },
-      { value: '15+', label: 'years of Experience' },
-      { value: '10+', label: 'Dreams Successful' },
+      { value: '50+', label: 'projects' },
+      { value: '8+', label: 'years of Experience' },
+      // { value: '10+', label: 'Dreams Successful' },
     ],
   },
 ];
