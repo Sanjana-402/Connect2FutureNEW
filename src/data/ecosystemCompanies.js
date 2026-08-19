@@ -11,7 +11,7 @@ export const ecosystemCompanies = [
   },
   {
     id: 2,
-    name: 'Connect2Crevox',
+    name: 'Connect2Creovox',
     logo: '/c2flooooo.png',
     tagline: 'UNLOCK THE POWER OF CONNECTIVITY',
     description: '• Technology • Digital Solutions',
@@ -41,7 +41,7 @@ export const ecosystemCompanies = [
   },
   {
     id: 5,
-    name: 'Zentrax',
+    name: 'Zentrax Construction',
     logo: '/ZENTRAXBUILDING.png',
     tagline: 'CONSTRUCTION AND MAN POWER',
     description: '• Construction • Man Power Solutions',

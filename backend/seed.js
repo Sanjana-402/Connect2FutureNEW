@@ -19,7 +19,7 @@ const companyDefinitions = [
     localLogoPath: path.join(__dirname, "../public/c2flooooo.png"),
   },
   {
-    name: "Connect2Crevox",
+    name: "Connect2Creovox",
     tagline: "UNLOCK THE POWER OF CONNECTIVITY",
     description: "A creative technology studio specializing in digital transformation, design systems, and software engineering.",
     localLogoPath: path.join(__dirname, "../public/c2flooooo.png"),
@@ -37,7 +37,7 @@ const companyDefinitions = [
     localLogoPath: path.join(__dirname, "../public/c2flooooo.png"),
   },
   {
-    name: "Zentrax",
+    name: "Zentrax Construction",
     tagline: "CONSTRUCTION AND MAN POWER",
     description: "Enterprise IT solutions focusing on digital logistics, supply chain optimization, and operational intelligence.",
     localLogoPath: path.join(__dirname, "../public/logos/zentrax.png"),
@@ -68,7 +68,7 @@ const samplePosts = [
     hashtags: ["#EdTech", "#AILearning", "#CorporateTraining"],
   },
   {
-    companyName: "Zentrax",
+    companyName: "Zentrax Construction",
     type: "Story",
     title: "Building Sustainable Supply Chains: A Zentrax Case Study",
     content: "Discover how Zentrax partnered with a Fortune-500 enterprise to reduce carbon footprints by 40% while enhancing operational precision through automated supply chain tracking.",
@@ -84,10 +84,10 @@ const samplePosts = [
     hashtags: ["#CoWorking", "#EnterpriseWorkspace", "#Expansion"],
   },
   {
-    companyName: "Connect2Crevox",
+    companyName: "Connect2Creovox",
     type: "Insight",
     title: "Digital Transformation: From Strategy to Operational Execution",
-    content: "Navigating digital transformation requires more than adoption of software—it requires strategic alignment. Connect2Crevox outlines key principles for enterprise digital success.",
+    content: "Navigating digital transformation requires more than adoption of software—it requires strategic alignment. Connect2Creovox outlines key principles for enterprise digital success.",
     imageDescription: "Executive board meeting analyzing strategic technology architecture",
     hashtags: ["#DigitalTransformation", "#EnterpriseStrategy", "#Innovation"],
   },

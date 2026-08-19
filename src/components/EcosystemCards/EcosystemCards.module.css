@@ -165,14 +165,16 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  padding-left: 35px;
 }
 
 .descriptionItem {
-  display: inline;
+  display: block;
 }
 
 .descriptionItem + .descriptionItem {
-  margin-left: 0.4em;
+  margin-left: 0;
+  margin-top: 6px;
 }
 
 .arrow {

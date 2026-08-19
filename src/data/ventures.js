@@ -41,14 +41,14 @@ export const ventures = [
     services: ['Technical Training', 'Non-Technical Training', 'Career Mentorship', 'Certifications'],
   },
   {
-    id: 'connect2crevox',
+    id: 'connect2creovox',
     mark: 'C',
-    name: 'Connect2Crevox',
+    name: 'Connect2Creovox',
     website: 'https://connect2creovox.connect2future.com/',
     tagline: 'Building intelligent digital solutions.',
     description:
-      'Connect2Crevox is our technological innovation studio specializing in Branding & Identity ,AI, automation, and custom software solutions for businesses.',
-    image: images.ventureConnect2Crevox,
+      'Connect2Creovox is our technological innovation studio specializing in Branding & Identity ,AI, automation, and custom software solutions for businesses.',
+    image: images.ventureConnect2Creovox,
     stats: [
       { value: '200+', label: 'Projects Delivered' },
       { value: '50+', label: 'Happy Clients' },
@@ -113,12 +113,12 @@ export const ventures = [
   {
     id: 'zentrax',
     mark: 'Z',
-    name: 'ZenTrax',
+    name: 'ZenTrax Construction',
     website: 'https://zentraxconstructions.com',
     logo: '/ZENTRAXBUILDING.png',
     tagline: 'Construction & Man Power',
     description:
-      'ZenTrax provides construction , man power requirements and be your real estate partner.',
+      'ZenTrax Construction provides construction , man power requirements and be your real estate partner.',
     image: images.ventureZenTrax,
     stats: [
       { value: '50+', label: 'projects' },

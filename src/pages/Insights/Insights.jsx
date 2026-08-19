@@ -191,7 +191,7 @@ export default function Insights() {
                 className={styles.searchInput}
               />
               <svg className={styles.searchIcon} width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#888888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#888888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
           </div>
@@ -299,8 +299,8 @@ export default function Insights() {
                 <span className={styles.brandName}>Connect2Job</span>
               </div>
               <div className={styles.companyBrandItem}>
-                <img src="/c2flooooo.png" alt="Connect2Crevox" className={styles.brandLogoWing} />
-                <span className={styles.brandName}>Connect2Crevox</span>
+                <img src="/c2flooooo.png" alt="Connect2Creovox" className={styles.brandLogoWing} />
+                <span className={styles.brandName}>Connect2Creovox</span>
               </div>
               <div className={styles.companyBrandItem}>
                 <img src="/c2flooooo.png" alt="Connect2EdTech" className={styles.brandLogoWing} />
@@ -311,8 +311,12 @@ export default function Insights() {
                 <span className={styles.brandName}>Connect2Space</span>
               </div>
               <div className={styles.companyBrandItem}>
-                <img src="/ZENTRAXBUILDING.png" alt="Zentrax" className={styles.brandLogoCustom} />
-                <span className={styles.brandNameBold}>ZENTRAX</span>
+                <img
+                  src="/ZENTRAX_ECOSYSTEM_LOGO.png"
+                  alt="Zentrax Construction"
+                  className={styles.brandLogoCustom}
+                />
+                <span className={styles.brandNameBold}>Zentrax Construction</span>
               </div>
               <div className={styles.companyBrandItem}>
                 <img src="/washwalaMAN.png" alt="Mr.WashWala" className={styles.brandLogoMascot} />

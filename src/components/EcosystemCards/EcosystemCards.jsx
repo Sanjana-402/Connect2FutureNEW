@@ -76,11 +76,16 @@ export default function EcosystemCards({ items = ecosystemCompanies, className =
               )}
             </div>
 
-            <p className={styles.description}>
-              {company.description.split('•').filter(Boolean).map((item) => (
-                <span key={item} className={styles.descriptionItem}>• {item.trim()}</span>
-              ))}
-            </p>
+            <div className={styles.description}>
+              {company.description
+                .split('•')
+                .filter(Boolean)
+                .map((item) => (
+                  <span key={item} className={styles.descriptionItem}>
+                    • {item.trim()}
+                  </span>
+                ))}
+            </div>
 
             <span className={styles.arrow}>
               <ArrowIcon />

@@ -20,7 +20,15 @@ export default function VentureCard({ venture, reverse = false }) {
           <div className={styles.header}>
             {venture.logo ? (
               <>
-                <img src={venture.logo} alt={venture.name} className={styles.standaloneLogo} />
+                <img
+                  src={
+                    venture.id === 'zentrax'
+                      ? '/ZENTRAX_ECOSYSTEM_LOGO.png'
+                      : venture.logo
+                  }
+                  alt={venture.name}
+                  className={styles.standaloneLogo}
+                />
                 <h3 className={`h-3 ${styles.name} ${styles.standaloneName}`}>{venture.name}</h3>
               </>
             ) : (

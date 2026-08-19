@@ -23,7 +23,7 @@ export const images = {
 
   ventureConnect2Job: '/job1.png',      // two colleagues laptop
   ventureConnect2EdTech: '/EDtech.png',   // students + tech classroom
-  ventureConnect2Crevox: '/creovox.png',   // engineer at monitors
+  ventureConnect2Creovox: '/creovox.png',   // engineer at monitors
   ventureConnect2Space: '/hero2.jpg',    // creative photo studio   
   ventureMrWashWala: '/washwalaout.jpeg',          // laundry service
   ventureZenTrax: '/build2.png',             // dashboard analytics

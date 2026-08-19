@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .h-1 { font-size: clamp(2.25rem, 4vw, 3.25rem); line-height: 1.12; }
 .h-2 { font-size: clamp(1.9rem, 3vw, 2.5rem); line-height: 1.18; }
-.h-3 { font-size: clamp(1.5rem, 2.4vw, 1.85rem); line-height: 1.25; }
+.h-3 { font-size: clamp(1.5rem, 2.4vw, 1.5rem); line-height: 1.25; }
 .h-4 { font-size: 1.25rem; line-height: 1.35; }
 
 p {
