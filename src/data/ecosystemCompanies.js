@@ -34,7 +34,7 @@ export const ecosystemCompanies = [
     name: 'Connect2Space',
     logo: '/c2flooooo.png',
     tagline: 'UNLOCK THE POWER OF CONNECTIVITY',
-    description: '• Your Desired Space',
+    description: '• Your Desired Space • Grow Your Brand with Our Space',
     link: 'https://connect2space.connect2future.com/',
     connectBrand: true,
     variant: 'pink',
