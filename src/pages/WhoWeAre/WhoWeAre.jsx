@@ -124,35 +124,72 @@ export default function WhoWeAre() {
         </Container>
       </section>
 
-            {/* ===== CERTIFICATION ===== */}
-      {/* ✅ Changed style to padding: '0' to eliminate the massive gap */}
-      <section className="section bg-surface" style={{ padding: '0' }}>
-        <Container wide>
-          <div className={styles.certificationCard}>
-            <div className={styles.certLogos}>
-              <img src={images.iitGuwahatiLogo} alt="IIT Guwahati" className={styles.certLogo} />
-              <img src={images.nsdcLogo} alt="NSDC" className={styles.certLogo} />
-              <img src={images.masaiLogo} alt="Masai" className={styles.certLogo} />
-            </div>
-            
-            <div className={styles.certDivider}></div>
-            
-            <div className={styles.certTextArea}>
-              <h3>
-                Certified / Associated with 
-                <span className={styles.certHighlight}> IIT Guwahati</span>
-                <span className={styles.greenTick}>✓</span>
-              </h3>
-              <div className={styles.certMeta}>
-                <span>Code: <span className={styles.certCode}>IITGCS/24091634</span></span>
-                <span className={styles.officialBadge}>
-                  <span>🛡️</span> Official Recognition
-                </span>
-              </div>
-            </div>
+{/* ===== CERTIFICATION ===== */}
+<section className="section bg-surface" style={{ padding: '0' }}>
+  <Container wide>
+    <div className={styles.certificationWrapper}>
+
+      {/* Female mascot - LEFT */}
+      <img
+        src="/female1.png"
+        alt=""
+        className={`${styles.certificationMascot} ${styles.certificationMascotLeft}`}
+      />
+
+      {/* Existing certification card */}
+      <div className={styles.certificationCard}>
+        <div className={styles.certLogos}>
+          <img
+            src={images.iitGuwahatiLogo}
+            alt="IIT Guwahati"
+            className={styles.certLogo}
+          />
+          <img
+            src={images.nsdcLogo}
+            alt="NSDC"
+            className={styles.certLogo}
+          />
+          <img
+            src={images.masaiLogo}
+            alt="Masai"
+            className={styles.certLogo}
+          />
+        </div>
+
+        <div className={styles.certDivider}></div>
+
+        <div className={styles.certTextArea}>
+          <h3>
+            Certified / Associated with
+            <span className={styles.certHighlight}> IIT Guwahati</span>
+            <span className={styles.greenTick}>✓</span>
+          </h3>
+
+          <div className={styles.certMeta}>
+            <span>
+              Code:{' '}
+              <span className={styles.certCode}>
+                IITGCS/24091634
+              </span>
+            </span>
+
+            <span className={styles.officialBadge}>
+              <span>🛡️</span> Official Recognition
+            </span>
           </div>
-        </Container>
-      </section>
+        </div>
+      </div>
+
+      {/* Male mascot - RIGHT */}
+      <img
+        src="/male1.png"
+        alt=""
+        className={`${styles.certificationMascot} ${styles.certificationMascotRight}`}
+      />
+
+    </div>
+  </Container>
+</section>
 
     </>
   );

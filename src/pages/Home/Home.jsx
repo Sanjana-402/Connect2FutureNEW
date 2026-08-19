@@ -17,27 +17,27 @@ function HomeInsightsPreview() {
   const [insights, setInsights] = useState([]);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  const fetchLatest = async () => {
-    try {
-      const res = await getInsights({ page: 1, limit: 3 });
+  useEffect(() => {
+    const fetchLatest = async () => {
+      try {
+        const res = await getInsights({ page: 1, limit: 3 });
 
-      if (res.success && res.data) {
-        setInsights(res.data);
-      } else {
+        if (res.success && res.data) {
+          setInsights(res.data);
+        } else {
+          setInsights([]);
+        }
+      } catch (err) {
         setInsights([]);
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      setInsights([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
 
-  fetchLatest();
-}, []);
+    fetchLatest();
+  }, []);
 
-const displayItems = loading ? [] : insights;
+  const displayItems = loading ? [] : insights;
 
   return (
     <section className="section bg-background">
@@ -186,7 +186,7 @@ export default function Home() {
           <div className={styles.founderGrid}>
 
             <RevealOnScroll className={styles.founderCard}>
-
+              
               <img
                 src="/founder.png"
                 alt="Founder"
@@ -218,6 +218,7 @@ export default function Home() {
                 alt="Co-founder"
                 className={styles.founderImage}
               />
+             
 
               <div className={styles.quoteCard}>
 

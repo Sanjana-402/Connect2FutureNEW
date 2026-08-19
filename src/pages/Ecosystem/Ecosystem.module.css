@@ -60,3 +60,40 @@
     gap: var(--space-4);
   }
 }
+
+
+/* ===== OUR VENTURES HEADING MASCOTS ===== */
+
+.venturesHeadingWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.venturesHeading {
+  position: relative;
+  z-index: 2;
+}
+
+.venturesMascot {
+  position: absolute;
+  z-index: 1;
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.venturesMascotLeft {
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.venturesMascotRight {
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}

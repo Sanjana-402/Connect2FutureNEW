@@ -39,12 +39,30 @@ export default function Ecosystem() {
 
       <section className="section bg-background">
         <Container wide>
-          <SectionTitle
-            center
-            eyebrow="Our Ventures"
-            title="A Diverse Ecosystem. Unified Purpose."
-            subtitle="Each company in our ecosystem is solving real-world problems and creating lasting impact."
-          />
+          <div className={styles.venturesHeadingWrapper}>
+
+            <img
+              src="/male2.png"
+              alt=""
+              className={`${styles.venturesMascot} ${styles.venturesMascotLeft}`}
+            />
+
+            <div className={styles.venturesHeading}>
+              <SectionTitle
+                center
+                eyebrow="Our Ventures"
+                title="A Diverse Ecosystem. Unified Purpose."
+                subtitle="Each company in our ecosystem is solving real-world problems and creating lasting impact."
+              />
+            </div>
+
+            <img 
+              src="/female11.png"
+              alt=""
+              className={`${styles.venturesMascot} ${styles.venturesMascotRight}`}
+            />
+
+          </div>
 
           <div className={styles.list}>
             {ventures.map((v, i) => (
