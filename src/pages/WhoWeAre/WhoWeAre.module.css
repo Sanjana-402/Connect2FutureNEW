@@ -272,3 +272,9 @@
     transform: none;
   }
 }
+/* Hide certification mascots on tablet and mobile */
+@media (max-width: 1024px) {
+  .certificationMascot {
+    display: none;
+  }
+}
