@@ -10,7 +10,6 @@ import EcosystemCards from '../../components/EcosystemCards/EcosystemCards'; // 
 import { images } from '../../utils/images';
 // import { ventures } from '../../data/ventures';
 import EcosystemSpotlight from '../../components/EcosystemSpotlight/EcosystemSpotlight';
-import { homeInsights } from '../../data/insights';
 import { getInsights } from '../../services/insightService';
 import styles from './Home.module.css';
 
@@ -18,25 +17,27 @@ function HomeInsightsPreview() {
   const [insights, setInsights] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchLatest = async () => {
-      try {
-        const res = await getInsights({ page: 1, limit: 3 });
-        if (res.success && res.data && res.data.length > 0) {
-          setInsights(res.data);
-        } else {
-          setInsights(homeInsights);
-        }
-      } catch (err) {
-        setInsights(homeInsights);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchLatest();
-  }, []);
+useEffect(() => {
+  const fetchLatest = async () => {
+    try {
+      const res = await getInsights({ page: 1, limit: 3 });
 
-  const displayItems = insights.length > 0 ? insights : homeInsights;
+      if (res.success && res.data) {
+        setInsights(res.data);
+      } else {
+        setInsights([]);
+      }
+    } catch (err) {
+      setInsights([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchLatest();
+}, []);
+
+const displayItems = loading ? [] : insights;
 
   return (
     <section className="section bg-background">
